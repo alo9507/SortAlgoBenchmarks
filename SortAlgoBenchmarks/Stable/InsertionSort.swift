@@ -1,5 +1,5 @@
 //
-//  BubbleSort.swift
+//  InsertionSort.swift
 //  SortAlgoBenchmarks
 //
 //  Created by Andrew O'Brien on 2/13/20.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-class BubbleSort {
+class InsertionSort {
     static func sort<Element: Comparable>(_ array: inout [Element]) {
         return
     }
 }
+
