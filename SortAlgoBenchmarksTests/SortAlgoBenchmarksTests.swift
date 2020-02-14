@@ -39,4 +39,9 @@ class SortAlgoBenchmarksTests: XCTestCase {
         }
     }
 
+    func testInsertionSort() {
+        timeElapsed("Insertion Sort") {
+            InsertionSort.sort(&TestFixtures.tenThousand_sorted)
+        }
+    }
 }
