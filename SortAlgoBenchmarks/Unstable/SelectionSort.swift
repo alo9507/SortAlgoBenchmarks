@@ -10,7 +10,21 @@ import Foundation
 
 class SelectionSort {
     static func sort<Element: Comparable>(_ array: inout [Element]) {
-        return
+        guard array.count > 1 else { return }
+        
+        for x in 0 ..< array.count - 1 {
+            
+            var lowest = x
+            for y in x + 1 ..< array.count {
+                if array[y] < array[lowest] {
+                    lowest = y
+                }
+            }
+            
+            if x != lowest {
+                array.swapAt(x, lowest)
+            }
+        }
     }
 }
 

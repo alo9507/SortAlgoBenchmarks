@@ -34,14 +34,32 @@ class SortAlgoBenchmarksTests: XCTestCase {
     }
 
     func testBubbleSort() {
-        timeElapsed("Bubble Sort") {
+        timeElapsed("Bubble Sort: SORTED") {
             BubbleSort.sort(&TestFixtures.tenThousand_sorted)
+        }
+        
+        timeElapsed("Bubble Sort: RANDOM(1...10000)") {
+            BubbleSort.sort(&TestFixtures.tenThousand_random)
         }
     }
 
     func testInsertionSort() {
-        timeElapsed("Insertion Sort") {
+        timeElapsed("Insertion Sort: SORTED") {
             InsertionSort.sort(&TestFixtures.tenThousand_sorted)
+        }
+        
+        timeElapsed("Insertion Sort: RANDOM(1...10000)") {
+            InsertionSort.sort(&TestFixtures.tenThousand_random)
+        }
+    }
+    
+    func testSelectionSort() {
+        timeElapsed("Selection Sort: SORTED") {
+            SelectionSort.sort(&TestFixtures.tenThousand_sorted)
+        }
+        
+        timeElapsed("Selection Sort: RANDOM(1...10000)") {
+            SelectionSort.sort(&TestFixtures.tenThousand_random)
         }
     }
 }
