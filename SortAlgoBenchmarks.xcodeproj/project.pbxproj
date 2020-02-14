@@ -10,6 +10,7 @@
 		59D1E98123F618DF00647E4B /* SortAlgoBenchmarks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D1E97723F618DF00647E4B /* SortAlgoBenchmarks.framework */; };
 		59D1E98623F618DF00647E4B /* SortAlgoBenchmarksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E98523F618DF00647E4B /* SortAlgoBenchmarksTests.swift */; };
 		59D1E98823F618DF00647E4B /* SortAlgoBenchmarks.h in Headers */ = {isa = PBXBuildFile; fileRef = 59D1E97A23F618DF00647E4B /* SortAlgoBenchmarks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59D1E99223F6196F00647E4B /* BubbleSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E99123F6196F00647E4B /* BubbleSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		59D1E98023F618DF00647E4B /* SortAlgoBenchmarksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SortAlgoBenchmarksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D1E98523F618DF00647E4B /* SortAlgoBenchmarksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortAlgoBenchmarksTests.swift; sourceTree = "<group>"; };
 		59D1E98723F618DF00647E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59D1E99123F6196F00647E4B /* BubbleSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				59D1E97A23F618DF00647E4B /* SortAlgoBenchmarks.h */,
 				59D1E97B23F618DF00647E4B /* Info.plist */,
+				59D1E99123F6196F00647E4B /* BubbleSort.swift */,
 			);
 			path = SortAlgoBenchmarks;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					59D1E97623F618DF00647E4B = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					59D1E97F23F618DF00647E4B = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D1E99223F6196F00647E4B /* BubbleSort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 		59D1E98C23F618DF00647E4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VK9Q399257;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.SortAlgoBenchmarks.SortAlgoBenchmarks;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +371,7 @@
 		59D1E98D23F618DF00647E4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VK9Q399257;
@@ -388,6 +396,7 @@
 		59D1E98F23F618DF00647E4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK9Q399257;
 				INFOPLIST_FILE = SortAlgoBenchmarksTests/Info.plist;
@@ -406,6 +415,7 @@
 		59D1E99023F618DF00647E4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VK9Q399257;
 				INFOPLIST_FILE = SortAlgoBenchmarksTests/Info.plist;
