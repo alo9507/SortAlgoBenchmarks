@@ -15,6 +15,8 @@
 		590EA4F023F87C6600E71EAF /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590EA4EF23F87C6600E71EAF /* BinarySearch.swift */; };
 		590EA4F223F87D1500E71EAF /* LinearSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590EA4F123F87D1500E71EAF /* LinearSearch.swift */; };
 		590EA4F723F87DD900E71EAF /* SearchAlgorithmPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590EA4F623F87DD900E71EAF /* SearchAlgorithmPerformance.swift */; };
+		5964088923F891D900B68414 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964088823F891D900B68414 /* BinaryTree.swift */; };
+		5964088B23F8923400B68414 /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964088A23F8923400B68414 /* BinaryTreeTests.swift */; };
 		5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */; };
 		5973C05723F63B420008C0C7 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05623F63B420008C0C7 /* Heap.swift */; };
 		5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05823F63B5B0008C0C7 /* Queue.swift */; };
@@ -49,6 +51,8 @@
 		590EA4EF23F87C6600E71EAF /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		590EA4F123F87D1500E71EAF /* LinearSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearSearch.swift; sourceTree = "<group>"; };
 		590EA4F623F87DD900E71EAF /* SearchAlgorithmPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlgorithmPerformance.swift; sourceTree = "<group>"; };
+		5964088823F891D900B68414 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		5964088A23F8923400B68414 /* BinaryTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeTests.swift; sourceTree = "<group>"; };
 		5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		5973C05623F63B420008C0C7 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		5973C05823F63B5B0008C0C7 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			children = (
 				5973C05B23F63C530008C0C7 /* PriorityQueueTests.swift */,
 				59013D9423F841D800725562 /* HeapTests.swift */,
+				5964088A23F8923400B68414 /* BinaryTreeTests.swift */,
 			);
 			path = Functionality;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */,
 				5973C05623F63B420008C0C7 /* Heap.swift */,
 				5973C05823F63B5B0008C0C7 /* Queue.swift */,
+				5964088823F891D900B68414 /* BinaryTree.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				590EA4F223F87D1500E71EAF /* LinearSearch.swift in Sources */,
 				5973C05723F63B420008C0C7 /* Heap.swift in Sources */,
 				59013D9E23F8488400725562 /* HeapSort.swift in Sources */,
+				5964088923F891D900B68414 /* BinaryTree.swift in Sources */,
 				59FA5FB123F88787002BA196 /* MinComparisonLinearSearch.swift in Sources */,
 				5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */,
 				59D1E99923F6206700647E4B /* SelectionSort.swift in Sources */,
@@ -409,6 +416,7 @@
 				59D1E99423F61E1500647E4B /* TestFixtures.swift in Sources */,
 				59013D9B23F8437000725562 /* Utils.swift in Sources */,
 				5973C05C23F63C530008C0C7 /* PriorityQueueTests.swift in Sources */,
+				5964088B23F8923400B68414 /* BinaryTreeTests.swift in Sources */,
 				5973C05F23F63F740008C0C7 /* FunctionalityTests.swift in Sources */,
 				59013D9523F841D800725562 /* HeapTests.swift in Sources */,
 				590EA4F723F87DD900E71EAF /* SearchAlgorithmPerformance.swift in Sources */,
