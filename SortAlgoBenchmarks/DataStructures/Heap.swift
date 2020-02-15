@@ -58,11 +58,6 @@ struct Heap<Element: Equatable> {
         return (index - 1) / 2
     }
     
-    mutating func insert(_ element: Element) {
-        elements.append(element)
-        siftUp(from: elements.count - 1)
-    }
-    
     mutating func removeRoot() -> Element? {
         guard !isEmpty else {
             return nil
@@ -80,6 +75,7 @@ struct Heap<Element: Equatable> {
         return originalRoot
     }
     
+    // since our heap is implemented with an array, search is O(n) not O(log n) like in binary search tree
     mutating func remove(at index: Int) -> Element? {
         guard index < elements.count else {
             return nil
@@ -128,12 +124,22 @@ struct Heap<Element: Equatable> {
         }
     }
     
+    mutating func insert(_ element: Element) {
+        elements.append(element)
+        siftUp(from: elements.count - 1)
+    }
+    
     mutating func siftUp(from index: Int) {
         var childIndex = index
         var parentIndex = getParentIndex(ofChildAt: childIndex)
         while childIndex > 0 && areSorted(elements[childIndex], elements[parentIndex]) {
+            // swap child with parent
             elements.swapAt(childIndex, parentIndex)
+            
+            // update the child index
             childIndex = parentIndex
+            
+            // get the new index's parent
             parentIndex = getParentIndex(ofChildAt: childIndex)
         }
     }

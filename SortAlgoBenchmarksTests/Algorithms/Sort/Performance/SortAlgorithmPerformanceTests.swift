@@ -53,25 +53,49 @@ class SortAlgorithmPerformanceTests: XCTestCase {
         InsertionSort.sort(&testArray)
         XCTAssertTrue(testArray == sortedArray)
         
-        Utils.timeElapsed("Insertion Sort: SORTED") {
-            InsertionSort.sort(&TestFixtures.tenThousand_sorted)
-        }
-        
-        Utils.timeElapsed("Insertion Sort: RANDOM(1...10000)") {
-            InsertionSort.sort(&TestFixtures.tenThousand_random)
-        }
+//        Utils.timeElapsed("Insertion Sort: SORTED") {
+//            InsertionSort.sort(&TestFixtures.tenThousand_sorted)
+//        }
+//
+//        Utils.timeElapsed("Insertion Sort: RANDOM(1...10000)") {
+//            InsertionSort.sort(&TestFixtures.tenThousand_random)
+//        }
     }
     
     func testSelectionSort() {
         SelectionSort.sort(&testArray)
         XCTAssertTrue(testArray == sortedArray)
         
-        Utils.timeElapsed("Selection Sort: SORTED") {
-            SelectionSort.sort(&TestFixtures.tenThousand_sorted)
+//        Utils.timeElapsed("Selection Sort: SORTED") {
+//            SelectionSort.sort(&TestFixtures.tenThousand_sorted)
+//        }
+//
+//        Utils.timeElapsed("Selection Sort: RANDOM(1...10000)") {
+//            SelectionSort.sort(&TestFixtures.tenThousand_random)
+//        }
+    }
+    
+    // BEST, WORST and AVERAGE: O(n log n).
+    // Sifting down is a O(log n) operation. In heapsort, you siftDown n times, giving you O(n log n) complexity
+    func testHeapSort() {
+        Utils.timeElapsed("Heap Sort: RANDOM") {
+            let heap = Heap(TestFixtures.tenThousand_random, areSorted: <)
+            Array(heap)
         }
         
-        Utils.timeElapsed("Selection Sort: RANDOM(1...10000)") {
-            SelectionSort.sort(&TestFixtures.tenThousand_random)
+        Utils.timeElapsed("Heap Sort: SORTED") {
+            let heap = Heap(TestFixtures.tenThousand_sorted, areSorted: <)
+            Array(heap)
+        }
+    }
+    
+    func testMergeSort() {
+        Utils.timeElapsed("MERGE SORT: RANDOM") {
+            let _ = Merge.sort(TestFixtures.tenThousand_random)
+        }
+        
+        Utils.timeElapsed("MERGE SORT: SORTED") {
+            let _ = Merge.sort(TestFixtures.tenThousand_sorted)
         }
     }
 }

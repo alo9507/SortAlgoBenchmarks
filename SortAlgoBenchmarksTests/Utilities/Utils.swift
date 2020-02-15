@@ -14,7 +14,8 @@ class Utils {
         operation()
         let methodFinish = Date()
         let executionTime = methodFinish.timeIntervalSince(methodStart)
-        let executionTimeInMillis = executionTime * 1000
-        print("⌛️ \(title): \(executionTimeInMillis)")
+        let executionTimeInMillis = (executionTime * 1000)
+        let roundedMilliseconds = String(format: "%.4f", executionTimeInMillis)
+        print("⌛️ \(title): \(roundedMilliseconds)")
     }
 }
