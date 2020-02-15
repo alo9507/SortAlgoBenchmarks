@@ -23,11 +23,15 @@ struct Heap<Element: Equatable> {
         }
     }
     
-    func hasLeftChild(_ index: Int) -> Bool {
+    func hasLeftChild(_ index: Int, upTo count: Int? = nil) -> Bool {
+        let count = count ?? self.count
+        
         return getChildIndices(ofParentAt: index).left < count
     }
     
-    func hasRightChild(_ index: Int) -> Bool {
+    func hasRightChild(_ index: Int, upTo count: Int? = nil) -> Bool {
+        let count = count ?? self.count
+        
         return getChildIndices(ofParentAt: index).right < count
     }
     
@@ -95,7 +99,9 @@ struct Heap<Element: Equatable> {
     }
     
     // Enforces the heap invariant
-    mutating func siftDown(from index: Int) {
+    mutating func siftDown(from index: Int, upTo count: Int? = nil) {
+        let count = count ?? self.count
+        
         var parentIndex = index
         while true {
             // start each iteration by getting the index's children
@@ -104,11 +110,11 @@ struct Heap<Element: Equatable> {
             // you may need to swap it with one if its children, so store the child index
             var optionalParentSwapIndex: Int?
             
-            if hasLeftChild(parentIndex) && areSorted(elements[leftIndex], elements[parentIndex]) {
+            if hasLeftChild(parentIndex, upTo: count) && areSorted(elements[leftIndex], elements[parentIndex]) {
                  optionalParentSwapIndex = leftIndex
             }
             
-            if hasRightChild(parentIndex) && areSorted(elements[rightIndex], elements[optionalParentSwapIndex ?? parentIndex]) {
+            if hasRightChild(parentIndex, upTo: count) && areSorted(elements[rightIndex], elements[optionalParentSwapIndex ?? parentIndex]) {
                 optionalParentSwapIndex = rightIndex
             }
             
@@ -134,6 +140,16 @@ struct Heap<Element: Equatable> {
 }
 
 extension Array where Element: Equatable {
+    init(_ heap: Heap<Element>) {
+        var heap = heap
+        
+        // iteratively shrinks the unsorted region by extracting larges/smallest element and inserting it into the sorted region
+        for index in heap.elements.indices.reversed() {
+            heap.elements.swapAt(0, index)
+            heap.siftDown(from: 0, upTo: index)
+        }
+        self = heap.elements
+    }
     
     func isHeap(sortedBy areSorted: @escaping (Element, Element) -> Bool) -> Bool {
         if isEmpty {

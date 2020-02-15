@@ -32,5 +32,10 @@ class FunctionalityTests: XCTestCase {
         SelectionSort.sort(&testArray)
         XCTAssertTrue(testArray == sortedArray)
     }
+    
+    func testHeapSort() {
+        let heap = Heap(TestFixtures.tenThousand_random, areSorted: <)
+        XCTAssertEqual(TestFixtures.tenThousand_random.sorted(by: >), Array(heap))
+    }
 }
 

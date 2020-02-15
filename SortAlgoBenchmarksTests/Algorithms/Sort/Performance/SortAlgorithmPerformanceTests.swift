@@ -28,11 +28,11 @@ class SortAlgorithmPerformanceTests: XCTestCase {
         }
         
         Utils.timeElapsed("Swift Sort (copy): SORTED") {
-            TestFixtures.tenThousand_sorted.sorted()
+            let _ = TestFixtures.tenThousand_sorted.sorted()
         }
         
         Utils.timeElapsed("Swift Sort (copy): RANDOM(1...10000)") {
-            TestFixtures.tenThousand_random.sorted()
+            let _ = TestFixtures.tenThousand_random.sorted()
         }
     }
     

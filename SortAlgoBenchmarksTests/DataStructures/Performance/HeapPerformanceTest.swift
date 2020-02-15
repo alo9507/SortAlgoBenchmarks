@@ -17,6 +17,8 @@ class HeapPerformanceTests: XCTestCase {
         }
     }
     
+    // BEST CASE: O(log n)
+    // WORST CASE: O(log n) The new root must be swapped all the way to the bottom of the tree
     func testRootRemoval() {
         var heap = Heap(TestFixtures.tenThousand_random, areSorted: >)
         
@@ -26,6 +28,15 @@ class HeapPerformanceTests: XCTestCase {
         
         Utils.timeElapsed("ARRAY ROOT REMOVAL: 10,000") {
             TestFixtures.tenThousand_random.removeFirst()
+        }
+    }
+    
+    // BEST AND AVERAGE CASE: O(1) (half the tree is at the leaves, so 50% it belongs there, decrease up the tree. Very unlikely to be the new root)
+    // WORST CASE: O(log n)
+    func testHeapInsertion() {
+        var heap = Heap(TestFixtures.tenThousand_random, areSorted: >)
+        Utils.timeElapsed("HEAP INSERTION: 10,000") {
+            heap.insert(500)
         }
     }
 }

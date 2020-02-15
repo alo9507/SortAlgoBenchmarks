@@ -10,6 +10,7 @@
 		59013D9523F841D800725562 /* HeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59013D9423F841D800725562 /* HeapTests.swift */; };
 		59013D9923F8433100725562 /* HeapPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59013D9823F8433100725562 /* HeapPerformanceTest.swift */; };
 		59013D9B23F8437000725562 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59013D9A23F8437000725562 /* Utils.swift */; };
+		59013D9E23F8488400725562 /* HeapSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59013D9D23F8488400725562 /* HeapSort.swift */; };
 		5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */; };
 		5973C05723F63B420008C0C7 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05623F63B420008C0C7 /* Heap.swift */; };
 		5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05823F63B5B0008C0C7 /* Queue.swift */; };
@@ -38,6 +39,7 @@
 		59013D9423F841D800725562 /* HeapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 		59013D9823F8433100725562 /* HeapPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapPerformanceTest.swift; sourceTree = "<group>"; };
 		59013D9A23F8437000725562 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		59013D9D23F8488400725562 /* HeapSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapSort.swift; sourceTree = "<group>"; };
 		5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		5973C05623F63B420008C0C7 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		5973C05823F63B5B0008C0C7 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -91,6 +93,24 @@
 			path = Functionality;
 			sourceTree = "<group>";
 		};
+		59013D9C23F8450400725562 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				59D1E99623F6204100647E4B /* Unstable */,
+				59D1E99523F6203900647E4B /* Stable */,
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
+		59013D9F23F84B8000725562 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				5973C06123F640870008C0C7 /* Performance */,
+				5973C05D23F63F5C0008C0C7 /* Functionality */,
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
 		5973C05323F63A7C0008C0C7 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +141,7 @@
 		5973C06023F6407E0008C0C7 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				5973C06123F640870008C0C7 /* Performance */,
-				5973C05D23F63F5C0008C0C7 /* Functionality */,
+				59013D9F23F84B8000725562 /* Sort */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -138,8 +157,7 @@
 		5973C06223F640B80008C0C7 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				59D1E99623F6204100647E4B /* Unstable */,
-				59D1E99523F6203900647E4B /* Stable */,
+				59013D9C23F8450400725562 /* Sort */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -205,6 +223,7 @@
 		59D1E99623F6204100647E4B /* Unstable */ = {
 			isa = PBXGroup;
 			children = (
+				59013D9D23F8488400725562 /* HeapSort.swift */,
 				59D1E99823F6206700647E4B /* SelectionSort.swift */,
 			);
 			path = Unstable;
@@ -323,6 +342,7 @@
 				59D1E99B23F6208100647E4B /* InsertionSort.swift in Sources */,
 				5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */,
 				5973C05723F63B420008C0C7 /* Heap.swift in Sources */,
+				59013D9E23F8488400725562 /* HeapSort.swift in Sources */,
 				5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */,
 				59D1E99923F6206700647E4B /* SelectionSort.swift in Sources */,
 				59D1E99223F6196F00647E4B /* BubbleSort.swift in Sources */,
