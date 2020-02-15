@@ -19,19 +19,19 @@ class SortAlgorithmPerformanceTests: XCTestCase {
     }
     
     func testSwiftSort() {
-        timeElapsed("Swift Sort (inplace): SORTED") {
+        Utils.timeElapsed("Swift Sort (inplace): SORTED") {
             TestFixtures.tenThousand_sorted.sort()
         }
         
-        timeElapsed("Swift Sort (inplace): RANDOM(1...10000)") {
+        Utils.timeElapsed("Swift Sort (inplace): RANDOM(1...10000)") {
             TestFixtures.tenThousand_random.sort()
         }
         
-        timeElapsed("Swift Sort (copy): SORTED") {
+        Utils.timeElapsed("Swift Sort (copy): SORTED") {
             TestFixtures.tenThousand_sorted.sorted()
         }
         
-        timeElapsed("Swift Sort (copy): RANDOM(1...10000)") {
+        Utils.timeElapsed("Swift Sort (copy): RANDOM(1...10000)") {
             TestFixtures.tenThousand_random.sorted()
         }
     }
@@ -40,11 +40,11 @@ class SortAlgorithmPerformanceTests: XCTestCase {
         BubbleSort.sort(&testArray)
         XCTAssertTrue(testArray == sortedArray)
         
-        //        timeElapsed("Bubble Sort: SORTED") {
+        //        Utils.timeElapsed("Bubble Sort: SORTED") {
         //            BubbleSort.sort(&TestFixtures.tenThousand_sorted)
         //        }
         //
-        //        timeElapsed("Bubble Sort: RANDOM(1...10000)") {
+        //        Utils.timeElapsed("Bubble Sort: RANDOM(1...10000)") {
         //            BubbleSort.sort(&TestFixtures.tenThousand_random)
         //        }
     }
@@ -53,11 +53,11 @@ class SortAlgorithmPerformanceTests: XCTestCase {
         InsertionSort.sort(&testArray)
         XCTAssertTrue(testArray == sortedArray)
         
-        timeElapsed("Insertion Sort: SORTED") {
+        Utils.timeElapsed("Insertion Sort: SORTED") {
             InsertionSort.sort(&TestFixtures.tenThousand_sorted)
         }
         
-        timeElapsed("Insertion Sort: RANDOM(1...10000)") {
+        Utils.timeElapsed("Insertion Sort: RANDOM(1...10000)") {
             InsertionSort.sort(&TestFixtures.tenThousand_random)
         }
     }
@@ -66,23 +66,12 @@ class SortAlgorithmPerformanceTests: XCTestCase {
         SelectionSort.sort(&testArray)
         XCTAssertTrue(testArray == sortedArray)
         
-        timeElapsed("Selection Sort: SORTED") {
+        Utils.timeElapsed("Selection Sort: SORTED") {
             SelectionSort.sort(&TestFixtures.tenThousand_sorted)
         }
         
-        timeElapsed("Selection Sort: RANDOM(1...10000)") {
+        Utils.timeElapsed("Selection Sort: RANDOM(1...10000)") {
             SelectionSort.sort(&TestFixtures.tenThousand_random)
         }
-    }
-}
-
-extension SortAlgorithmPerformanceTests {
-    func timeElapsed(_ title:String, operation:()->()) {
-        let methodStart = Date()
-        operation()
-        let methodFinish = Date()
-        let executionTime = methodFinish.timeIntervalSince(methodStart)
-        let executionTimeInMillis = executionTime * 1000
-        print("\(title): \(executionTimeInMillis)")
     }
 }

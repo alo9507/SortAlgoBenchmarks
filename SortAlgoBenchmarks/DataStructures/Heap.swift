@@ -23,6 +23,14 @@ struct Heap<Element: Equatable> {
         }
     }
     
+    func hasLeftChild(_ index: Int) -> Bool {
+        return getChildIndices(ofParentAt: index).left < count
+    }
+    
+    func hasRightChild(_ index: Int) -> Bool {
+        return getChildIndices(ofParentAt: index).right < count
+    }
+    
     var isEmpty: Bool {
         return elements.isEmpty
     }
@@ -35,29 +43,15 @@ struct Heap<Element: Equatable> {
         return elements.first
     }
     
+    // O(1) since arrays allow random access. Better than O(log n) of a binary tree
     func getChildIndices(ofParentAt parentIndex: Int) -> (left: Int, right: Int) {
         let leftIndex = (2 * parentIndex) + 1
         return (leftIndex, leftIndex + 1)
     }
     
+    // The .5 left over for the left child is floored by integer division
     func getParentIndex(ofChildAt index: Int) -> Int {
         return (index - 1) / 2
-    }
-    
-    func getFirstIndex(of element: Element, startingAt startingIndex: Int = 0) -> Int? {
-        guard elements.indices.contains(startingIndex) else {
-            return nil
-        }
-        if areSorted(element, elements[startingIndex]) {
-            return nil
-        }
-        if element == elements[startingIndex] {
-            return startingIndex
-        }
-        
-        let childIndices = getChildIndices(ofParentAt: startingIndex)
-        return getFirstIndex(of: element, startingAt: childIndices.left)
-            ?? getFirstIndex(of: element, startingAt: childIndices.right)
     }
     
     mutating func insert(_ element: Element) {
@@ -69,10 +63,16 @@ struct Heap<Element: Equatable> {
         guard !isEmpty else {
             return nil
         }
-        
+
+        // swap current root with final leaf
         elements.swapAt(0, count - 1)
+        
+        // remove original root
         let originalRoot = elements.removeLast()
+        
+        // sift down from new root
         siftDown(from: 0)
+        
         return originalRoot
     }
     
@@ -94,25 +94,29 @@ struct Heap<Element: Equatable> {
         }
     }
     
-    mutating func siftDown(from index: Int, upTo count: Int? = nil) {
-        let count = count ?? self.count
+    // Enforces the heap invariant
+    mutating func siftDown(from index: Int) {
         var parentIndex = index
         while true {
+            // start each iteration by getting the index's children
             let (leftIndex, rightIndex) = getChildIndices(ofParentAt: parentIndex)
+            
+            // you may need to swap it with one if its children, so store the child index
             var optionalParentSwapIndex: Int?
-            if leftIndex < count
-                && areSorted(elements[leftIndex], elements[parentIndex])
-            {
-                optionalParentSwapIndex = leftIndex
+            
+            if hasLeftChild(parentIndex) && areSorted(elements[leftIndex], elements[parentIndex]) {
+                 optionalParentSwapIndex = leftIndex
             }
-            if rightIndex < count
-                && areSorted(elements[rightIndex], elements[optionalParentSwapIndex ?? parentIndex])
-            {
+            
+            if hasRightChild(parentIndex) && areSorted(elements[rightIndex], elements[optionalParentSwapIndex ?? parentIndex]) {
                 optionalParentSwapIndex = rightIndex
             }
+            
+            // If parent is already arranged properly with respect to its children, siftDown is complete
             guard let parentSwapIndex = optionalParentSwapIndex else {
                 return
             }
+            
             elements.swapAt(parentIndex, parentSwapIndex)
             parentIndex = parentSwapIndex
         }
@@ -130,14 +134,6 @@ struct Heap<Element: Equatable> {
 }
 
 extension Array where Element: Equatable {
-    init(_ heap: Heap<Element>) {
-        var heap = heap
-        for index in heap.elements.indices.reversed() {
-            heap.elements.swapAt(0, index)
-            heap.siftDown(from: 0, upTo: index)
-        }
-        self = heap.elements
-    }
     
     func isHeap(sortedBy areSorted: @escaping (Element, Element) -> Bool) -> Bool {
         if isEmpty {

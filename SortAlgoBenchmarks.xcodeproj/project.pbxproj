@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59013D9523F841D800725562 /* HeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59013D9423F841D800725562 /* HeapTests.swift */; };
+		59013D9923F8433100725562 /* HeapPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59013D9823F8433100725562 /* HeapPerformanceTest.swift */; };
+		59013D9B23F8437000725562 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59013D9A23F8437000725562 /* Utils.swift */; };
 		5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */; };
 		5973C05723F63B420008C0C7 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05623F63B420008C0C7 /* Heap.swift */; };
 		5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05823F63B5B0008C0C7 /* Queue.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59013D9423F841D800725562 /* HeapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
+		59013D9823F8433100725562 /* HeapPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapPerformanceTest.swift; sourceTree = "<group>"; };
+		59013D9A23F8437000725562 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		5973C05623F63B420008C0C7 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		5973C05823F63B5B0008C0C7 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -68,6 +74,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59013D9623F8431400725562 /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				59013D9823F8433100725562 /* HeapPerformanceTest.swift */,
+			);
+			path = Performance;
+			sourceTree = "<group>";
+		};
+		59013D9723F8432100725562 /* Functionality */ = {
+			isa = PBXGroup;
+			children = (
+				5973C05B23F63C530008C0C7 /* PriorityQueueTests.swift */,
+				59013D9423F841D800725562 /* HeapTests.swift */,
+			);
+			path = Functionality;
+			sourceTree = "<group>";
+		};
 		5973C05323F63A7C0008C0C7 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +104,8 @@
 		5973C05A23F63C3E0008C0C7 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				5973C05B23F63C530008C0C7 /* PriorityQueueTests.swift */,
+				59013D9723F8432100725562 /* Functionality */,
+				59013D9623F8431400725562 /* Performance */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -124,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				59D1E99323F61E1500647E4B /* TestFixtures.swift */,
+				59013D9A23F8437000725562 /* Utils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -308,10 +333,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59013D9923F8433100725562 /* HeapPerformanceTest.swift in Sources */,
 				59D1E98623F618DF00647E4B /* SortAlgorithmPerformanceTests.swift in Sources */,
 				59D1E99423F61E1500647E4B /* TestFixtures.swift in Sources */,
+				59013D9B23F8437000725562 /* Utils.swift in Sources */,
 				5973C05C23F63C530008C0C7 /* PriorityQueueTests.swift in Sources */,
 				5973C05F23F63F740008C0C7 /* FunctionalityTests.swift in Sources */,
+				59013D9523F841D800725562 /* HeapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

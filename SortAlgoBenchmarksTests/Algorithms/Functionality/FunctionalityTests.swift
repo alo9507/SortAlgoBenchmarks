@@ -17,15 +17,6 @@ class FunctionalityTests: XCTestCase {
     override func setUp() {
         testArray = [10,4,6,5,3,7,2,8,9,1]
     }
-    
-    func timeElapsed(_ title:String, operation:()->()) {
-        let methodStart = Date()
-        operation()
-        let methodFinish = Date()
-        let executionTime = methodFinish.timeIntervalSince(methodStart)
-        let executionTimeInMillis = executionTime * 1000
-        print("\(title): \(executionTimeInMillis)")
-    }
 
     func testBubbleSort() {
         BubbleSort.sort(&testArray)
