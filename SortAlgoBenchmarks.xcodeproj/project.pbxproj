@@ -27,6 +27,7 @@
 		59D1E99423F61E1500647E4B /* TestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E99323F61E1500647E4B /* TestFixtures.swift */; };
 		59D1E99923F6206700647E4B /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E99823F6206700647E4B /* SelectionSort.swift */; };
 		59D1E99B23F6208100647E4B /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E99A23F6208100647E4B /* InsertionSort.swift */; };
+		59FA5FB123F88787002BA196 /* MinComparisonLinearSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA5FB023F88787002BA196 /* MinComparisonLinearSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		59D1E99323F61E1500647E4B /* TestFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtures.swift; sourceTree = "<group>"; };
 		59D1E99823F6206700647E4B /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		59D1E99A23F6208100647E4B /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
+		59FA5FB023F88787002BA196 /* MinComparisonLinearSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinComparisonLinearSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				590EA4EF23F87C6600E71EAF /* BinarySearch.swift */,
 				590EA4F123F87D1500E71EAF /* LinearSearch.swift */,
+				59FA5FB023F88787002BA196 /* MinComparisonLinearSearch.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				590EA4F223F87D1500E71EAF /* LinearSearch.swift in Sources */,
 				5973C05723F63B420008C0C7 /* Heap.swift in Sources */,
 				59013D9E23F8488400725562 /* HeapSort.swift in Sources */,
+				59FA5FB123F88787002BA196 /* MinComparisonLinearSearch.swift in Sources */,
 				5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */,
 				59D1E99923F6206700647E4B /* SelectionSort.swift in Sources */,
 				59D1E99223F6196F00647E4B /* BubbleSort.swift in Sources */,
