@@ -1,5 +1,7 @@
 <h1>Swift Algorithm and Data Structure Performance Suite</h1>
 
+(Swift Docs)[https://swiftdoc.org/v3.0]
+
 <h3>General Performance Considerations:</h3>
 
 1. Number of Comparisons
@@ -33,5 +35,7 @@ Sliding Window
 
 [Range Types](https://medium.com/@lucianoalmeida1/exploring-range-types-in-swift-e0e7ab27ab79)
 [CountableRange](https://swiftdoc.org/v3.0/type/countablerange/)
-[BidirectionalCollection](https://developer.apple.com/documentation/swift/bidirectionalcollection)
+[BidirectionalCollection](https://swiftdoc.org/v3.0/protocol/bidirectionalcollection/)
 [.reversed()](https://developer.apple.com/documentation/swift/array/1690025-reversed)
+
+<h3>[Adaptive Sorting Algorithm](https://en.wikipedia.org/wiki/Adaptive_sort)</h3>

@@ -6,6 +6,12 @@
 //  Copyright © 2020 Andrew O'Brien. All rights reserved.
 //
 
+// Full binary tree: every node (except the terminal leaves) has two children
+// Complete binary tree:
+//                      A) All but the last level has to be filled compeltely
+//                      B) All nodes are as far left as possible
+// Heap Invariant/Property: Value of a parent node must always be greater than or equal to the value of its children
+
 struct Heap<Element: Equatable> {
     fileprivate var elements: [Element] = []
     let areSorted: (Element, Element) -> Bool
