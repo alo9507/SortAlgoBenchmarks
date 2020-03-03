@@ -24,21 +24,6 @@ protocol Graph {
     func getEdges(from: Vertex) -> [Edge]
 }
 
-struct GraphVertex<Element> {
-    let index: Int
-    let element: Element
-}
-
-// With two GraphVertex you can define a GraphEdge
-struct GraphEdge<Element> {
-    // An edge's vertices will be a GraphVertex with a matching Element type
-    typealias Vertex = GraphVertex<Element>
-    
-    let source: Vertex
-    let destination: Vertex
-    let weight: Double
-}
-
 extension Graph where Element: Hashable {
     func getPaths(from source: Vertex, to destination: Vertex) -> Set<[Edge]> {
         var completedPaths: Set<[Edge]> = []
@@ -78,13 +63,3 @@ extension Graph where Element: Hashable {
         return completedPaths
     }
 }
-
-// To add edges to a PriorityQueue, they'll have to be Equatable
-extension GraphEdge: Equatable where Element: Equatable {}
-extension GraphEdge: Hashable where Element: Hashable {}
-
-// In order to be used as a dictionary key, GraphVertex must be Hashable
-extension GraphVertex: Hashable where Element: Hashable {}
-
-// Conditional conformance to Hashable does not imply conformance to inherited protocol Equatable
-extension GraphVertex: Equatable where Element: Equatable {}
