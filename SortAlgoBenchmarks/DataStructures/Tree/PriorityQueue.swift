@@ -24,6 +24,10 @@ struct PriorityQueue<Element: Equatable>: Queue {
         return heap.peek()
     }
     
+    var count: Int {
+        return heap.count
+    }
+    
     mutating func enqueue(_ element: Element) {
         heap.push(element)
     }

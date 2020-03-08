@@ -14,7 +14,7 @@ class BinaryNode<Element> {
     var leftChild: BinaryNode?
     var rightChild: BinaryNode?
     
-    init(value: Element) {
+    init(_ value: Element) {
         self.value = value
     }
 }

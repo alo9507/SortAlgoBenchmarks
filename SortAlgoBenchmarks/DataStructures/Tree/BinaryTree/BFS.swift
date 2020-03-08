@@ -14,7 +14,29 @@ import Foundation
  */
 
 extension BinaryNode {
-    func bfs<T>() -> [[T]] {
-        return []
+    func bfs() -> [[Element]] {
+        var result: [[Element]] = []
+        var queue: ArrayQueue<BinaryNode<Element>> = ArrayQueue()
+        
+        queue.enqueue(self)
+        
+        while !queue.isEmpty {
+            let levelSize = queue.count
+            var level: [Element] = []
+            
+            for _ in stride(from: 0, to: levelSize, by: 1) {
+                let node = queue.dequeue()!
+                level.append(node.value)
+                
+                if node.leftChild != nil {
+                    queue.enqueue(node.leftChild!)
+                }
+                if node.rightChild != nil {
+                    queue.enqueue(node.rightChild!)
+                }
+            }
+            result.append(level)
+        }
+        return result
     }
 }
