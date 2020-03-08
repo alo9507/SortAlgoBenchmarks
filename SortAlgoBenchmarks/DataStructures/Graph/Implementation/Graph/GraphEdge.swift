@@ -14,6 +14,12 @@ struct GraphEdge<Element> {
     let source: Vertex
     let destination: Vertex
     let weight: Double
+    
+    init(source: Vertex, destination: Vertex, weight: Double = 0.0) {
+        self.source = source
+        self.destination = destination
+        self.weight = weight
+    }
 }
 
 // To add edges to a PriorityQueue, they'll have to be Equatable

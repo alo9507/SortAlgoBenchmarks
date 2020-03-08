@@ -13,8 +13,8 @@ import XCTest
 
 class TopologicalSortTest: XCTestCase {
     func test_topologicalSort() {
-        let graph = AdjacencyList<Int>()
-        
+        let result = AdjacencyList<Int>.topologicalSort(4, [[ 3, 2 ], [ 3, 0 ], [ 2, 0 ], [ 2, 1 ]])
+        print(result)
     }
 }
 

@@ -45,7 +45,7 @@ final class DijkstraTestCase: XCTestCase {
             GraphEdge(source: f, destination: h, weight: 2),
             GraphEdge(source: g, destination: h, weight: 5)
             ] {
-                graph.add(edge)
+                graph.addEdge(edge)
         }
         
         return (graph, a, b, c, d, e, f, g, h)

@@ -37,7 +37,7 @@ final class PrimTestCase: XCTestCase {
             GraphEdge(source: three, destination: five, weight: 6),
             GraphEdge(source: five, destination: six, weight: 6)
             ] {
-                graph.add(edge)
+                graph.addEdge(edge)
         }
         
         let (cost, minimumSpanningTree) = Prim.getMinimumSpanningTree(for: graph)

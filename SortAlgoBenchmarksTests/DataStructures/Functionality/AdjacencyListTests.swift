@@ -29,7 +29,7 @@ final class AdjacencyListTestCase: XCTestCase {
         let de = GraphEdge(source: d, destination: e, weight: 0)
         
         for edge in [ab, ac, ad, ae, bc, bd, ce, de] {
-            graph.add(edge)
+            graph.addEdge(edge)
         }
         
         // reversed versions of edges we explicitly added to the graph
@@ -73,7 +73,7 @@ final class AdjacencyListTestCase: XCTestCase {
       GraphEdge(source: sanFrancisco, destination: seattle, weight: 218),
       GraphEdge(source: austinTexas, destination: sanFrancisco, weight: 297)
     ] {
-      graph.add(edge)
+      graph.addEdge(edge)
     }
 
     XCTAssertEqual(
