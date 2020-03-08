@@ -64,7 +64,7 @@ struct Heap<Element: Equatable> {
         return (index - 1) / 2
     }
     
-    mutating func removeRoot() -> Element? {
+    mutating func pop() -> Element? {
         guard !isEmpty else {
             return nil
         }
@@ -161,7 +161,7 @@ struct Heap<Element: Equatable> {
         }
     }
     
-    mutating func insert(_ element: Element) {
+    mutating func push(_ element: Element) {
         elements.append(element)
         siftUp(from: elements.count - 1)
     }

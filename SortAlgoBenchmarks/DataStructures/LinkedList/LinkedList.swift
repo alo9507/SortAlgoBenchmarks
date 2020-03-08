@@ -8,13 +8,17 @@
 
 import Foundation
 
-class Node<T> {
+class Node<T>: Equatable {
     var value: T
     var next: Node?
     weak var previous: Node?
     
     init(_ value: T) {
         self.value = value
+    }
+    
+    static func == (lhs: Node<T>, rhs: Node<T>) -> Bool {
+        return lhs === rhs
     }
 }
 

@@ -23,7 +23,7 @@ class HeapPerformanceTests: XCTestCase {
         var heap = Heap(TestFixtures.tenThousand_random, areSorted: >)
         
         Utils.timeElapsed("HEAP ROOT REMOVAL: 10,000") {
-            heap.removeRoot()
+            heap.pop()
         }
         
         Utils.timeElapsed("ARRAY ROOT REMOVAL: 10,000") {
@@ -36,7 +36,7 @@ class HeapPerformanceTests: XCTestCase {
     func testHeapInsertion() {
         var heap = Heap(TestFixtures.tenThousand_random, areSorted: >)
         Utils.timeElapsed("HEAP INSERTION: 10,000") {
-            heap.insert(500)
+            heap.push(500)
         }
     }
 }
