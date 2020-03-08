@@ -40,10 +40,12 @@ struct AdjacencyList<Element: Hashable>: Graph {
     
     // An undirected graph could be seen as a bidirectional graph, where every edge could be traversed in both directions
     // Adds an undirected edge
-    mutating func add(_ edge: Edge) {
+    mutating func addEdge(_ edge: Edge, _ directed: Bool = false) {
         adjacencies[edge.source]?.append(edge)
-        let reversedEdge = Edge(source: edge.destination, destination: edge.source, weight: edge.weight)
-        adjacencies[edge.destination]!.append(reversedEdge)
+        if !directed {
+            let reversedEdge = Edge(source: edge.destination, destination: edge.source, weight: edge.weight)
+            adjacencies[edge.destination]!.append(reversedEdge)
+        }
     }
     
     func getEdges(from source: Vertex) -> [Edge] {

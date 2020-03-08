@@ -44,7 +44,7 @@ enum Prim<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
             }
             visited.insert(destination)
             cost += lightestEdge.weight
-            minimumSpanningTree.add(lightestEdge)
+            minimumSpanningTree.addEdge(lightestEdge)
             
             enqueueAvailableEdges(for: destination)
         }

@@ -8,6 +8,20 @@
 
 import Foundation
 
+protocol Graph2 {
+    associatedtype Element
+    
+    typealias Edge = GraphEdge<Element>
+    typealias Vertex = Edge.Vertex
+    
+    var vertices: [Vertex] { get }
+    
+    @discardableResult
+    mutating func addVertex(_ element: Element) -> Vertex
+    
+    func getEdges(from: Vertex) -> [Edge]
+}
+
 protocol Graph {
     associatedtype Element
     
@@ -19,6 +33,8 @@ protocol Graph {
     // returns a Vertex with a populated index
     @discardableResult
     mutating func addVertex(_ : Element) -> Vertex
+    
+    mutating func addEdge(_ edge: Edge, _ directed: Bool)
     
     // returns all edges with a given vertex as their source
     func getEdges(from: Vertex) -> [Edge]
