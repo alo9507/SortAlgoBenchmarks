@@ -55,17 +55,17 @@ final class BinaryTreeTestCase: XCTestCase {
         root.leftChild?.leftChild = BinaryNode("Child1");
         root.rightChild?.leftChild = BinaryNode("Child2");
         root.rightChild?.rightChild = BinaryNode("Child3");
-        print(root.bfs())
+        XCTAssertEqual([["God"], ["Mother", "Father"], ["Child1", "Child2", "Child3"]], root.bfs())
     }
     
     func test_reverseBfs() {
-        let root = BinaryNode("God");
-        root.leftChild = BinaryNode("Mother");
-        root.rightChild = BinaryNode("Father");
-        root.leftChild?.leftChild = BinaryNode("Child1");
-        root.rightChild?.leftChild = BinaryNode("Child2");
-        root.rightChild?.rightChild = BinaryNode("Child3");
-        print(root.reverseBfs())
+        let root = BinaryNode(1);
+        root.leftChild = BinaryNode(2);
+        root.rightChild = BinaryNode(3);
+        root.leftChild?.leftChild = BinaryNode(4);
+        root.rightChild?.leftChild = BinaryNode(5);
+        root.rightChild?.rightChild = BinaryNode(6);
+        XCTAssertEqual([[4,5,6], [2,3], [1]], root.reverseBfs())
     }
     
     func test_zigZag() {
@@ -87,29 +87,36 @@ final class BinaryTreeTestCase: XCTestCase {
     func test_averages() {
         var root = BinaryNode(12);
         root.leftChild = BinaryNode(7);
-        root.rightChild? = BinaryNode(1);
+        root.rightChild = BinaryNode(1);
         root.leftChild?.leftChild = BinaryNode(9);
         root.leftChild?.rightChild = BinaryNode(2);
         root.rightChild?.leftChild = BinaryNode(10);
         root.rightChild?.rightChild = BinaryNode(5);
         
         // not sure why this isnt working. could be the data?
-//        XCTAssertEqual([12.0, 4.0, 6.5], root.levelAverages())
-    }
-    
-    func test_dfs() {
-        
+        XCTAssertEqual([12.0, 4.0, 6.0], root.levelAverages())
     }
     
     func test_dfsFindSumPath() {
         var root = BinaryNode(12);
         root.leftChild = BinaryNode(7);
-        root.rightChild? = BinaryNode(1);
+        root.rightChild = BinaryNode(1);
         root.leftChild?.leftChild = BinaryNode(9);
         root.rightChild?.leftChild = BinaryNode(10);
         root.rightChild?.rightChild = BinaryNode(5);
         
-//        XCTAssertEqual(true, root.hasSumPath(root, 23))
-//        XCTAssertEqual(false, root.hasSumPath(root, 16))
+        XCTAssertEqual(true, root.hasSumPath(root, 23))
+        XCTAssertEqual(false, root.hasSumPath(root, 16))
+    }
+    
+    func test_dfsFindAllPaths() {
+        var root = BinaryNode(12);
+        root.leftChild = BinaryNode(7);
+        root.rightChild = BinaryNode(1);
+        root.leftChild?.leftChild = BinaryNode(4);
+        root.rightChild?.leftChild = BinaryNode(10);
+        root.rightChild?.rightChild = BinaryNode(5);
+        
+        XCTAssertEqual([[12, 7, 4], [12, 1, 10]], root.findPaths(root, 23))
     }
 }

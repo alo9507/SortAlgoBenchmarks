@@ -55,6 +55,7 @@
 		59AF98572415493C00F718A1 /* KWayMergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF98562415493C00F718A1 /* KWayMergeTests.swift */; };
 		59B200B924021C5500E613C0 /* Dijkstras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B200B824021C5500E613C0 /* Dijkstras.swift */; };
 		59B200BB2402210900E613C0 /* DijkstrasTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B200BA2402210900E613C0 /* DijkstrasTest.swift */; };
+		59B3CA15241868A20042A8E6 /* IOSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3CA14241868A20042A8E6 /* IOSetup.swift */; };
 		59CB4D23240EFF7100AB0395 /* GraphVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D22240EFF7100AB0395 /* GraphVertex.swift */; };
 		59CB4D25240EFF8900AB0395 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D24240EFF8900AB0395 /* GraphEdge.swift */; };
 		59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */; };
@@ -130,6 +131,7 @@
 		59AF98562415493C00F718A1 /* KWayMergeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWayMergeTests.swift; sourceTree = "<group>"; };
 		59B200B824021C5500E613C0 /* Dijkstras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstras.swift; sourceTree = "<group>"; };
 		59B200BA2402210900E613C0 /* DijkstrasTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstrasTest.swift; sourceTree = "<group>"; };
+		59B3CA14241868A20042A8E6 /* IOSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSetup.swift; sourceTree = "<group>"; };
 		59CB4D22240EFF7100AB0395 /* GraphVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVertex.swift; sourceTree = "<group>"; };
 		59CB4D24240EFF8900AB0395 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
 		59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
@@ -486,6 +488,14 @@
 			path = KWayMerge;
 			sourceTree = "<group>";
 		};
+		59B3CA13241868950042A8E6 /* IOSetup */ = {
+			isa = PBXGroup;
+			children = (
+				59B3CA14241868A20042A8E6 /* IOSetup.swift */,
+			);
+			path = IOSetup;
+			sourceTree = "<group>";
+		};
 		59CB4D21240EFF5900AB0395 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +556,7 @@
 		59D1E97923F618DF00647E4B /* SortAlgoBenchmarks */ = {
 			isa = PBXGroup;
 			children = (
+				59B3CA13241868950042A8E6 /* IOSetup */,
 				59383B012412CFF40067CE89 /* Questions */,
 				5973C06223F640B80008C0C7 /* Algorithms */,
 				5973C05323F63A7C0008C0C7 /* DataStructures */,
@@ -726,6 +737,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59D1E99B23F6208100647E4B /* InsertionSort.swift in Sources */,
+				59B3CA15241868A20042A8E6 /* IOSetup.swift in Sources */,
 				590C8B1B2415752600B10C2B /* DFS.swift in Sources */,
 				59F238EA23FB76F700D8B467 /* Graph.swift in Sources */,
 				59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */,

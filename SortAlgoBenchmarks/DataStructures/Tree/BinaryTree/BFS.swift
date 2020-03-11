@@ -9,6 +9,12 @@
 import Foundation
 
 /*
+ Decision Problem – In this, we search for a feasible solution.
+ Optimization Problem – In this, we search for the best solution.
+ Enumeration Problem – In this, we find all feasible solutions.
+ */
+
+/*
  Given a binary tree, populate an array to represent its level-by-level traversal.
  You should populate the values of all nodes of each level from left to right in separate sub-arrays.
  */
@@ -21,7 +27,7 @@ extension BinaryNode {
         queue.enqueue(self)
         
         while !queue.isEmpty {
-            let levelSize = queue.count
+            var levelSize = queue.count
             var level: [Element] = []
             
             for _ in stride(from: 0, to: levelSize, by: 1) {
@@ -38,7 +44,6 @@ extension BinaryNode {
             }
             result.append(level)
         }
-        
         return result
     }
 }
@@ -97,6 +102,7 @@ extension BinaryNode {
             let levelSize = queue.count
             var level: [Element] = []
             
+            // iterate over all elements of the queue
             for _ in stride(from: 0, to: levelSize, by: 1) {
                 let node = queue.dequeue()!
                 
@@ -106,10 +112,12 @@ extension BinaryNode {
                     level.insert(node.value, at: 0)
                 }
                 
+                // add left child for next while loop iteration
                 if node.leftChild != nil {
                     queue.enqueue(node.leftChild!)
                 }
                 
+                // add right child for next while loop iteration
                 if node.rightChild != nil {
                     queue.enqueue(node.rightChild!)
                 }
@@ -133,12 +141,12 @@ extension BinaryNode where Element == Int {
         queue.enqueue(self)
         
         while !queue.isEmpty {
-            let levelSize = Double(queue.count)
-            var sum: Double = 0.0
+            let levelSize = queue.count
+            var sum: Int = 0
             
             for _ in stride(from: 0, to: levelSize, by: 1) {
                 let node = queue.dequeue()!
-                sum += Double(node.value)
+                sum += node.value
                 
                 if node.leftChild != nil {
                     queue.enqueue(node.leftChild!)
