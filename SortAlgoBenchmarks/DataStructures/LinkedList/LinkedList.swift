@@ -51,6 +51,23 @@ class LinkedList<T> {
         tail = node
     }
     
+    func reverse_singly() {
+        print(self.description)
+        var current: Node<T>? = head
+        var previous: Node<T>?
+        var next: Node<T>?
+        
+        while current != nil {
+            next = current?.next
+            current?.next = previous
+            previous = current
+            current = next
+        }
+        
+        head = previous
+        print(self.description)
+    }
+    
 }
 
 extension LinkedList: CustomStringConvertible {

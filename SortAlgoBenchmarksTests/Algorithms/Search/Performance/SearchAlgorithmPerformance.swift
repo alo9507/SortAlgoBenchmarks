@@ -35,15 +35,22 @@ class SearchAlgorithmPerformanceTests: XCTestCase {
     
     func testBinarySearch() {
         Utils.timeElapsed("Binary Search (BEST): 10,000") {
-            let _ = TestFixtures.tenThousand_sorted.binarySearch(for: 1)
+            let _ = TestFixtures.tenThousand_sorted.recursiveBinarySearch(for: 1)
         }
         
         Utils.timeElapsed("Binary Search (WORST): 10,000") {
-            let _ = TestFixtures.tenThousand_sorted.binarySearch(for: 10000)
+            let _ = TestFixtures.tenThousand_sorted.recursiveBinarySearch(for: 10000)
         }
         
         Utils.timeElapsed("Binary Search (AVERAGE): 10,000") {
-            let _ = TestFixtures.tenThousand_sorted.binarySearch(for: 5000)
+            let _ = TestFixtures.tenThousand_sorted.recursiveBinarySearch(for: 5000)
+        }
+    }
+    
+    func test_binarySearch2() {
+        let arr = TestFixtures.tenThousand_sorted
+        Utils.timeElapsed("Binary Search (AVERAGE): 10,000") {
+            let _ = iterativeBinarySearch(searchValue: 5000, array: arr)
         }
     }
 }

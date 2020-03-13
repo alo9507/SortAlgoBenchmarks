@@ -9,7 +9,7 @@
 import Foundation
 
 /// Each node can have at most two child nodes
-class BinaryNode<Element> {
+class BinaryNode<Element: Comparable> {
     var value: Element
     var leftChild: BinaryNode?
     var rightChild: BinaryNode?
@@ -46,6 +46,20 @@ extension BinaryNode {
         leftChild?.traversePostOrder(visit: visit)
         rightChild?.traversePostOrder(visit: visit)
         visit(value)
+    }
+}
+
+extension BinaryNode {
+    func search(node: BinaryNode?, searchValue: Element) -> Bool {
+        if node == nil { return false }
+        
+        if node?.value == searchValue {
+            return true
+        } else if (searchValue < node!.value) {
+            return self.search(node: node?.leftChild, searchValue: searchValue)
+        } else {
+            return self.search(node: node?.rightChild, searchValue: searchValue)
+        }
     }
 }
 

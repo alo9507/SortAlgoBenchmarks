@@ -18,8 +18,8 @@ class FunctionalityTests: XCTestCase {
     }
 
     func testBinarySearch() {
-        XCTAssertEqual(sortedArray.binarySearch(for: 5), 4)
-        XCTAssertEqual(sortedArray.binarySearch(for: 10), 9)
+        XCTAssertEqual(sortedArray.recursiveBinarySearch(for: 5), 4)
+        XCTAssertEqual(sortedArray.recursiveBinarySearch(for: 10), 9)
     }
 }
 

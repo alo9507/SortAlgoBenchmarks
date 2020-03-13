@@ -22,4 +22,18 @@ class LinkedListTests: XCTestCase {
         
         XCTAssertEqual(linkedList.description, "[5, 10]")
     }
+    
+    func test_reverse() {
+        let linkedList: LinkedList<Int> = {
+            let ll = LinkedList<Int>()
+            ll.append(5)
+            ll.append(10)
+            ll.append(15)
+            return ll
+        }()
+        
+        linkedList.reverse_singly()
+        
+        XCTAssertEqual(linkedList.description, "[15, 10, 5]")
+    }
 }

@@ -119,4 +119,16 @@ final class BinaryTreeTestCase: XCTestCase {
         
         XCTAssertEqual([[12, 7, 4], [12, 1, 10]], root.findPaths(root, 23))
     }
+    
+    func test_search() {
+        var root = BinaryNode(10);
+        root.leftChild = BinaryNode(5);
+        root.rightChild = BinaryNode(14);
+        root.leftChild?.leftChild = BinaryNode(1);
+        root.rightChild?.leftChild = BinaryNode(11);
+        root.rightChild?.rightChild = BinaryNode(20);
+        
+        XCTAssertEqual(true, root.search(node: root, searchValue: 5))
+        XCTAssertEqual(false, root.search(node: root, searchValue: 43))
+    }
 }

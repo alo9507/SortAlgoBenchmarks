@@ -17,7 +17,7 @@ import Foundation
 /// 2) Sorted
 /// Each iteration of a binary search effectively removes half of the comparisons you might make
 extension RandomAccessCollection where Element: Comparable {
-    func binarySearch(for value: Element, in range: Range<Index>? = nil) -> Index? {
+    func recursiveBinarySearch(for value: Element, in range: Range<Index>? = nil) -> Index? {
         let range = range ?? startIndex..<endIndex
         
         guard range.lowerBound < range.upperBound else {
@@ -30,9 +30,34 @@ extension RandomAccessCollection where Element: Comparable {
         if self[middle] == value {
             return middle
         } else if self[middle] > value {
-            return binarySearch(for: value, in: range.lowerBound..<middle)
+            return recursiveBinarySearch(for: value, in: range.lowerBound..<middle)
         } else {
-            return binarySearch(for: value, in: index(after: middle)..<range.upperBound)
+            return recursiveBinarySearch(for: value, in: index(after: middle)..<range.upperBound)
         }
     }
+}
+
+func iterativeBinarySearch(searchValue: Int, array: [Int]) -> Bool {
+    var leftIndex = 0
+    var rightIndex = array.count - 1
+    
+    // testing for index cross instead of array length reached
+    while leftIndex <= rightIndex {
+        let middleIndex = (leftIndex + rightIndex) / 2
+        let middleValue = array[middleIndex]
+        
+        if middleValue == searchValue {
+            return true
+        }
+        
+        if searchValue < middleValue {
+            rightIndex = middleIndex - 1
+        }
+        
+        if searchValue > middleValue {
+            leftIndex = middleIndex - 1
+        }
+    }
+    
+    return false
 }

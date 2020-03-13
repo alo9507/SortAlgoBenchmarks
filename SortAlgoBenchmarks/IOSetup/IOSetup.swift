@@ -8,6 +8,10 @@
 
 import Foundation
 
+// ------------------------
+// IO Setup
+// ------------------------
+
 func readInt() -> Int {
     return Int(readLine()!)!
 }
@@ -23,3 +27,18 @@ func readIntArray() -> [Int] {
     
     return intArray
 }
+
+func red() {
+    let arr = [1,2,3]
+    
+    var hourGlassSum = 0
+    arr.forEach { (num) in
+        hourGlassSum += num
+    }
+    
+    var least = Int.min
+}
+
+// ------------------------
+// Starting the Problem
+// ------------------------
