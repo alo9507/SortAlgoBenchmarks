@@ -44,8 +44,13 @@ struct AdjacencyList<Element: Hashable>: Graph {
     
     // An undirected graph could be seen as a bidirectional graph, where every edge could be traversed in both directions
     mutating func addEdge(_ edge: Edge, _ directed: Bool = false) {
-        if !vertices.contains(edge.source) { addVertex(edge.source.element) }
-        if !vertices.contains(edge.destination) { addVertex(edge.destination.element) }
+        if !adjacencies.keys.contains(edge.source) {
+            addVertex(edge.source.element)
+        }
+        
+        if !adjacencies.keys.contains(edge.destination) {
+            addVertex(edge.destination.element)
+        }
         
         adjacencies[edge.source]!.append(edge)
         if !directed {
