@@ -15,9 +15,19 @@ import Foundation
  */
 
 func graphDfs<T>(_ graph: AdjacencyList<T>,
-            _ source: GraphVertex<T>,
-            _ augmentation: @escaping (T) -> Void) {
+                 _ source: GraphVertex<T>,
+                 _ augmentation: @escaping (T) -> Void) {
     var visited: [GraphVertex<T>: Bool] = [:]
+    recurseDfs(graph, source, &visited, augmentation)
+}
+
+func findComponents<T>(_ graph: AdjacencyList<T>,
+                       _ source: GraphVertex<T>,
+                       _ augmentation: @escaping (T) -> Void) {
+    var visited: [GraphVertex<T>: Bool] = [:]
+    
+    var count = 0
+    var components: [Int] = []
     recurseDfs(graph, source, &visited, augmentation)
 }
 
