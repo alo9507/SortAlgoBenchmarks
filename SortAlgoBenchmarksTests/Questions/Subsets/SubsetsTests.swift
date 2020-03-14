@@ -16,6 +16,6 @@ class SubsetsTests: XCTestCase {
         let testArray = [1,3]
         let testArray2 = [1, 5, 3]
         XCTAssertEqual([[], [1], [3], [1,3]], allDistinctSubsets(testArray))
-        XCTAssertEqual([[], [1], [5], [3], [1,5], [1,3], [5,3], [1,5,3]], allDistinctSubsets(testArray2))
+        XCTAssertEqual([[], [1], [5], [1, 5], [3], [1, 3], [5, 3], [1, 5, 3]], allDistinctSubsets(testArray2))
     }
 }
