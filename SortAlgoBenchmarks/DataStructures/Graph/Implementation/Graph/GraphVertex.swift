@@ -12,11 +12,7 @@ struct GraphVertex<Element> {
 }
 
 // In order to be used as a dictionary key, GraphVertex must be Hashable
-extension GraphVertex: Hashable where Element: Hashable {
-    var hashValue: Int {
-        return element.hashValue &* 16777619
-    }
-}
+extension GraphVertex: Hashable where Element: Hashable {}
 
 // Conditional conformance to Hashable does not imply conformance to inherited protocol Equatable
 extension GraphVertex: Equatable where Element: Equatable {
