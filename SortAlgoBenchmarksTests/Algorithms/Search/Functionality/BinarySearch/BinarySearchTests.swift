@@ -13,6 +13,8 @@ class BinarySearchTests: XCTestCase {
     func test_orderAgnosticBinarySearch() {
         let array = [1,2,3,4,5,6,7,8,9]
         XCTAssertEqual(4,orderAgnosticBinarySearch(for: 5, array: array))
-//        XCTAssertEqual(6,orderAgnosticBinarySearch([9,8,7,6,5,4,3,2,1], 3))
+        XCTAssertEqual(8,orderAgnosticBinarySearch(for: 9, array: array))
+        XCTAssertEqual(-1,orderAgnosticBinarySearch(for: 50, array: array))
+        XCTAssertEqual(6,orderAgnosticBinarySearch(for: 3, array: array.reversed()))
     }
 }

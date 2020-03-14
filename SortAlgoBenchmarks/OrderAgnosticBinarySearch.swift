@@ -16,20 +16,33 @@ import Foundation
 
 func orderAgnosticBinarySearch(for value: Int, array: [Int], range: Range<Int>? = nil) -> Int {
     guard !array.isEmpty else { return -1 }
-    let range = range ?? 0..<array.count
-    let rangeSize = range.lowerBound.distance(to: range.upperBound)
-    let middle = rangeSize / 2
+    let isAscending = array[0] < array[array.count - 1]
     
-    guard range.lowerBound < range.upperBound else {
+    let range = range ?? 0..<array.count
+    
+    if range.lowerBound >= range.upperBound {
         return -1
     }
     
+    // the middle of this range can be found at the lower bound offset by half the distance between the upper and lower bound
+    let middle = range.lowerBound + (range.upperBound - range.lowerBound) / 2
+    
     if array[middle] == value {
         return middle
-    } else if array[middle] > value {
-        return orderAgnosticBinarySearch(for: value, array: array, range: range.lowerBound..<middle)
+    }
+    
+    if isAscending {
+        if array[middle] > value {
+            return orderAgnosticBinarySearch(for: value, array: array, range: range.lowerBound..<middle)
+        } else {
+            return orderAgnosticBinarySearch(for: value, array: array, range: middle + 1..<range.upperBound)
+        }
     } else {
-        return orderAgnosticBinarySearch(for: value, array: array, range: middle..<range.upperBound)
+        if array[middle] > value {
+            return orderAgnosticBinarySearch(for: value, array: array, range: middle + 1..<range.upperBound)
+        } else {
+            return orderAgnosticBinarySearch(for: value, array: array, range: range.lowerBound..<middle)
+        }
     }
 }
 
