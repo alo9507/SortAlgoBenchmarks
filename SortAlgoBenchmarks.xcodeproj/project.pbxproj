@@ -60,6 +60,8 @@
 		59B200BB2402210900E613C0 /* DijkstrasTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B200BA2402210900E613C0 /* DijkstrasTest.swift */; };
 		59B3CA15241868A20042A8E6 /* IOSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3CA14241868A20042A8E6 /* IOSetup.swift */; };
 		59BCAAA3241D37B0006F9E56 /* UnionFindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BCAAA2241D37B0006F9E56 /* UnionFindTests.swift */; };
+		59BCAAA6241D453B006F9E56 /* RoadsAndLibraries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BCAAA5241D453B006F9E56 /* RoadsAndLibraries.swift */; };
+		59BCAAA9241D473F006F9E56 /* RoadsAndLibrariesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BCAAA8241D473F006F9E56 /* RoadsAndLibrariesTests.swift */; };
 		59CB4D23240EFF7100AB0395 /* GraphVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D22240EFF7100AB0395 /* GraphVertex.swift */; };
 		59CB4D25240EFF8900AB0395 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D24240EFF8900AB0395 /* GraphEdge.swift */; };
 		59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */; };
@@ -145,6 +147,8 @@
 		59B200BA2402210900E613C0 /* DijkstrasTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstrasTest.swift; sourceTree = "<group>"; };
 		59B3CA14241868A20042A8E6 /* IOSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSetup.swift; sourceTree = "<group>"; };
 		59BCAAA2241D37B0006F9E56 /* UnionFindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionFindTests.swift; sourceTree = "<group>"; };
+		59BCAAA5241D453B006F9E56 /* RoadsAndLibraries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsAndLibraries.swift; sourceTree = "<group>"; };
+		59BCAAA8241D473F006F9E56 /* RoadsAndLibrariesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsAndLibrariesTests.swift; sourceTree = "<group>"; };
 		59CB4D22240EFF7100AB0395 /* GraphVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVertex.swift; sourceTree = "<group>"; };
 		59CB4D24240EFF8900AB0395 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
 		59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 		59383B012412CFF40067CE89 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				59BCAAA4241D452D006F9E56 /* RoadsAndLibraries */,
 				59EE4617241B09AD00CA36E3 /* Factorial */,
 				5954A31E241AB813007F5FAC /* MedianOfAStream */,
 				599D0F80241592B200B71E42 /* TopologicalSort */,
@@ -364,6 +369,7 @@
 		59383B042412D0590067CE89 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				59BCAAA7241D4736006F9E56 /* RoadsAndLibraries */,
 				59EE4618241B09BA00CA36E3 /* Factorial */,
 				5954A322241ABB19007F5FAC /* MedianOfAStream */,
 				599D0F83241592C600B71E42 /* TopologicalSort */,
@@ -535,6 +541,22 @@
 				59B3CA14241868A20042A8E6 /* IOSetup.swift */,
 			);
 			path = IOSetup;
+			sourceTree = "<group>";
+		};
+		59BCAAA4241D452D006F9E56 /* RoadsAndLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				59BCAAA5241D453B006F9E56 /* RoadsAndLibraries.swift */,
+			);
+			name = RoadsAndLibraries;
+			sourceTree = "<group>";
+		};
+		59BCAAA7241D4736006F9E56 /* RoadsAndLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				59BCAAA8241D473F006F9E56 /* RoadsAndLibrariesTests.swift */,
+			);
+			path = RoadsAndLibraries;
 			sourceTree = "<group>";
 		};
 		59CB4D21240EFF5900AB0395 /* Graph */ = {
@@ -812,6 +834,7 @@
 				5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */,
 				590EA4ED23F872C000E71EAF /* MergeSort.swift in Sources */,
 				59CB4D23240EFF7100AB0395 /* GraphVertex.swift in Sources */,
+				59BCAAA6241D453B006F9E56 /* RoadsAndLibraries.swift in Sources */,
 				599D0F82241592BE00B71E42 /* TopologicalSort.swift in Sources */,
 				59F238ED23FB7A4E00D8B467 /* AdjacencyList.swift in Sources */,
 				590EA4F223F87D1500E71EAF /* LinearSearch.swift in Sources */,
@@ -852,6 +875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				590EA4F023F87C6600E71EAF /* BinarySearch.swift in Sources */,
+				59BCAAA9241D473F006F9E56 /* RoadsAndLibrariesTests.swift in Sources */,
 				59383B0E2412E4980067CE89 /* LongestSubstringWithDistinctCharsTests.swift in Sources */,
 				5939FEAE2414747B000586D1 /* CyclicSortTests.swift in Sources */,
 				59BCAAA3241D37B0006F9E56 /* UnionFindTests.swift in Sources */,
