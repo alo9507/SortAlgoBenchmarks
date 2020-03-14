@@ -53,3 +53,30 @@ extension ArrayQueue: CustomStringConvertible {
             .joined(separator: " ")
     }
 }
+
+struct StackQueue<Element>: Queue {
+    private var enqueueStack: [Element] = []
+    private var dequeueStack: [Element] = []
+    
+    var isEmpty: Bool
+    
+    var peek: Element? {
+        dequeueStack.isEmpty ? enqueueStack.first : dequeueStack.last
+    }
+    
+    var count: Int {
+        return enqueueStack.count + dequeueStack.count
+    }
+    
+    mutating func enqueue(_ element: Element) {
+        enqueueStack.append(element)
+    }
+    
+    mutating func dequeue() -> Element? {
+        if dequeueStack.isEmpty {
+            dequeueStack = enqueueStack.reversed()
+            enqueueStack.removeAll()
+        }
+        return dequeueStack.removeLast()
+    }
+}

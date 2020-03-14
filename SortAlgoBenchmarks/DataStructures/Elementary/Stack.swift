@@ -27,6 +27,10 @@ struct Stack<Element>: Sequence, IteratorProtocol {
     mutating func pop() -> Element? {
         return isEmpty ? nil : storage.removeLast()
     }
+    
+    var count: Int {
+        return storage.count
+    }
 }
 
 extension Stack {

@@ -24,5 +24,4 @@ func graphBfs<T>(_ graph: AdjacencyList<T>, _ source: GraphVertex<T>, _ augmenta
             }
         }
     }
-    return
 }
