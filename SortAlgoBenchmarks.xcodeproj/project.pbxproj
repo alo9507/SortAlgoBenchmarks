@@ -59,6 +59,7 @@
 		59B200B924021C5500E613C0 /* Dijkstras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B200B824021C5500E613C0 /* Dijkstras.swift */; };
 		59B200BB2402210900E613C0 /* DijkstrasTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B200BA2402210900E613C0 /* DijkstrasTest.swift */; };
 		59B3CA15241868A20042A8E6 /* IOSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3CA14241868A20042A8E6 /* IOSetup.swift */; };
+		59BCAAA3241D37B0006F9E56 /* UnionFindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BCAAA2241D37B0006F9E56 /* UnionFindTests.swift */; };
 		59CB4D23240EFF7100AB0395 /* GraphVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D22240EFF7100AB0395 /* GraphVertex.swift */; };
 		59CB4D25240EFF8900AB0395 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D24240EFF8900AB0395 /* GraphEdge.swift */; };
 		59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */; };
@@ -143,6 +144,7 @@
 		59B200B824021C5500E613C0 /* Dijkstras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstras.swift; sourceTree = "<group>"; };
 		59B200BA2402210900E613C0 /* DijkstrasTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstrasTest.swift; sourceTree = "<group>"; };
 		59B3CA14241868A20042A8E6 /* IOSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSetup.swift; sourceTree = "<group>"; };
+		59BCAAA2241D37B0006F9E56 /* UnionFindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionFindTests.swift; sourceTree = "<group>"; };
 		59CB4D22240EFF7100AB0395 /* GraphVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVertex.swift; sourceTree = "<group>"; };
 		59CB4D24240EFF8900AB0395 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
 		59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				5917EE342402C09200D3A061 /* PrimTest.swift */,
 				59462F62240729BC00CE5885 /* LinkedListTests.swift */,
 				59EE461F241B0F1F00CA36E3 /* KruskalTest.swift */,
+				59BCAAA2241D37B0006F9E56 /* UnionFindTests.swift */,
 			);
 			path = Functionality;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				590EA4F023F87C6600E71EAF /* BinarySearch.swift in Sources */,
 				59383B0E2412E4980067CE89 /* LongestSubstringWithDistinctCharsTests.swift in Sources */,
 				5939FEAE2414747B000586D1 /* CyclicSortTests.swift in Sources */,
+				59BCAAA3241D37B0006F9E56 /* UnionFindTests.swift in Sources */,
 				599D0F85241592D400B71E42 /* TopologicalSortTest.swift in Sources */,
 				59EE461C241B09D400CA36E3 /* FactorialTests.swift in Sources */,
 				59EE4620241B0F1F00CA36E3 /* KruskalTest.swift in Sources */,
