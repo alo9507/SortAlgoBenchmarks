@@ -37,9 +37,8 @@ public func roadsAndLibraries(n: Int, c_lib: Int, c_road: Int, cities: [[Int]]) 
         }
     }
     print(unionFind.allSets())
-    // if its cheaper to build a library than build a new road, then build a library
     
-    // determine edges without cycles for total road costs
+    // determine distinct edges cycles for total road costs. subtract 1 per cycle
     
     return totalCost
 }
