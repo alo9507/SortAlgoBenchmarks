@@ -57,7 +57,7 @@
 		5973C05F23F63F740008C0C7 /* FunctionalityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05E23F63F740008C0C7 /* FunctionalityTests.swift */; };
 		599D0F7C2415873700B71E42 /* XOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F7B2415873700B71E42 /* XOR.swift */; };
 		599D0F7F2415874C00B71E42 /* XORTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F7E2415874C00B71E42 /* XORTests.swift */; };
-		599D0F82241592BE00B71E42 /* TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F81241592BE00B71E42 /* TopologicalSort.swift */; };
+		599D0F82241592BE00B71E42 /* StandardTopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F81241592BE00B71E42 /* StandardTopologicalSort.swift */; };
 		599D0F85241592D400B71E42 /* TopologicalSortTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F84241592D400B71E42 /* TopologicalSortTest.swift */; };
 		59A574D1240308930089BF61 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A574D0240308930089BF61 /* Stack.swift */; };
 		59AF98542415491900F718A1 /* KWayMerge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF98532415491900F718A1 /* KWayMerge.swift */; };
@@ -79,6 +79,9 @@
 		59D1E99923F6206700647E4B /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E99823F6206700647E4B /* SelectionSort.swift */; };
 		59D1E99B23F6208100647E4B /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E99A23F6208100647E4B /* InsertionSort.swift */; };
 		59E68455241E7410005C677D /* KahnsTopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68454241E7410005C677D /* KahnsTopologicalSort.swift */; };
+		59E68458241E77AB005C677D /* RandomSourceTopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68457241E77AB005C677D /* RandomSourceTopologicalSort.swift */; };
+		59E6845A241E7A33005C677D /* nTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68459241E7A33005C677D /* nTree.swift */; };
+		59E6845D241E7B63005C677D /* nTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E6845C241E7B63005C677D /* nTreeTests.swift */; };
 		59EE461A241B09C300CA36E3 /* Factorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE4619241B09C300CA36E3 /* Factorial.swift */; };
 		59EE461C241B09D400CA36E3 /* FactorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE461B241B09D400CA36E3 /* FactorialTests.swift */; };
 		59EE461E241B0CFC00CA36E3 /* Kruskal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE461D241B0CFC00CA36E3 /* Kruskal.swift */; };
@@ -151,7 +154,7 @@
 		5973C05E23F63F740008C0C7 /* FunctionalityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalityTests.swift; sourceTree = "<group>"; };
 		599D0F7B2415873700B71E42 /* XOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOR.swift; sourceTree = "<group>"; };
 		599D0F7E2415874C00B71E42 /* XORTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XORTests.swift; sourceTree = "<group>"; };
-		599D0F81241592BE00B71E42 /* TopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopologicalSort.swift; sourceTree = "<group>"; };
+		599D0F81241592BE00B71E42 /* StandardTopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTopologicalSort.swift; sourceTree = "<group>"; };
 		599D0F84241592D400B71E42 /* TopologicalSortTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopologicalSortTest.swift; sourceTree = "<group>"; };
 		59A574D0240308930089BF61 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		59AF98532415491900F718A1 /* KWayMerge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWayMerge.swift; sourceTree = "<group>"; };
@@ -176,6 +179,9 @@
 		59D1E99823F6206700647E4B /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		59D1E99A23F6208100647E4B /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		59E68454241E7410005C677D /* KahnsTopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KahnsTopologicalSort.swift; sourceTree = "<group>"; };
+		59E68457241E77AB005C677D /* RandomSourceTopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSourceTopologicalSort.swift; sourceTree = "<group>"; };
+		59E68459241E7A33005C677D /* nTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nTree.swift; sourceTree = "<group>"; };
+		59E6845C241E7B63005C677D /* nTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nTreeTests.swift; sourceTree = "<group>"; };
 		59EE4619241B09C300CA36E3 /* Factorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factorial.swift; sourceTree = "<group>"; };
 		59EE461B241B09D400CA36E3 /* FactorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorialTests.swift; sourceTree = "<group>"; };
 		59EE461D241B0CFC00CA36E3 /* Kruskal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kruskal.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 		59013D9723F8432100725562 /* Functionality */ = {
 			isa = PBXGroup;
 			children = (
+				59E6845B241E7B5B005C677D /* Tree */,
 				5973C05B23F63C530008C0C7 /* PriorityQueueTests.swift */,
 				59013D9423F841D800725562 /* HeapTests.swift */,
 				5964088A23F8923400B68414 /* BinaryTreeTests.swift */,
@@ -465,12 +472,12 @@
 			path = Traversal;
 			sourceTree = "<group>";
 		};
-		595E7007241D713500B7677F /* ShortesPath */ = {
+		595E7007241D713500B7677F /* PathFinding */ = {
 			isa = PBXGroup;
 			children = (
 				59B200B824021C5500E613C0 /* Dijkstras.swift */,
 			);
-			path = ShortesPath;
+			path = PathFinding;
 			sourceTree = "<group>";
 		};
 		595E7008241D725F00B7677F /* Graph */ = {
@@ -640,7 +647,7 @@
 			children = (
 				59E68456241E741D005C677D /* MinimumSpanningTree */,
 				59F39E35241E5F7400395A62 /* TopologicalSort */,
-				595E7007241D713500B7677F /* ShortesPath */,
+				595E7007241D713500B7677F /* PathFinding */,
 				595E7006241D712F00B7677F /* Traversal */,
 			);
 			path = Algorithms;
@@ -729,6 +736,22 @@
 			path = MinimumSpanningTree;
 			sourceTree = "<group>";
 		};
+		59E6845B241E7B5B005C677D /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				59E6845C241E7B63005C677D /* nTreeTests.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		59E6845E241E83A8005C677D /* nTree */ = {
+			isa = PBXGroup;
+			children = (
+				59E68459241E7A33005C677D /* nTree.swift */,
+			);
+			path = nTree;
+			sourceTree = "<group>";
+		};
 		59EE4617241B09AD00CA36E3 /* Factorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +798,7 @@
 		59F238EF23FB7A8300D8B467 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				59E6845E241E83A8005C677D /* nTree */,
 				59CB4D28240F00CE00AB0395 /* BinaryTree */,
 				5973C05623F63B420008C0C7 /* Heap.swift */,
 				5973C05423F63A8C0008C0C7 /* PriorityQueue.swift */,
@@ -786,8 +810,9 @@
 		59F39E35241E5F7400395A62 /* TopologicalSort */ = {
 			isa = PBXGroup;
 			children = (
-				599D0F81241592BE00B71E42 /* TopologicalSort.swift */,
+				599D0F81241592BE00B71E42 /* StandardTopologicalSort.swift */,
 				59E68454241E7410005C677D /* KahnsTopologicalSort.swift */,
+				59E68457241E77AB005C677D /* RandomSourceTopologicalSort.swift */,
 			);
 			path = TopologicalSort;
 			sourceTree = "<group>";
@@ -911,8 +936,9 @@
 				5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */,
 				590EA4ED23F872C000E71EAF /* MergeSort.swift in Sources */,
 				59CB4D23240EFF7100AB0395 /* GraphVertex.swift in Sources */,
+				59E68458241E77AB005C677D /* RandomSourceTopologicalSort.swift in Sources */,
 				59BCAAA6241D453B006F9E56 /* RoadsAndLibraries.swift in Sources */,
-				599D0F82241592BE00B71E42 /* TopologicalSort.swift in Sources */,
+				599D0F82241592BE00B71E42 /* StandardTopologicalSort.swift in Sources */,
 				59F238ED23FB7A4E00D8B467 /* AdjacencyList.swift in Sources */,
 				590EA4F223F87D1500E71EAF /* LinearSearch.swift in Sources */,
 				5973C05723F63B420008C0C7 /* Heap.swift in Sources */,
@@ -940,6 +966,7 @@
 				59FA5FB123F88787002BA196 /* MinComparisonLinearSearch.swift in Sources */,
 				5954A320241AB824007F5FAC /* MedianOfAStream.swift in Sources */,
 				5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */,
+				59E6845A241E7A33005C677D /* nTree.swift in Sources */,
 				5917D8D6241426A100A39C19 /* MergeIntervals.swift in Sources */,
 				59D1E99923F6206700647E4B /* SelectionSort.swift in Sources */,
 				5917EE332402BE0100D3A061 /* Prim.swift in Sources */,
@@ -963,6 +990,7 @@
 				59BCAAA3241D37B0006F9E56 /* UnionFindTests.swift in Sources */,
 				590BCC21241D595600419559 /* BinarySearchTests.swift in Sources */,
 				599D0F85241592D400B71E42 /* TopologicalSortTest.swift in Sources */,
+				59E6845D241E7B63005C677D /* nTreeTests.swift in Sources */,
 				59EE461C241B09D400CA36E3 /* FactorialTests.swift in Sources */,
 				59EE4620241B0F1F00CA36E3 /* KruskalTest.swift in Sources */,
 				59013D9923F8433100725562 /* HeapPerformanceTest.swift in Sources */,

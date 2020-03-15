@@ -15,6 +15,7 @@ struct GraphVertex<Element> {
 extension GraphVertex: Hashable where Element: Hashable {}
 
 // Conditional conformance to Hashable does not imply conformance to inherited protocol Equatable
+// Comparing on Element enforces a "uniqueness" based on element
 extension GraphVertex: Equatable where Element: Equatable {
     static func ==(lhs: GraphVertex<Element>, rhs: GraphVertex<Element>) -> Bool {
         return lhs.element == rhs.element

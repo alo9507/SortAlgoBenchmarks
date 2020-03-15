@@ -56,5 +56,11 @@ class TopologicalSortTest: XCTestCase {
             print(vertex.element)
         }
     }
+    
+    func test_randomSourceTopologicalSort() {
+        graph.topologicalSortRandomSource().forEach { (vertex) in
+            print(vertex.element)
+        }
+    }
 }
 
