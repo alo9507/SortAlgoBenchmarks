@@ -75,7 +75,9 @@ class TopologicalSortTest: XCTestCase {
             return graph
         }()
         
-        print(graph.topologicalSort())
+        graph.topologicalSort().forEach { (vertex) in
+            print(vertex.element)
+        }
     }
 }
 

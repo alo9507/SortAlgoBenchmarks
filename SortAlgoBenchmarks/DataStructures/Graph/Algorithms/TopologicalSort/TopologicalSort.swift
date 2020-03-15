@@ -9,7 +9,7 @@
 import Foundation
 
 extension AdjacencyList {
-    public func topologicalSort() -> [Element] {
+    public func topologicalSort() -> [GraphVertex<Element>] {
         let startVertices = calculateInDegreeOfNodes().filter({_, indegree in
             return indegree == 0
         }).map({ node, indegree in
@@ -23,10 +23,10 @@ extension AdjacencyList {
         
         var result = [GraphVertex<Element>]()
         for vertex in startVertices {
-            result = depthFirstSearch(vertex, &visited)
+            result = depthFirstSearch(vertex, &visited) + result
         }
         
-        return []
+        return result
     }
     
     typealias InDegree = Int
