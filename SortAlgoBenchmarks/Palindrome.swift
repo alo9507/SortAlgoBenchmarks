@@ -17,11 +17,7 @@ func isPalindrom(_ s: String) -> Bool {
     var rightPointer = string.count - 1
     
     while leftPointer < rightPointer {
-        let char1 = string[leftPointer]
-        let char2 = string[rightPointer]
-        
-        if char1 != char2 { return false }
-        
+        if string[leftPointer] != string[rightPointer] { return false }
         leftPointer += 1
         rightPointer -= 1
     }
