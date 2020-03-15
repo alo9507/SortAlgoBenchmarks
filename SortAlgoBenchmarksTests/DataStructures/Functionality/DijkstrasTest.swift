@@ -15,11 +15,6 @@ private typealias Graph = AdjacencyList<String>
 private typealias Vertex = Graph.Vertex
 
 final class DijkstraTestCase: XCTestCase {
-    func test_getShortestPath() {
-        let shortestPath = Dijkstra.getShortestPath(from: a, to: d, graph: graph)
-        XCTAssertEqual(String(shortestPath: shortestPath), "AGCED")
-    }
-    
     private let (graph, a, b, c, d, e, f, g, h): (Graph, Vertex, Vertex, Vertex, Vertex, Vertex, Vertex, Vertex, Vertex) = {
         var graph = AdjacencyList<String>()
         
@@ -50,15 +45,26 @@ final class DijkstraTestCase: XCTestCase {
         
         return (graph, a, b, c, d, e, f, g, h)
     } ()
+    
+    func test_getShortestPath() {
+        let shortestPath_ad = Dijkstra.getShortestPath(from: a, to: d, graph: graph)
+        XCTAssertEqual(String(shortestPath: shortestPath_ad), "AGCED")
+        
+        let shortestPath_ab = Dijkstra.getShortestPath(from: a, to: b, graph: graph)
+        XCTAssertEqual(String(shortestPath: shortestPath_ab), "AGCEB")
+    }
 }
 
 private extension String {
     init?(shortestPath: [Graph.Edge]) {
+        // when the source and destination of the path are the same
         guard !shortestPath.isEmpty else {
             return nil
         }
         
+        // start string at the source of the path
         self = shortestPath.reduce(into: shortestPath[0].source.element, { (string, edge) in
+            // append edge of each subsequent destination to the string
             string += edge.destination.element
         })
     }

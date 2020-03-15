@@ -82,6 +82,9 @@
 		59E68458241E77AB005C677D /* RandomSourceTopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68457241E77AB005C677D /* RandomSourceTopologicalSort.swift */; };
 		59E6845A241E7A33005C677D /* nTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68459241E7A33005C677D /* nTree.swift */; };
 		59E6845D241E7B63005C677D /* nTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E6845C241E7B63005C677D /* nTreeTests.swift */; };
+		59E68461241EAADA005C677D /* TrieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68460241EAADA005C677D /* TrieTest.swift */; };
+		59E68464241EABFB005C677D /* Palindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68463241EABFB005C677D /* Palindrome.swift */; };
+		59E68467241EAC95005C677D /* PalindromTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68466241EAC95005C677D /* PalindromTest.swift */; };
 		59EE461A241B09C300CA36E3 /* Factorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE4619241B09C300CA36E3 /* Factorial.swift */; };
 		59EE461C241B09D400CA36E3 /* FactorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE461B241B09D400CA36E3 /* FactorialTests.swift */; };
 		59EE461E241B0CFC00CA36E3 /* Kruskal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE461D241B0CFC00CA36E3 /* Kruskal.swift */; };
@@ -182,6 +185,9 @@
 		59E68457241E77AB005C677D /* RandomSourceTopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSourceTopologicalSort.swift; sourceTree = "<group>"; };
 		59E68459241E7A33005C677D /* nTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nTree.swift; sourceTree = "<group>"; };
 		59E6845C241E7B63005C677D /* nTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nTreeTests.swift; sourceTree = "<group>"; };
+		59E68460241EAADA005C677D /* TrieTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieTest.swift; sourceTree = "<group>"; };
+		59E68463241EABFB005C677D /* Palindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palindrome.swift; sourceTree = "<group>"; };
+		59E68466241EAC95005C677D /* PalindromTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromTest.swift; sourceTree = "<group>"; };
 		59EE4619241B09C300CA36E3 /* Factorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factorial.swift; sourceTree = "<group>"; };
 		59EE461B241B09D400CA36E3 /* FactorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorialTests.swift; sourceTree = "<group>"; };
 		59EE461D241B0CFC00CA36E3 /* Kruskal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kruskal.swift; sourceTree = "<group>"; };
@@ -388,6 +394,7 @@
 		59383B012412CFF40067CE89 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				59E68462241EABF0005C677D /* StringManipulation */,
 				590BCC1C241D54BE00419559 /* ModifiedBinarySearch */,
 				59BCAAA4241D452D006F9E56 /* RoadsAndLibraries */,
 				59EE4617241B09AD00CA36E3 /* Factorial */,
@@ -408,6 +415,7 @@
 		59383B042412D0590067CE89 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				59E68465241EAC8B005C677D /* StringManipulation */,
 				59BCAAA7241D4736006F9E56 /* RoadsAndLibraries */,
 				59EE4618241B09BA00CA36E3 /* Factorial */,
 				5954A322241ABB19007F5FAC /* MedianOfAStream */,
@@ -503,6 +511,7 @@
 		5973C05A23F63C3E0008C0C7 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				59E6845F241EAAD0005C677D /* Tree */,
 				595E7008241D725F00B7677F /* Graph */,
 				59013D9623F8431400725562 /* Performance */,
 				59013D9723F8432100725562 /* Functionality */,
@@ -752,6 +761,30 @@
 			path = nTree;
 			sourceTree = "<group>";
 		};
+		59E6845F241EAAD0005C677D /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				59E68460241EAADA005C677D /* TrieTest.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		59E68462241EABF0005C677D /* StringManipulation */ = {
+			isa = PBXGroup;
+			children = (
+				59E68463241EABFB005C677D /* Palindrome.swift */,
+			);
+			name = StringManipulation;
+			sourceTree = "<group>";
+		};
+		59E68465241EAC8B005C677D /* StringManipulation */ = {
+			isa = PBXGroup;
+			children = (
+				59E68466241EAC95005C677D /* PalindromTest.swift */,
+			);
+			path = StringManipulation;
+			sourceTree = "<group>";
+		};
 		59EE4617241B09AD00CA36E3 /* Factorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,6 +966,7 @@
 				590C8B1B2415752600B10C2B /* DFS.swift in Sources */,
 				59F238EA23FB76F700D8B467 /* Graph.swift in Sources */,
 				59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */,
+				59E68464241EABFB005C677D /* Palindrome.swift in Sources */,
 				5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */,
 				590EA4ED23F872C000E71EAF /* MergeSort.swift in Sources */,
 				59CB4D23240EFF7100AB0395 /* GraphVertex.swift in Sources */,
@@ -994,6 +1028,7 @@
 				59EE461C241B09D400CA36E3 /* FactorialTests.swift in Sources */,
 				59EE4620241B0F1F00CA36E3 /* KruskalTest.swift in Sources */,
 				59013D9923F8433100725562 /* HeapPerformanceTest.swift in Sources */,
+				59E68467241EAC95005C677D /* PalindromTest.swift in Sources */,
 				59383B062412D0690067CE89 /* MaxSumOfSubarray.swift in Sources */,
 				599D0F7F2415874C00B71E42 /* XORTests.swift in Sources */,
 				5920B880241302B000607A4D /* FindCycleInLinkedListTests.swift in Sources */,
@@ -1006,6 +1041,7 @@
 				59B200BB2402210900E613C0 /* DijkstrasTest.swift in Sources */,
 				59383B0A2412DB460067CE89 /* SmallestSubarrayWithSum.swift in Sources */,
 				59462F63240729BC00CE5885 /* LinkedListTests.swift in Sources */,
+				59E68461241EAADA005C677D /* TrieTest.swift in Sources */,
 				5917EE352402C09200D3A061 /* PrimTest.swift in Sources */,
 				59F238F123FB7ABF00D8B467 /* AdjacencyListTests.swift in Sources */,
 				59AF98572415493C00F718A1 /* KWayMergeTests.swift in Sources */,
