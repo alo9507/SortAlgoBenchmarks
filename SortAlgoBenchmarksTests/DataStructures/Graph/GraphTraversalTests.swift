@@ -32,10 +32,9 @@ final class GraphTraversalTests: XCTestCase {
             graph.addEdge(edge)
         }
         
-        var dfsResults: [String] = []
-        graphDfs(graph, graph.vertices.first!) { element in
-            print(element)
-        }
+        let start = graph.vertices.first!
+        var visited: [GraphVertex<String>: Bool] = [:]
+        var dfsResults: [GraphVertex<String>] = graph.depthFirstSearch(start, &visited)
     }
     
     func test_bfs() {

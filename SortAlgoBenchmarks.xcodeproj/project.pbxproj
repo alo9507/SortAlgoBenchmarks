@@ -564,7 +564,6 @@
 		599D0F80241592B200B71E42 /* TopologicalSort */ = {
 			isa = PBXGroup;
 			children = (
-				599D0F81241592BE00B71E42 /* TopologicalSort.swift */,
 			);
 			name = TopologicalSort;
 			sourceTree = "<group>";
@@ -639,6 +638,7 @@
 		59CB4D27240EFFEA00AB0395 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				59F39E35241E5F7400395A62 /* TopologicalSort */,
 				595E7007241D713500B7677F /* ShortesPath */,
 				595E7006241D712F00B7677F /* Traversal */,
 			);
@@ -771,6 +771,14 @@
 				5941032D241C079000941AC7 /* Trie.swift */,
 			);
 			path = Tree;
+			sourceTree = "<group>";
+		};
+		59F39E35241E5F7400395A62 /* TopologicalSort */ = {
+			isa = PBXGroup;
+			children = (
+				599D0F81241592BE00B71E42 /* TopologicalSort.swift */,
+			);
+			path = TopologicalSort;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

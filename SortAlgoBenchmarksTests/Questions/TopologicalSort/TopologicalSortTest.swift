@@ -12,9 +12,70 @@ import XCTest
 @testable import SortAlgoBenchmarks
 
 class TopologicalSortTest: XCTestCase {
+    let graph: AdjacencyList<String> = {
+        var graph = AdjacencyList<String>()
+        
+        let linkingObject = graph.addVertex("Linking Objects")
+        let tree = graph.addVertex("Tree")
+        let al = graph.addVertex("Graph")
+        let ll = graph.addVertex("Linked List")
+        let dfs = graph.addVertex("Depth First Search")
+        let stack = graph.addVertex("Stack")
+        let ts = graph.addVertex("Topological Sort")
+        
+        let linkingObject_tree = GraphEdge(source: linkingObject, destination: tree)
+        let linkingObject_graph = GraphEdge(source: linkingObject, destination: al)
+        let linkingObject_ll = GraphEdge(source: linkingObject, destination: ll)
+        
+        let tree_dfs = GraphEdge(source: tree, destination: dfs)
+        let al_dfs = GraphEdge(source: al, destination: dfs)
+        
+        let dfs_ts = GraphEdge(source: dfs, destination: ts)
+        
+        let stack_ts = GraphEdge(source: stack, destination: ts)
+        
+        for edge in [linkingObject_tree, linkingObject_graph, linkingObject_ll, tree_dfs, al_dfs, dfs_ts, stack_ts] {
+            graph.addEdge(edge, true)
+        }
+        
+        return graph
+    }()
+    
+    func test_calculateInDegrees() {
+        print(graph.calculateInDegreeOfNodes())
+    }
+    
     func test_topologicalSort() {
-        let result = AdjacencyList<Int>.topologicalSort(4, [[ 3, 2 ], [ 3, 0 ], [ 2, 0 ], [ 2, 1 ]])
-        print(result)
+        let graph: AdjacencyList<String> = {
+            var graph = AdjacencyList<String>()
+            
+            let linkingObject = graph.addVertex("Linking Objects")
+            let tree = graph.addVertex("Tree")
+            let al = graph.addVertex("Graph")
+            let ll = graph.addVertex("Linked List")
+            let dfs = graph.addVertex("Depth First Search")
+            let stack = graph.addVertex("Stack")
+            let ts = graph.addVertex("Topological Sort")
+            
+            let linkingObject_tree = GraphEdge(source: linkingObject, destination: tree)
+            let linkingObject_graph = GraphEdge(source: linkingObject, destination: al)
+            let linkingObject_ll = GraphEdge(source: linkingObject, destination: ll)
+            
+            let tree_dfs = GraphEdge(source: tree, destination: dfs)
+            let al_dfs = GraphEdge(source: al, destination: dfs)
+            
+            let dfs_ts = GraphEdge(source: dfs, destination: ts)
+            
+            let stack_ts = GraphEdge(source: stack, destination: ts)
+            
+            for edge in [linkingObject_tree, linkingObject_graph, linkingObject_ll, tree_dfs, al_dfs, dfs_ts, stack_ts] {
+                graph.addEdge(edge, true)
+            }
+            
+            return graph
+        }()
+        
+        print(graph.topologicalSort())
     }
 }
 

@@ -16,7 +16,7 @@ struct AdjacencyList<Element: Hashable>: Graph {
     typealias Edge = GraphEdge<Element>
     typealias Vertex = Edge.Vertex
     
-    private var adjacencies: [Vertex: [Edge]] = [:]
+    public var adjacencies: [Vertex: [Edge]] = [:]
     
     init() {}
     
