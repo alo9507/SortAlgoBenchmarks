@@ -34,13 +34,9 @@ final class GraphTraversalTests: XCTestCase {
         
         let start = graph.vertices.first!
         var visited: [GraphVertex<String>: Bool] = [:]
-        let dfsResults: [GraphVertex<String>] = graph.depthFirstSearch(start, &visited)
-        
-        dfsResults.forEach { (vertex) in
-            print(vertex.element)
-        }
-        
-        print(dfsResults.description)
+        let dfsResults: [GraphVertex<String>] = graph.depthFirstSearch(start, &visited, previsit: { element in
+            print(element)
+        })
     }
     
     func test_bfs() {
