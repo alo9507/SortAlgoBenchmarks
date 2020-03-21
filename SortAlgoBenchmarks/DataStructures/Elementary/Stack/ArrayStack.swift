@@ -8,6 +8,11 @@
 
 import Foundation
 
+// Push: (amortized) O(1)
+// Pop: O(1)
+// Count: O(N)
+// Space: O(N)
+
 struct ArrayStack<Element>: Sequence, IteratorProtocol {
     private var storage: [Element] = []
     

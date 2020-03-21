@@ -23,6 +23,17 @@ class LinkedListTests: XCTestCase {
         XCTAssertEqual(linkedList.description, "[5, 10]")
     }
     
+    func test_count() {
+        let linkedList: LinkedList<Int> = {
+            let ll = LinkedList<Int>()
+            ll.append(5)
+            ll.append(10)
+            return ll
+        }()
+        
+        XCTAssertEqual(2, linkedList.count)
+    }
+    
     func test_reverse() {
         let linkedList: LinkedList<Int> = {
             let ll = LinkedList<Int>()

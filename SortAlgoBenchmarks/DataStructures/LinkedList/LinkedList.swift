@@ -30,6 +30,19 @@ class LinkedList<T> {
         return head == nil
     }
     
+    public var count: Int {
+        guard var node = head else {
+            return 0
+        }
+        
+        var count = 1
+        while let next = node.next {
+            node = next
+            count += 1
+        }
+        return count
+    }
+    
     public var first: LinkedListNode<T>? {
         return head
     }

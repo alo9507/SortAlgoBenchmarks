@@ -29,6 +29,7 @@
 		59261842242677C4000A0DC5 /* ThreeSumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59261841242677C4000A0DC5 /* ThreeSumTests.swift */; };
 		59261845242686E7000A0DC5 /* SinglyLinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59261844242686E7000A0DC5 /* SinglyLinkedListStack.swift */; };
 		59261847242686F1000A0DC5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59261846242686F1000A0DC5 /* Stack.swift */; };
+		5926184A2426925A000A0DC5 /* SinglyLinkedListStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592618492426925A000A0DC5 /* SinglyLinkedListStackTests.swift */; };
 		593002CA24219F25003CE21E /* RedBlackTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593002C924219F25003CE21E /* RedBlackTree.swift */; };
 		593002CC24219F41003CE21E /* RedBlackTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593002CB24219F41003CE21E /* RedBlackTreeTests.swift */; };
 		59383B032412D00E0067CE89 /* MaxSumOfSubarray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59383B022412D00E0067CE89 /* MaxSumOfSubarray.swift */; };
@@ -61,6 +62,8 @@
 		5973C05923F63B5B0008C0C7 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05823F63B5B0008C0C7 /* Queue.swift */; };
 		5973C05C23F63C530008C0C7 /* PriorityQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05B23F63C530008C0C7 /* PriorityQueueTests.swift */; };
 		5973C05F23F63F740008C0C7 /* FunctionalityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05E23F63F740008C0C7 /* FunctionalityTests.swift */; };
+		5977EA7324269AAF00152D33 /* FixedSizeArrayStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA7124269A9000152D33 /* FixedSizeArrayStack.swift */; };
+		5977EA7524269AC300152D33 /* FixedSizeArrayStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA7424269AC300152D33 /* FixedSizeArrayStackTests.swift */; };
 		599D0F7C2415873700B71E42 /* XOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F7B2415873700B71E42 /* XOR.swift */; };
 		599D0F7F2415874C00B71E42 /* XORTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F7E2415874C00B71E42 /* XORTests.swift */; };
 		599D0F82241592BE00B71E42 /* StandardTopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F81241592BE00B71E42 /* StandardTopologicalSort.swift */; };
@@ -91,7 +94,7 @@
 		59E68461241EAADA005C677D /* TrieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68460241EAADA005C677D /* TrieTest.swift */; };
 		59E68464241EABFB005C677D /* Palindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68463241EABFB005C677D /* Palindrome.swift */; };
 		59E68467241EAC95005C677D /* PalindromTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E68466241EAC95005C677D /* PalindromTest.swift */; };
-		59E6846C241EAF93005C677D /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E6846B241EAF93005C677D /* StackTests.swift */; };
+		59E6846C241EAF93005C677D /* ArrayStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E6846B241EAF93005C677D /* ArrayStackTests.swift */; };
 		59EE461A241B09C300CA36E3 /* Factorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE4619241B09C300CA36E3 /* Factorial.swift */; };
 		59EE461C241B09D400CA36E3 /* FactorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE461B241B09D400CA36E3 /* FactorialTests.swift */; };
 		59EE461E241B0CFC00CA36E3 /* Kruskal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE461D241B0CFC00CA36E3 /* Kruskal.swift */; };
@@ -144,6 +147,7 @@
 		59261841242677C4000A0DC5 /* ThreeSumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSumTests.swift; sourceTree = "<group>"; };
 		59261844242686E7000A0DC5 /* SinglyLinkedListStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListStack.swift; sourceTree = "<group>"; };
 		59261846242686F1000A0DC5 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		592618492426925A000A0DC5 /* SinglyLinkedListStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListStackTests.swift; sourceTree = "<group>"; };
 		593002C924219F25003CE21E /* RedBlackTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBlackTree.swift; sourceTree = "<group>"; };
 		593002CB24219F41003CE21E /* RedBlackTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBlackTreeTests.swift; sourceTree = "<group>"; };
 		59383B022412D00E0067CE89 /* MaxSumOfSubarray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSumOfSubarray.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 		5973C05823F63B5B0008C0C7 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		5973C05B23F63C530008C0C7 /* PriorityQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueueTests.swift; sourceTree = "<group>"; };
 		5973C05E23F63F740008C0C7 /* FunctionalityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalityTests.swift; sourceTree = "<group>"; };
+		5977EA7124269A9000152D33 /* FixedSizeArrayStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeArrayStack.swift; sourceTree = "<group>"; };
+		5977EA7424269AC300152D33 /* FixedSizeArrayStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeArrayStackTests.swift; sourceTree = "<group>"; };
 		599D0F7B2415873700B71E42 /* XOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOR.swift; sourceTree = "<group>"; };
 		599D0F7E2415874C00B71E42 /* XORTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XORTests.swift; sourceTree = "<group>"; };
 		599D0F81241592BE00B71E42 /* StandardTopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTopologicalSort.swift; sourceTree = "<group>"; };
@@ -209,7 +215,7 @@
 		59E68460241EAADA005C677D /* TrieTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieTest.swift; sourceTree = "<group>"; };
 		59E68463241EABFB005C677D /* Palindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palindrome.swift; sourceTree = "<group>"; };
 		59E68466241EAC95005C677D /* PalindromTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromTest.swift; sourceTree = "<group>"; };
-		59E6846B241EAF93005C677D /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		59E6846B241EAF93005C677D /* ArrayStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayStackTests.swift; sourceTree = "<group>"; };
 		59EE4619241B09C300CA36E3 /* Factorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factorial.swift; sourceTree = "<group>"; };
 		59EE461B241B09D400CA36E3 /* FactorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorialTests.swift; sourceTree = "<group>"; };
 		59EE461D241B0CFC00CA36E3 /* Kruskal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kruskal.swift; sourceTree = "<group>"; };
@@ -415,9 +421,20 @@
 		59261843242686CA000A0DC5 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				59261846242686F1000A0DC5 /* Stack.swift */,
+				5977EA7124269A9000152D33 /* FixedSizeArrayStack.swift */,
 				59A574D0240308930089BF61 /* ArrayStack.swift */,
 				59261844242686E7000A0DC5 /* SinglyLinkedListStack.swift */,
-				59261846242686F1000A0DC5 /* Stack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		592618482426924D000A0DC5 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				59E6846B241EAF93005C677D /* ArrayStackTests.swift */,
+				592618492426925A000A0DC5 /* SinglyLinkedListStackTests.swift */,
+				5977EA7424269AC300152D33 /* FixedSizeArrayStackTests.swift */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -863,7 +880,7 @@
 		59E6846A241EAF30005C677D /* Elementary */ = {
 			isa = PBXGroup;
 			children = (
-				59E6846B241EAF93005C677D /* StackTests.swift */,
+				592618482426924D000A0DC5 /* Stack */,
 			);
 			path = Elementary;
 			sourceTree = "<group>";
@@ -1081,6 +1098,7 @@
 				59261847242686F1000A0DC5 /* Stack.swift in Sources */,
 				59261845242686E7000A0DC5 /* SinglyLinkedListStack.swift in Sources */,
 				5973C05723F63B420008C0C7 /* Heap.swift in Sources */,
+				5977EA7324269AAF00152D33 /* FixedSizeArrayStack.swift in Sources */,
 				59EE4623241B168500CA36E3 /* UnionFind.swift in Sources */,
 				59013D9E23F8488400725562 /* HeapSort.swift in Sources */,
 				59401319241D936300F67C2F /* Deque.swift in Sources */,
@@ -1151,7 +1169,7 @@
 				59D1E99423F61E1500647E4B /* TestFixtures.swift in Sources */,
 				595E700A241D726900B7677F /* GraphTraversalTests.swift in Sources */,
 				59013D9B23F8437000725562 /* Utils.swift in Sources */,
-				59E6846C241EAF93005C677D /* StackTests.swift in Sources */,
+				59E6846C241EAF93005C677D /* ArrayStackTests.swift in Sources */,
 				5954A324241ABB26007F5FAC /* MedianOfAStreamTests.swift in Sources */,
 				59B200BB2402210900E613C0 /* DijkstrasTest.swift in Sources */,
 				59383B0A2412DB460067CE89 /* SmallestSubarrayWithSum.swift in Sources */,
@@ -1166,6 +1184,8 @@
 				596828D32412F7C0002AEF7E /* RemoveDuplicatesTests.swift in Sources */,
 				5964088B23F8923400B68414 /* BinaryTreeTests.swift in Sources */,
 				5973C05F23F63F740008C0C7 /* FunctionalityTests.swift in Sources */,
+				5926184A2426925A000A0DC5 /* SinglyLinkedListStackTests.swift in Sources */,
+				5977EA7524269AC300152D33 /* FixedSizeArrayStackTests.swift in Sources */,
 				59013D9523F841D800725562 /* HeapTests.swift in Sources */,
 				593002CC24219F41003CE21E /* RedBlackTreeTests.swift in Sources */,
 				590EA4F723F87DD900E71EAF /* SearchAlgorithmPerformance.swift in Sources */,

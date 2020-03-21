@@ -8,21 +8,35 @@
 
 import Foundation
 
+// Push: O(1)
+// Pop: O(1)
+// Count: O(N)
+// Space: O(N)
 struct SinglyLinkedListStack<Element>: Stack {
-    private var storage: LinkedList<Element>
+    private var storage: LinkedList<Element> = LinkedList<Element>()
     
-    var isEmpty: Bool
-    
-    var count: Int
-    
-    func pop() -> Element? {
-        let tail = storage.tail
-        storage.tail = tail?.next
-        return tail?.value
+    var isEmpty: Bool {
+        return storage.isEmpty
     }
     
-    func push(_ element: Element) {
-        let node: LinkedListNode<Element> = LinkedListNode(element)
-        
+    var count: Int {
+        return storage.count
+    }
+    
+    var peek: Element? {
+        return nil
+    }
+    
+    @discardableResult
+    mutating func pop() -> Element? {
+        let head = storage.head
+        storage.head = head?.next
+        return head?.value
+    }
+    
+    mutating func push(_ element: Element) {
+        let node = LinkedListNode(element)
+        node.next = storage.head
+        storage.head = node
     }
 }
