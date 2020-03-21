@@ -64,6 +64,12 @@
 		5973C05F23F63F740008C0C7 /* FunctionalityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973C05E23F63F740008C0C7 /* FunctionalityTests.swift */; };
 		5977EA7324269AAF00152D33 /* FixedSizeArrayStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA7124269A9000152D33 /* FixedSizeArrayStack.swift */; };
 		5977EA7524269AC300152D33 /* FixedSizeArrayStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA7424269AC300152D33 /* FixedSizeArrayStackTests.swift */; };
+		5977EA792426AD7E00152D33 /* ArrayQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA782426AD7E00152D33 /* ArrayQueue.swift */; };
+		5977EA7B2426AD9000152D33 /* StackQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA7A2426AD9000152D33 /* StackQueue.swift */; };
+		5977EA7D2426ADA700152D33 /* FixedSizeArrayQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA7C2426ADA700152D33 /* FixedSizeArrayQueue.swift */; };
+		5977EA802426ADE100152D33 /* FixedSizeArrayQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA7F2426ADE100152D33 /* FixedSizeArrayQueueTests.swift */; };
+		5977EA822426AE1400152D33 /* SinglyLinkedListQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA812426AE1400152D33 /* SinglyLinkedListQueue.swift */; };
+		5977EA842426AEDF00152D33 /* SinglyLinkedListQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977EA832426AEDF00152D33 /* SinglyLinkedListQueueTests.swift */; };
 		599D0F7C2415873700B71E42 /* XOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F7B2415873700B71E42 /* XOR.swift */; };
 		599D0F7F2415874C00B71E42 /* XORTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F7E2415874C00B71E42 /* XORTests.swift */; };
 		599D0F82241592BE00B71E42 /* StandardTopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F81241592BE00B71E42 /* StandardTopologicalSort.swift */; };
@@ -182,6 +188,12 @@
 		5973C05E23F63F740008C0C7 /* FunctionalityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalityTests.swift; sourceTree = "<group>"; };
 		5977EA7124269A9000152D33 /* FixedSizeArrayStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeArrayStack.swift; sourceTree = "<group>"; };
 		5977EA7424269AC300152D33 /* FixedSizeArrayStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeArrayStackTests.swift; sourceTree = "<group>"; };
+		5977EA782426AD7E00152D33 /* ArrayQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayQueue.swift; sourceTree = "<group>"; };
+		5977EA7A2426AD9000152D33 /* StackQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackQueue.swift; sourceTree = "<group>"; };
+		5977EA7C2426ADA700152D33 /* FixedSizeArrayQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeArrayQueue.swift; sourceTree = "<group>"; };
+		5977EA7F2426ADE100152D33 /* FixedSizeArrayQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeArrayQueueTests.swift; sourceTree = "<group>"; };
+		5977EA812426AE1400152D33 /* SinglyLinkedListQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListQueue.swift; sourceTree = "<group>"; };
+		5977EA832426AEDF00152D33 /* SinglyLinkedListQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListQueueTests.swift; sourceTree = "<group>"; };
 		599D0F7B2415873700B71E42 /* XOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOR.swift; sourceTree = "<group>"; };
 		599D0F7E2415874C00B71E42 /* XORTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XORTests.swift; sourceTree = "<group>"; };
 		599D0F81241592BE00B71E42 /* StandardTopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTopologicalSort.swift; sourceTree = "<group>"; };
@@ -630,6 +642,35 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		5977EA762426AD5000152D33 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				5973C05823F63B5B0008C0C7 /* Queue.swift */,
+				5977EA782426AD7E00152D33 /* ArrayQueue.swift */,
+				5977EA7A2426AD9000152D33 /* StackQueue.swift */,
+				5977EA7C2426ADA700152D33 /* FixedSizeArrayQueue.swift */,
+				5977EA812426AE1400152D33 /* SinglyLinkedListQueue.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		5977EA772426AD5900152D33 /* Deque */ = {
+			isa = PBXGroup;
+			children = (
+				59401318241D936300F67C2F /* Deque.swift */,
+			);
+			path = Deque;
+			sourceTree = "<group>";
+		};
+		5977EA7E2426ADD000152D33 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				5977EA7F2426ADE100152D33 /* FixedSizeArrayQueueTests.swift */,
+				5977EA832426AEDF00152D33 /* SinglyLinkedListQueueTests.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
 		599D0F7A2415872F00B71E42 /* XOR */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,6 +921,7 @@
 		59E6846A241EAF30005C677D /* Elementary */ = {
 			isa = PBXGroup;
 			children = (
+				5977EA7E2426ADD000152D33 /* Queue */,
 				592618482426924D000A0DC5 /* Stack */,
 			);
 			path = Elementary;
@@ -939,8 +981,8 @@
 			isa = PBXGroup;
 			children = (
 				59261843242686CA000A0DC5 /* Stack */,
-				5973C05823F63B5B0008C0C7 /* Queue.swift */,
-				59401318241D936300F67C2F /* Deque.swift */,
+				5977EA772426AD5900152D33 /* Deque */,
+				5977EA762426AD5000152D33 /* Queue */,
 			);
 			path = Elementary;
 			sourceTree = "<group>";
@@ -1079,8 +1121,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5977EA7B2426AD9000152D33 /* StackQueue.swift in Sources */,
 				59D1E99B23F6208100647E4B /* InsertionSort.swift in Sources */,
 				59B3CA15241868A20042A8E6 /* IOSetup.swift in Sources */,
+				5977EA7D2426ADA700152D33 /* FixedSizeArrayQueue.swift in Sources */,
 				5941032E241C079000941AC7 /* Trie.swift in Sources */,
 				590C8B1B2415752600B10C2B /* DFS.swift in Sources */,
 				59F238EA23FB76F700D8B467 /* Graph.swift in Sources */,
@@ -1128,6 +1172,8 @@
 				5954A320241AB824007F5FAC /* MedianOfAStream.swift in Sources */,
 				5973C05523F63A8C0008C0C7 /* PriorityQueue.swift in Sources */,
 				5926183F242676E2000A0DC5 /* 3Sum.swift in Sources */,
+				5977EA792426AD7E00152D33 /* ArrayQueue.swift in Sources */,
+				5977EA822426AE1400152D33 /* SinglyLinkedListQueue.swift in Sources */,
 				59E6845A241E7A33005C677D /* nTree.swift in Sources */,
 				5917D8D6241426A100A39C19 /* MergeIntervals.swift in Sources */,
 				59F7C0EF2425A3C100C2FEAA /* IteratedLogFunction.swift in Sources */,
@@ -1179,6 +1225,7 @@
 				59F238F123FB7ABF00D8B467 /* AdjacencyListTests.swift in Sources */,
 				59F0CFBF241EF4B100594616 /* ConnectedComponentsTests.swift in Sources */,
 				59AF98572415493C00F718A1 /* KWayMergeTests.swift in Sources */,
+				5977EA842426AEDF00152D33 /* SinglyLinkedListQueueTests.swift in Sources */,
 				596828CF2412F23E002AEF7E /* PairWithTargetSumTests.swift in Sources */,
 				5973C05C23F63C530008C0C7 /* PriorityQueueTests.swift in Sources */,
 				596828D32412F7C0002AEF7E /* RemoveDuplicatesTests.swift in Sources */,
@@ -1188,6 +1235,7 @@
 				5977EA7524269AC300152D33 /* FixedSizeArrayStackTests.swift in Sources */,
 				59013D9523F841D800725562 /* HeapTests.swift in Sources */,
 				593002CC24219F41003CE21E /* RedBlackTreeTests.swift in Sources */,
+				5977EA802426ADE100152D33 /* FixedSizeArrayQueueTests.swift in Sources */,
 				590EA4F723F87DD900E71EAF /* SearchAlgorithmPerformance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

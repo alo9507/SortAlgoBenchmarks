@@ -12,6 +12,20 @@ import XCTest
 @testable import SortAlgoBenchmarks
 
 class LinkedListTests: XCTestCase {
+    func test_append() {
+        let linkedList: LinkedList<Int> = {
+            let ll = LinkedList<Int>()
+            ll.append(5)
+            ll.append(10)
+            ll.append(15)
+            return ll
+        }()
+        
+        XCTAssertEqual(5, linkedList.head?.value)
+        XCTAssertEqual(15, linkedList.tail?.value)
+    }
+    
+    
     func test_print() {
         let linkedList: LinkedList<Int> = {
             let ll = LinkedList<Int>()

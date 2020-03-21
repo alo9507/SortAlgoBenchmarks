@@ -42,6 +42,7 @@ struct FixedSizeArrayStack<Element>: Stack, Sequence, IteratorProtocol {
         
         // Resize when storage is only a quarter full.
         // This has better worst case (thrashing scenario) compared to repeated halving plus repeated doubling
+        // Array is ALWAYS between 25% full and 100% full
         if (size == storage.count / 4) { resize(size/2) }
         
         size -= 1

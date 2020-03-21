@@ -10,7 +10,7 @@ import XCTest
 @testable import SortAlgoBenchmarks
 
 final class ArrayStackTests: XCTestCase {
-    func test_singlyLinkedListStack() {
+    func test_arrayStack() {
         var stack = ArrayStack<Int>()
         
         XCTAssertEqual(nil, stack.pop())

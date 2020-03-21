@@ -8,8 +8,8 @@
 
 import Foundation
 
-// Push: O(1)
-// Pop: O(1)
+// Push: Omega(1) / O(1)
+// Pop: Omega(1) / O(1)
 // Count: O(N)
 // Space: O(N)
 struct SinglyLinkedListStack<Element>: Stack {
