@@ -12,6 +12,12 @@ import Foundation
 // WORST CASE TIME COMPLEXITY:      O(log n)
 // AVERAGE CASE TIME COMPLEXITY:    O(log n)
 
+/*
+     key      0   1   2   3   4   5
+ lo hi m    | A | B | C | D | E | F |
+ 0  9  4                      x
+ */
+
 /// Two requirements for binary search to work:
 /// 1) RandomAccessCollection: index manipulation can happen in constant time O(1)
 /// 2) Sorted

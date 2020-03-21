@@ -87,6 +87,9 @@ class BinarySearchTree<T: Comparable> {
     
     // depth of a node, i.e. distance from root
     
+    public func rangeSearch(_ lowerBound: T, upperBound: T) -> Void {
+        
+    }
 }
 
 

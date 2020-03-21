@@ -8,38 +8,38 @@
 
 import Foundation
 
-class Node<T>: Equatable {
+class LinkedListNode<T>: Equatable {
     var value: T
-    var next: Node?
-    weak var previous: Node?
+    var next: LinkedListNode?
+    weak var previous: LinkedListNode?
     
     init(_ value: T) {
         self.value = value
     }
     
-    static func == (lhs: Node<T>, rhs: Node<T>) -> Bool {
+    static func == (lhs: LinkedListNode<T>, rhs: LinkedListNode<T>) -> Bool {
         return lhs === rhs
     }
 }
 
 class LinkedList<T> {
-    fileprivate var head: Node<T>?
-    private var tail: Node<T>?
+    public var head: LinkedListNode<T>?
+    public var tail: LinkedListNode<T>?
     
     public var isEmpty: Bool {
         return head == nil
     }
     
-    public var first: Node<T>? {
+    public var first: LinkedListNode<T>? {
         return head
     }
     
-    public var last: Node<T>? {
+    public var last: LinkedListNode<T>? {
         return tail
     }
     
     func append(_ value: T) {
-        let node = Node(value)
+        let node = LinkedListNode(value)
         
         if tail != nil {
             tail?.next = node
@@ -53,9 +53,9 @@ class LinkedList<T> {
     
     func reverse_singly() {
         print(self.description)
-        var current: Node<T>? = head
-        var previous: Node<T>?
-        var next: Node<T>?
+        var current: LinkedListNode<T>? = head
+        var previous: LinkedListNode<T>?
+        var next: LinkedListNode<T>?
         
         while current != nil {
             next = current?.next

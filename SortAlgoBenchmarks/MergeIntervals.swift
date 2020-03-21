@@ -14,6 +14,13 @@ import Foundation
  To produce a list that has only mutually exlclusive intervals
  */
 
+/*
+ Three possibilities of interval interaction:
+ 1. Nested
+ 2. Disjoint
+ 3. Interleaved
+ */
+
 func mergeOverlappingIntervals(_ intervals: [CountableClosedRange<Int>]) -> [CountableClosedRange<Int>] {
     var mergedIntervals:[CountableClosedRange<Int>] = []
     

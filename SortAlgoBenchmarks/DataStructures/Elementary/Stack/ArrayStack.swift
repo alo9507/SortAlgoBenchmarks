@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Stack<Element>: Sequence, IteratorProtocol {
+struct ArrayStack<Element>: Sequence, IteratorProtocol {
     private var storage: [Element] = []
     
     var isEmpty: Bool {
@@ -33,13 +33,13 @@ struct Stack<Element>: Sequence, IteratorProtocol {
     }
 }
 
-extension Stack {
+extension ArrayStack {
     mutating func next() -> Element? {
         return pop()
     }
 }
 
-extension Stack: CustomStringConvertible {
+extension ArrayStack: CustomStringConvertible {
     var description: String {
         return storage
             .map { "\($0)" }

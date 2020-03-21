@@ -13,19 +13,19 @@ import XCTest
 
 class KWayMergeTests: XCTestCase {
     func test_kwayMerge() {
-        let l1 = Node(2);
-        l1.next = Node(6);
-        l1.next?.next = Node(8);
+        let l1 = LinkedListNode(2);
+        l1.next = LinkedListNode(6);
+        l1.next?.next = LinkedListNode(8);
         
-        let l2 = Node(3);
-        l2.next = Node(6);
-        l2.next?.next = Node(7);
+        let l2 = LinkedListNode(3);
+        l2.next = LinkedListNode(6);
+        l2.next?.next = LinkedListNode(7);
 
-        let l3 = Node(1);
-        l3.next = Node(3);
-        l3.next?.next = Node(4);
+        let l3 = LinkedListNode(1);
+        l3.next = LinkedListNode(3);
+        l3.next?.next = LinkedListNode(4);
         
-        var result: Node? = kwayMerge(l1,l2,l3)
+        var result: LinkedListNode? = kwayMerge(l1,l2,l3)
         var actualOrder: [Int] = []
         while result != nil {
             actualOrder.append(result!.value)

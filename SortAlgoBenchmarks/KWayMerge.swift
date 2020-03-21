@@ -8,8 +8,8 @@
 
 import Foundation
 
-func kwayMerge(_ lists: Node<Int>?...) -> Node<Int>? {
-    var minHeap: Heap<Node<Int>> = Heap([]) { (node1, node2) -> Bool in
+func kwayMerge(_ lists: LinkedListNode<Int>?...) -> LinkedListNode<Int>? {
+    var minHeap: Heap<LinkedListNode<Int>> = Heap([]) { (node1, node2) -> Bool in
         return node1.value < node2.value
     }
     
@@ -19,8 +19,8 @@ func kwayMerge(_ lists: Node<Int>?...) -> Node<Int>? {
         }
     }
     
-    var resultHead: Node<Int>? = nil
-    var resultTail: Node<Int>? = nil
+    var resultHead: LinkedListNode<Int>? = nil
+    var resultTail: LinkedListNode<Int>? = nil
     
     while !minHeap.isEmpty {
         let node = minHeap.pop()

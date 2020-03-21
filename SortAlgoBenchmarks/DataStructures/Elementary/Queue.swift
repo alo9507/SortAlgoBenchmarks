@@ -40,6 +40,7 @@ struct ArrayQueue<Element>: Queue {
         storage.append(element)
     }
     
+    // O(n) to dequeue
     @discardableResult
     mutating func dequeue() -> Element? {
         return isEmpty ? nil : storage.removeFirst()
@@ -53,6 +54,11 @@ extension ArrayQueue: CustomStringConvertible {
             .joined(separator: " ")
     }
 }
+
+// Enqueue: O(N)
+// Dequeue: O(1)
+
+// Useful when there will be many enqueue operations in a row, and then many dequeue operations in a row
 
 struct StackQueue<Element>: Queue {
     private var enqueueStack: [Element] = []

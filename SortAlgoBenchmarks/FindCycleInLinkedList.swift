@@ -12,9 +12,9 @@ import Foundation
  Given the head of a singly LinkedList, write a function to determine if the LL has a cycle or not
  */
 
-func hasCycle(_ head: Node<Int>) -> Bool {
-    var slowPointer: Node<Int>? = head
-    var fastPointer: Node<Int>? = head
+func hasCycle(_ head: LinkedListNode<Int>) -> Bool {
+    var slowPointer: LinkedListNode<Int>? = head
+    var fastPointer: LinkedListNode<Int>? = head
     
     while (fastPointer != nil && fastPointer?.next != nil) {
         slowPointer = slowPointer?.next
@@ -31,8 +31,8 @@ func hasCycle(_ head: Node<Int>) -> Bool {
  Given the head of a LinkedList with a cycle, find the length of the cycle
  */
 
-func cycleLength(_ slow: Node<Int>?) -> Int {
-    var current: Node<Int>? = slow
+func cycleLength(_ slow: LinkedListNode<Int>?) -> Int {
+    var current: LinkedListNode<Int>? = slow
     var cycleLength = 0
     
     while true {
@@ -51,9 +51,9 @@ func cycleLength(_ slow: Node<Int>?) -> Int {
  Reverse the linked list
  */
 
-func inplaceReversalOfLinkedList(_ head: Node<Int>) -> Node<Int> {
-    var current: Node<Int>? = head
-    var previous: Node<Int>? = nil
+func inplaceReversalOfLinkedList(_ head: LinkedListNode<Int>) -> LinkedListNode<Int> {
+    var current: LinkedListNode<Int>? = head
+    var previous: LinkedListNode<Int>? = nil
     
     while current != nil {
         // temporarily store the next node
