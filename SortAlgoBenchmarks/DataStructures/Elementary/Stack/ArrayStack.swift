@@ -13,7 +13,7 @@ import Foundation
 // Count: O(N)
 // Space: O(N)
 
-struct ArrayStack<Element>: Sequence, IteratorProtocol {
+struct ArrayStack<Element> {
     private var storage: [Element] = []
     
     var isEmpty: Bool {
@@ -35,12 +35,6 @@ struct ArrayStack<Element>: Sequence, IteratorProtocol {
     
     var count: Int {
         return storage.count
-    }
-}
-
-extension ArrayStack {
-    mutating func next() -> Element? {
-        return pop()
     }
 }
 

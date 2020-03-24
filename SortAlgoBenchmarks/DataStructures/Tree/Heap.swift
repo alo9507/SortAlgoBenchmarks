@@ -147,6 +147,7 @@ struct Heap<Element: Equatable> {
                 optionalParentSwapIndex = leftIndex
             }
             
+            // the optionalParentSwapIndex ?? parentIndex ensures that optionalParentSwapIndex is the index of the LARGEST child
             if hasRightChild(parentIndex, upTo: count) && areSorted(elements[rightIndex], elements[optionalParentSwapIndex ?? parentIndex]) {
                 optionalParentSwapIndex = rightIndex
             }
@@ -168,6 +169,7 @@ struct Heap<Element: Equatable> {
     
     // For insertion, you can't siftDown because you inserted to the end of the array
     // Continously comparing new node with parent and swapping if necessary
+    // Since it goes up the height of the tree, it only takes 1 + log N comparisons
     mutating func siftUp(from index: Int) {
         var childIndex = index
         var parentIndex = getParentIndex(ofChildAt: childIndex)
@@ -187,6 +189,8 @@ struct Heap<Element: Equatable> {
 extension Array where Element: Equatable {
     init(_ heap: Heap<Element>) {
         var heap = heap
+        
+        // go backwards over the heap and sink starting at index
         
         // iteratively shrinks the unsorted region by extracting larges/smallest element and inserting it into the sorted region
         for index in heap.elements.indices.reversed() {

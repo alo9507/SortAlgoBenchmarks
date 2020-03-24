@@ -34,19 +34,19 @@ struct SinglyLinkedListQueue<Element>: Queue {
     mutating func enqueue(_ element: Element) {
         let node = LinkedListNode(element)
         
-        if tail != nil {
-            tail?.next = node
-        } else {
+        if isEmpty {
             head = node
+            tail = head
+        } else {
+            tail?.next = node
         }
-        
-        tail = node
     }
     
     
     mutating func dequeue() -> Element? {
         let oldHead = head
         head = head?.next
+        if isEmpty { tail = head }
         return oldHead?.value
     }
     

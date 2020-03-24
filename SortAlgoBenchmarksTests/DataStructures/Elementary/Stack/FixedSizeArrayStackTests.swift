@@ -66,6 +66,3 @@ final class FixedSizeArrayStackTests: XCTestCase {
         XCTAssertEqual(100, many.pop())
     }
 }
-
-
-

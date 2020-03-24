@@ -13,8 +13,8 @@ import XCTest
 
 class LinkedListTests: XCTestCase {
     func test_append() {
-        let linkedList: LinkedList<Int> = {
-            let ll = LinkedList<Int>()
+        let linkedList: SinglyLinkedList<Int> = {
+            let ll = SinglyLinkedList<Int>()
             ll.append(5)
             ll.append(10)
             ll.append(15)
@@ -27,8 +27,8 @@ class LinkedListTests: XCTestCase {
     
     
     func test_print() {
-        let linkedList: LinkedList<Int> = {
-            let ll = LinkedList<Int>()
+        let linkedList: SinglyLinkedList<Int> = {
+            let ll = SinglyLinkedList<Int>()
             ll.append(5)
             ll.append(10)
             return ll
@@ -38,8 +38,8 @@ class LinkedListTests: XCTestCase {
     }
     
     func test_count() {
-        let linkedList: LinkedList<Int> = {
-            let ll = LinkedList<Int>()
+        let linkedList: SinglyLinkedList<Int> = {
+            let ll = SinglyLinkedList<Int>()
             ll.append(5)
             ll.append(10)
             return ll
@@ -49,8 +49,8 @@ class LinkedListTests: XCTestCase {
     }
     
     func test_reverse() {
-        let linkedList: LinkedList<Int> = {
-            let ll = LinkedList<Int>()
+        let linkedList: SinglyLinkedList<Int> = {
+            let ll = SinglyLinkedList<Int>()
             ll.append(5)
             ll.append(10)
             ll.append(15)

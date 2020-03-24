@@ -30,12 +30,10 @@ public struct Deque<T> {
         return array.count
     }
     
-    public mutating func enqueue(_ element: T) {
-        array.append(element)
-    }
-    
     // if you enqueue a lot of elements, you'll run out of space at the front
     // the array automatically resizes the back of the array
+    
+    // HEAD OPERATIONS
     public mutating func enqueueFront(_ element: T) {
         if head == 0 {
             capacity *= 2
@@ -46,6 +44,14 @@ public struct Deque<T> {
         
         head -= 1
         array[head] = element
+    }
+    
+    public func peekFront() -> T? {
+        if isEmpty {
+            return nil
+        } else {
+            return array[head]
+        }
     }
     
     public mutating func dequeue() -> T? {
@@ -63,19 +69,16 @@ public struct Deque<T> {
       return element
     }
     
+    // TAIL OPERATIONS
+    public mutating func enqueue(_ element: T) {
+        array.append(element)
+    }
+    
     public mutating func dequeueBack() -> T? {
         if isEmpty {
             return nil
         } else {
             return array.removeLast()
-        }
-    }
-    
-    public func peekFront() -> T? {
-        if isEmpty {
-            return nil
-        } else {
-            return array[head]
         }
     }
     

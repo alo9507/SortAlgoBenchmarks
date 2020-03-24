@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andrew O'Brien. All rights reserved.
 //
 
-protocol Stack {
+protocol Stack: Sequence, IteratorProtocol {
     associatedtype Element
     var isEmpty: Bool { get }
     var count: Int { get }
@@ -14,4 +14,10 @@ protocol Stack {
     
     mutating func pop() -> Element?
     mutating func push(_ element: Element)
+}
+
+extension Stack {
+    mutating func next() -> Element? {
+        return pop()
+    }
 }

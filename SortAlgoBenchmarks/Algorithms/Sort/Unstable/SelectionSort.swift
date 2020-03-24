@@ -8,23 +8,23 @@
 
 import Foundation
 
+// N^2 / 2
+// Invariant: all items to the left of the i pointer are in ascending order
 class SelectionSort {
     static func sort<Element: Comparable>(_ array: inout [Element]) {
         guard array.count > 1 else { return }
         
-        for x in 0 ..< array.count - 1 {
-            
-            var lowest = x
-            for y in x + 1 ..< array.count {
-                if array[y] < array[lowest] {
-                    lowest = y
+        for i in stride(from: 0, to: array.count, by: 1) {
+            var lowest = i
+            for j in stride(from: i+1, to: array.count, by: 1) {
+                if array[j] < array[lowest] {
+                    lowest = j
                 }
             }
             
-            if x != lowest {
-                array.swapAt(x, lowest)
+            if lowest != i {
+                array.swapAt(i, lowest)
             }
         }
     }
 }
-

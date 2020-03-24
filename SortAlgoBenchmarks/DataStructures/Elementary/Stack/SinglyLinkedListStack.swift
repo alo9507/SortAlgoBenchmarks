@@ -13,7 +13,7 @@ import Foundation
 // Count: O(N)
 // Space: O(N)
 struct SinglyLinkedListStack<Element>: Stack {
-    private var storage: LinkedList<Element> = LinkedList<Element>()
+    private var storage: SinglyLinkedList<Element> = SinglyLinkedList<Element>()
     
     var isEmpty: Bool {
         return storage.isEmpty

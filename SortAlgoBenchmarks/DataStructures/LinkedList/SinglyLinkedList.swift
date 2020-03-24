@@ -1,5 +1,5 @@
 //
-//  LinkedList.swift
+//  SinglyLinkedList.swift
 //  SortAlgoBenchmarks
 //
 //  Created by Andrew O'Brien on 2/26/20.
@@ -22,7 +22,23 @@ class LinkedListNode<T>: Equatable {
     }
 }
 
-class LinkedList<T> {
+protocol LinkedList {
+    associatedtype T
+    var head: LinkedListNode<T>? { get }
+    var tail: LinkedListNode<T>? { get }
+
+    var isEmpty: Bool { get }
+
+    var count: Int { get }
+
+    var first: LinkedListNode<T>? { get }
+
+    var last: LinkedListNode<T>? { get }
+
+    func append(_ value: T)
+}
+
+class SinglyLinkedList<T>: LinkedList {
     public var head: LinkedListNode<T>?
     public var tail: LinkedListNode<T>?
     
@@ -83,7 +99,7 @@ class LinkedList<T> {
     
 }
 
-extension LinkedList: CustomStringConvertible {
+extension SinglyLinkedList: CustomStringConvertible {
     public var description: String {
         var text = "["
         var node = head

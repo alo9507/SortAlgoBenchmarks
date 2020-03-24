@@ -18,7 +18,7 @@
 // Instead of sum of integers from one to N, we have the sum of powers of 2 from one to N
 // N + (2 + 4 + 8 + 16... + N) ~ 3N
 // Amortized Analysis considers total cost averaged over all operations
-struct FixedSizeArrayStack<Element>: Stack, Sequence, IteratorProtocol {
+struct FixedSizeArrayStack<Element>: Stack {
     var size: Int = 0
     private var storage = [Element?](repeating: nil, count: 1)
     
@@ -45,8 +45,11 @@ struct FixedSizeArrayStack<Element>: Stack, Sequence, IteratorProtocol {
         // Array is ALWAYS between 25% full and 100% full
         if (size == storage.count / 4) { resize(size/2) }
         
-        size -= 1
-        return storage[size]
+        defer {
+            size -= 1
+        }
+        
+        return storage[size - 1]
     }
     
     mutating func push(_ element: Element) {

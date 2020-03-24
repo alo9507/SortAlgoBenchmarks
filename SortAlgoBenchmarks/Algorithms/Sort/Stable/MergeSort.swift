@@ -13,6 +13,9 @@ import Foundation
 // AVERAGE CASE:    O(n log n)
 
 // SPACE COMPLEXITY:    O(n log n) (allocates new memory in `sort` to split data and again in `merge` to combine in result array)
+
+// Pracitcal improvements:
+// Use insertion sort for smaller subarrays
 class Merge<Element: Comparable> {
     /// Recursive function to sort
     /// - Parameter elements: an array of Comparable elements
@@ -41,9 +44,12 @@ class Merge<Element: Comparable> {
     /// - Parameters:
     ///   - left: a SORTED array
     ///   - right: a SORTED array
+    // Goal: Given two sorted subarrays a[lo] to a[mid] and a[mid+1] to a[hi], replace wit ha sorted subarray a[lo] to a[hi]
     static func merge<Element: Comparable>(_ left: [Element], _ right: [Element]) -> [Element] {
         var leftIndex: Int = 0
         var rightIndex: Int = 0
+        
+        // an auxiliary array
         var result: [Element] = []
         
         // Only loop while the left and right array both have elements
