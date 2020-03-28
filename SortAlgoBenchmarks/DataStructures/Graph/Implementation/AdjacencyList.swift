@@ -25,6 +25,7 @@ struct AdjacencyList<Element: Hashable>: Graph {
                 let element = grid[row][col]
                 let source = addVertex(element: element)
                 adjacencies[source] = []
+//                addNeighborsAsEdges()
             }
         }
         

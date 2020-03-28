@@ -13,7 +13,7 @@ import XCTest
 
 final class KruskalTestCase: XCTestCase {
     func test() {
-        var graph = AdjacencyList<Int>()
+        var graph: AdjacencyList<Int> = AdjacencyList<Int>()
         
         let one = graph.addVertex(element: 1)
         let two = graph.addVertex(element: 2)
@@ -40,7 +40,7 @@ final class KruskalTestCase: XCTestCase {
                 graph.addEdge(edge)
         }
         
-        let (cost, minimumSpanningTree) = minimumSpanningTreeKruskal(for: graph)
+        let (cost, minimumSpanningTree) = Kruskal.minimumSpanningTree(for: graph)
         XCTAssertEqual(cost, 15)
         
         XCTAssertEqual(
