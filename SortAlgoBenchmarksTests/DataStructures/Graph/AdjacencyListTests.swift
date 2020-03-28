@@ -49,15 +49,18 @@ final class AdjacencyListTestCase: XCTestCase {
     
     func test_graphInit() {
         let grid: [[Int]] = [
-            [0,0,0,0,0],
-            [0,0,0,0,0],
-            [0,0,0,0,0],
-            [0,0,0,0,0]
+            [0,1,2,3,4],
+            [5,6,7,8,9]
         ]
         
         var graph = AdjacencyList(grid: grid)
-        XCTAssertEqual(20, graph.vertices.count)
-        print(graph)
+        
+        // Once you can add edges without adding new vertices for non-unique vertices these will pass
+        XCTAssertEqual(10, graph.vertices.count)
+        print(graph.vertices)
+        XCTAssertEqual(26, graph.sortedEdges.count)
+        
+        print(graph.description)
     }
     
     func test_description() {

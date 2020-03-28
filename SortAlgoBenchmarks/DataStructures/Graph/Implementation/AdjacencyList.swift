@@ -17,36 +17,42 @@ struct AdjacencyList<Element: Hashable>: Graph {
     typealias Edge = GraphEdge<Element>
     typealias Vertex = Edge.Vertex
     
+    /// Vertex-keyed dictionary of edge-lists representing a vertex's neighbors
     public var adjacencies: [Vertex: [Edge]] = [:]
     
     init(grid: [[Element]]) {
         for row in stride(from: 0, to: grid.count, by: 1) {
             for col in stride(from: 0, to: grid[row].count, by: 1) {
-                let element = grid[row][col]
-                let source = addVertex(element: element)
-                adjacencies[source] = []
-//                addNeighborsAsEdges()
+                addNeighborsAsEdges(position: (row: row, col: col), grid)
             }
         }
+    }
+    
+    mutating func addNeighborsAsEdges(position: (row: Int, col: Int), _ grid: [[Element]]) {
+        let dr = [-1,1,0,0]
+        let dc = [0,0,1,-1]
         
-        for row in stride(from: 0, to: grid.count, by: 1) {
-            for col in stride(from: 0, to: grid[row].count, by: 1) {
-                // need the index and the element...
-                
-                // add top neighbor
-                if row - 1 > 0 {
-                    let sourceIndex = getIndexForPosition((row, col), in: grid)
-                    let topNeighborIndex = getIndexForPosition((row - 1, col), in: grid)
-                    guard let source = getVertexWithIndex(sourceIndex) else {
-                        fatalError("No source")
-                    }
-                    guard let destination = getVertexWithIndex(topNeighborIndex) else {
-                        fatalError("No dest")
-                    }
-                    let edge = Edge(source: source, destination: destination)
-                    addEdge(edge)
-                }
+        let element = grid[position.row][position.col]
+        let source = addVertex(element: element)
+        
+        for i in stride(from: 0, to: 4, by: 1) {
+            let rr = position.row + dr[i]
+            let cc = position.col + dc[i]
+            
+            if rr < 0 || cc < 0 { continue }
+            if rr >= grid.count || cc >= grid[0].count { continue }
+            
+            let index = getIndexForPosition((row: rr, col: cc), in: grid)
+            
+            var destination: Vertex
+            if !containsVertexWithIndex(index) {
+                destination = addVertex(element: grid[rr][cc])
+            } else {
+                destination = getVertexWithIndex(index)!
             }
+            
+            let edge = Edge(source: source, destination: destination)
+            addEdge(edge)
         }
     }
     
@@ -61,6 +67,12 @@ struct AdjacencyList<Element: Hashable>: Graph {
     func getIndexForPosition(_ position: (row: Int, col: Int), in grid: [[Element]]) -> Int {
         let width = grid.count
         return width * position.col + position.row
+    }
+    
+    func containsVertexWithIndex(_ index: Int) -> Bool {
+        return vertices.filter { (vertex) in
+            return vertex.index == index
+        }.first != nil
     }
     
     func getVertexWithIndex(_ index: Int) -> Vertex? {
@@ -92,6 +104,7 @@ struct AdjacencyList<Element: Hashable>: Graph {
     }
     
     // An undirected graph could be seen as a bidirectional graph, where every edge could be traversed in both directions
+    // Should allow parallel edges? Or should there be a check for that?
     mutating func addEdge(_ edge: Edge, _ directed: Bool = false) {
         if !adjacencies.keys.contains(edge.source) {
             addVertex(vertex: edge.source)
@@ -104,7 +117,22 @@ struct AdjacencyList<Element: Hashable>: Graph {
         adjacencies[edge.source]!.append(edge)
         if !directed {
             let reversedEdge = Edge(source: edge.destination, destination: edge.source, weight: edge.weight)
-            adjacencies[edge.destination]!.append(reversedEdge)
+            
+            // only add this exact undirected edge if its not already present
+            if !adjacencies[edge.destination]!.contains(reversedEdge) {
+                adjacencies[edge.destination]!.append(reversedEdge)
+            }
+            
+        }
+    }
+    
+    mutating func addEdge(source: Vertex, destination: Vertex, _ directed: Bool = false, weight: Double = 0.0) {
+        let edge = Edge(source: source, destination: destination)
+        
+        adjacencies[source]!.append(edge)
+        if !directed {
+            let reversedEdge = Edge(source: destination, destination: source, weight: edge.weight)
+            adjacencies[destination]!.append(reversedEdge)
         }
     }
     
@@ -139,4 +167,3 @@ extension AdjacencyList: CustomStringConvertible {
       .joined(separator: "\n\n")
   }
 }
-

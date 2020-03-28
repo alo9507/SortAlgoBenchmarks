@@ -36,7 +36,6 @@ enum Prim<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
         visited.insert(start)
         enqueueUntraversedEdges(for: start)
         
-        // Prim's will greedily search for edges until the PQ is empty
         while let lightestEdge = priorityQueue.dequeue() {
             let destination = lightestEdge.destination
             
