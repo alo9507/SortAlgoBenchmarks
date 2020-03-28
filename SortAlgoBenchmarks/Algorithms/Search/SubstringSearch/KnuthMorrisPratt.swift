@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+// introducing state to a brute force algorithm is often a good method for reducing its worst case complexity
+
+// transition table for the DFA is just a 2d array indexed by the pattern character
+
+// Text pointer i never has to decrement (backup)
+
+// Match transitions and mismatch transitions

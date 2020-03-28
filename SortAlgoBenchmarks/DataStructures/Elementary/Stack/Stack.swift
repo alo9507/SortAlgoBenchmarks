@@ -8,6 +8,7 @@
 
 protocol Stack: Sequence, IteratorProtocol {
     associatedtype Element
+    
     var isEmpty: Bool { get }
     var count: Int { get }
     var peek: Element? { get }

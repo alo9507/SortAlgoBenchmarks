@@ -8,20 +8,6 @@
 
 import Foundation
 
-protocol Graph2 {
-    associatedtype Element
-    
-    typealias Edge = GraphEdge<Element>
-    typealias Vertex = Edge.Vertex
-    
-    var vertices: [Vertex] { get }
-    
-    @discardableResult
-    mutating func addVertex(_ element: Element) -> Vertex
-    
-    func getEdges(from: Vertex) -> [Edge]
-}
-
 protocol Graph {
     associatedtype Element
     
@@ -39,6 +25,16 @@ protocol Graph {
     // returns all edges with a given vertex as their source
     func getEdges(from: Vertex) -> [Edge]
 }
+
+// EdgeList (inefficient impls)
+// AdjacencyList
+// AdjacencyMatrix
+
+//extension Graph {
+//    func degree(vertex)
+//    func maxDegree(vertex)
+//    func numberOfSelfLoops()
+//}
 
 extension Graph where Element: Hashable {
     func getPaths(from source: Vertex, to destination: Vertex) -> Set<[Edge]> {

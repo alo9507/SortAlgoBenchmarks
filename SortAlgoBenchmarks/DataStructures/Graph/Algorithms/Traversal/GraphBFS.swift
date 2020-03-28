@@ -25,3 +25,6 @@ func graphBfs<T>(_ graph: AdjacencyList<T>, _ source: GraphVertex<T>, _ augmenta
         }
     }
 }
+
+// Coorectness proof
+// Performance proof

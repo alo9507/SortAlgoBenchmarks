@@ -12,6 +12,7 @@
 // AddEdge: O(1)
 // Finding Edges and Weights: O(V)
 
+/// Vertex-indexed array of edges
 struct AdjacencyList<Element: Hashable>: Graph {
     typealias Edge = GraphEdge<Element>
     typealias Vertex = Edge.Vertex

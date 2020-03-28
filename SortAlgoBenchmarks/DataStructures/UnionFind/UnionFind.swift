@@ -26,6 +26,7 @@ public struct UnionFind<T: Hashable> {
     private var index = [T: Int]()
     
     // parent[i] returns the index of node i's parent
+    // This is an "up-tree" where children point at parent
     private var parent = [Int]()
     
     private var size = [Int]()

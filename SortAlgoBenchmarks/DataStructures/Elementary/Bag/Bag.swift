@@ -12,4 +12,12 @@ import Foundation
 class Bag<Element: Hashable> {
     private var storage = Dictionary<Element, Int>()
     
+    var toArray: [Element] {
+        var array: [Element] = []
+        for (key, value) in storage {
+            let subarray = Array(repeating: key, count: value)
+            array.append(contentsOf: subarray)
+        }
+        return array
+    }
 }

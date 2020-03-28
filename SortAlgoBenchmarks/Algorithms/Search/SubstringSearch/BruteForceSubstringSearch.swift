@@ -8,7 +8,10 @@
 
 import Foundation
 
-// GOAL: A linear time guarantee for substring search without backup (space complexity of 0)
+// The Pattern: What you're searching
+// The Text: the search range
+
+// GOAL: A linear time guarantee for substring search without backup
 
 // requires backing up to the left through the input when a subsequence does not match
 // we don't have the luxury of backup in the case of a data stream
