@@ -15,12 +15,12 @@ final class PrimTestCase: XCTestCase {
     func test() {
         var graph = AdjacencyList<Int>()
         
-        let one = graph.addVertex(1)
-        let two = graph.addVertex(2)
-        let three = graph.addVertex(3)
-        let four = graph.addVertex(4)
-        let five = graph.addVertex(5)
-        let six = graph.addVertex(6)
+        let one = graph.addVertex(element: 1)
+        let two = graph.addVertex(element: 2)
+        let three = graph.addVertex(element: 3)
+        let four = graph.addVertex(element: 4)
+        let five = graph.addVertex(element: 5)
+        let six = graph.addVertex(element: 6)
         
         for edge in [
             // minimum spanning tree edges:

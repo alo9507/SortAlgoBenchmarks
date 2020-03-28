@@ -18,14 +18,14 @@ final class DijkstraTestCase: XCTestCase {
     private let (graph, a, b, c, d, e, f, g, h): (Graph, Vertex, Vertex, Vertex, Vertex, Vertex, Vertex, Vertex, Vertex) = {
         var graph = AdjacencyList<String>()
         
-        let a = graph.addVertex("A")
-        let b = graph.addVertex("B")
-        let c = graph.addVertex("C")
-        let d = graph.addVertex("D")
-        let e = graph.addVertex("E")
-        let f = graph.addVertex("F")
-        let g = graph.addVertex("G")
-        let h = graph.addVertex("H")
+        let a = graph.addVertex(element: "A")
+        let b = graph.addVertex(element: "B")
+        let c = graph.addVertex(element: "C")
+        let d = graph.addVertex(element: "D")
+        let e = graph.addVertex(element: "E")
+        let f = graph.addVertex(element: "F")
+        let g = graph.addVertex(element: "G")
+        let h = graph.addVertex(element: "H")
         
         for edge in [
             GraphEdge(source: a, destination: b, weight: 8),

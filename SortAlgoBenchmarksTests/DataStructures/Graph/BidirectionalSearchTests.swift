@@ -13,11 +13,11 @@ final class BidirectionalSearchTest: XCTestCase {
     func test_bidirectionalSearch() {
         var graph = AdjacencyList<String>()
 
-        let a = graph.addVertex("A")
-        let b = graph.addVertex("B")
-        let c = graph.addVertex("C")
-        let d = graph.addVertex("D")
-        let e = graph.addVertex("E")
+        let a = graph.addVertex(element: "A")
+        let b = graph.addVertex(element: "B")
+        let c = graph.addVertex(element: "C")
+        let d = graph.addVertex(element: "D")
+        let e = graph.addVertex(element: "E")
 
         let ab = GraphEdge(source: a, destination: b, weight: 0)
         let ac = GraphEdge(source: a, destination: c, weight: 0)

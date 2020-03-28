@@ -16,16 +16,16 @@ final class ConnectedComponentsTest: XCTestCase {
         let graph: AdjacencyList<String> = {
             var graph = AdjacencyList<String>()
             
-            let a1 = graph.addVertex("A")
-            let a2 = graph.addVertex("AA")
-            let a3 = graph.addVertex("AAA")
-            let a4 = graph.addVertex("AAAA")
+            let a1 = graph.addVertex(element: "A")
+            let a2 = graph.addVertex(element: "AA")
+            let a3 = graph.addVertex(element: "AAA")
+            let a4 = graph.addVertex(element: "AAAA")
             
-            let b1 = graph.addVertex("B")
-            let b2 = graph.addVertex("BB")
+            let b1 = graph.addVertex(element: "B")
+            let b2 = graph.addVertex(element: "BB")
             
-            let c1 = graph.addVertex("C")
-            let c2 = graph.addVertex("CC")
+            let c1 = graph.addVertex(element: "C")
+            let c2 = graph.addVertex(element: "CC")
             
             let a1a2 = GraphEdge(source: a1, destination: a2)
             let a2a3 = GraphEdge(source: a2, destination: a3)

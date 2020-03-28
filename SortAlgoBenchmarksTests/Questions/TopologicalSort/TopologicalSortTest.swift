@@ -15,13 +15,13 @@ class TopologicalSortTest: XCTestCase {
     let graph: AdjacencyList<String> = {
         var graph = AdjacencyList<String>()
         
-        let linkingObject = graph.addVertex("Linking Objects")
-        let tree = graph.addVertex("Tree")
-        let al = graph.addVertex("Graph")
-        let ll = graph.addVertex("Linked List")
-        let dfs = graph.addVertex("Depth First Search")
-        let stack = graph.addVertex("Stack")
-        let ts = graph.addVertex("Topological Sort")
+        let linkingObject = graph.addVertex(element: "Linking Objects")
+        let tree = graph.addVertex(element: "Tree")
+        let al = graph.addVertex(element: "Graph")
+        let ll = graph.addVertex(element: "Linked List")
+        let dfs = graph.addVertex(element: "Depth First Search")
+        let stack = graph.addVertex(element: "Stack")
+        let ts = graph.addVertex(element: "Topological Sort")
         
         let linkingObject_tree = GraphEdge(source: linkingObject, destination: tree)
         let linkingObject_graph = GraphEdge(source: linkingObject, destination: al)

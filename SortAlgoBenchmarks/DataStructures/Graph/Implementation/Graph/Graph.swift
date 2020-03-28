@@ -17,7 +17,10 @@ protocol Graph {
     var vertices: [Vertex] { get }
     
     @discardableResult
-    mutating func addVertex(_ : Element) -> Vertex
+    mutating func addVertex(element: Element) -> Vertex
+    
+    @discardableResult
+    mutating func addVertex(vertex: Vertex) -> Vertex
     
     mutating func addEdge(_ edge: Edge, _ directed: Bool)
     

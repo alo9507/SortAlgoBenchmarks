@@ -13,11 +13,11 @@ final class AdjacencyListTestCase: XCTestCase {
     func test_getPaths() {
         var graph = AdjacencyList<String>()
         
-        let a = graph.addVertex("A")
-        let b = graph.addVertex("B")
-        let c = graph.addVertex("C")
-        let d = graph.addVertex("D")
-        let e = graph.addVertex("E")
+        let a = graph.addVertex(element: "A")
+        let b = graph.addVertex(element: "B")
+        let c = graph.addVertex(element: "C")
+        let d = graph.addVertex(element: "D")
+        let e = graph.addVertex(element: "E")
         
         let ab = GraphEdge(source: a, destination: b, weight: 0)
         let ac = GraphEdge(source: a, destination: c, weight: 0)
@@ -63,14 +63,14 @@ final class AdjacencyListTestCase: XCTestCase {
     func test_description() {
         var graph = AdjacencyList<String>()
         
-        let singapore = graph.addVertex("Singapore")
-        let tokyo = graph.addVertex("Tokyo")
-        let hongKong = graph.addVertex("Hong Kong")
-        let detroit = graph.addVertex("Detroit")
-        let sanFrancisco = graph.addVertex("San Francisco")
-        let washingtonDC = graph.addVertex("Washington, D.C.")
-        let austinTexas = graph.addVertex("Austin")
-        let seattle = graph.addVertex("Seattle")
+        let singapore = graph.addVertex(element: "Singapore")
+        let tokyo = graph.addVertex(element: "Tokyo")
+        let hongKong = graph.addVertex(element: "Hong Kong")
+        let detroit = graph.addVertex(element: "Detroit")
+        let sanFrancisco = graph.addVertex(element: "San Francisco")
+        let washingtonDC = graph.addVertex(element: "Washington, D.C.")
+        let austinTexas = graph.addVertex(element: "Austin")
+        let seattle = graph.addVertex(element: "Seattle")
         
         for edge in [
             GraphEdge(source: singapore, destination: hongKong, weight: 300),

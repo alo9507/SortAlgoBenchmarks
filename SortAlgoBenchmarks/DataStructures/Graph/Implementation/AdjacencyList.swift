@@ -22,8 +22,29 @@ struct AdjacencyList<Element: Hashable>: Graph {
     init(grid: [[Element]]) {
         for row in stride(from: 0, to: grid.count, by: 1) {
             for col in stride(from: 0, to: grid[row].count, by: 1) {
-                let source = grid[row][col]
-                addVertex(source)
+                let element = grid[row][col]
+                let source = addVertex(element: element)
+                adjacencies[source] = []
+            }
+        }
+        
+        for row in stride(from: 0, to: grid.count, by: 1) {
+            for col in stride(from: 0, to: grid[row].count, by: 1) {
+                // need the index and the element...
+                
+                // add top neighbor
+                if row - 1 > 0 {
+                    let sourceIndex = getIndexForPosition((row, col), in: grid)
+                    let topNeighborIndex = getIndexForPosition((row - 1, col), in: grid)
+                    guard let source = getVertexWithIndex(sourceIndex) else {
+                        fatalError("No source")
+                    }
+                    guard let destination = getVertexWithIndex(topNeighborIndex) else {
+                        fatalError("No dest")
+                    }
+                    let edge = Edge(source: source, destination: destination)
+                    addEdge(edge)
+                }
             }
         }
     }
@@ -36,6 +57,17 @@ struct AdjacencyList<Element: Hashable>: Graph {
         }
     }
     
+    func getIndexForPosition(_ position: (row: Int, col: Int), in grid: [[Element]]) -> Int {
+        let width = grid.count
+        return width * position.col + position.row
+    }
+    
+    func getVertexWithIndex(_ index: Int) -> Vertex? {
+        return vertices.filter { (vertex) in
+            return vertex.index == index
+        }.first
+    }
+    
     // the graphs vertices are the keys of the adjacency dictionary
     var vertices: [Vertex] {
         return Array(adjacencies.keys)
@@ -46,14 +78,14 @@ struct AdjacencyList<Element: Hashable>: Graph {
     }
     
     @discardableResult
-    mutating func addVertex(_ element: Element) -> Vertex {
+    mutating func addVertex(element: Element) -> Vertex {
         let vertex = Vertex(index: adjacencies.count, element: element)
         adjacencies[vertex] = []
         return vertex
     }
     
     @discardableResult
-    mutating func addVertex(_ vertex: Vertex) -> Vertex {
+    mutating func addVertex(vertex: Vertex) -> Vertex {
         adjacencies[vertex] = []
         return vertex
     }
@@ -61,11 +93,11 @@ struct AdjacencyList<Element: Hashable>: Graph {
     // An undirected graph could be seen as a bidirectional graph, where every edge could be traversed in both directions
     mutating func addEdge(_ edge: Edge, _ directed: Bool = false) {
         if !adjacencies.keys.contains(edge.source) {
-            addVertex(edge.source)
+            addVertex(vertex: edge.source)
         }
         
         if !adjacencies.keys.contains(edge.destination) {
-            addVertex(edge.destination)
+            addVertex(vertex: edge.destination)
         }
         
         adjacencies[edge.source]!.append(edge)

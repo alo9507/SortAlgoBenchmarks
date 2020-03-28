@@ -8,11 +8,12 @@
 
 import Foundation
 
-enum FloodFill<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
-    typealias Edge = Graph.Edge
-    typealias Vertex = Edge.Vertex
-    
-    static func fill(with color: Int, startingFrom: Vertex, graph: inout Graph) -> Void {
+// A 4 direction flood fill (8 direction includes diagonals)
+enum FloodFill {
+    static func fill(from position: (row: Int, col: Int), target: Int, replacement: Int, grid: inout [[Int]]) {
+        let graph = AdjacencyList(grid: grid)
         
+        // pass the flood augmentation to the DFS
+            // only update neighbors with the same color as current
     }
 }
