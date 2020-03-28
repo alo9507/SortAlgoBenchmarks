@@ -47,38 +47,51 @@ final class AdjacencyListTestCase: XCTestCase {
         ])
     }
     
-  func test_description() {
-    var graph = AdjacencyList<String>()
-
-    let singapore = graph.addVertex("Singapore")
-    let tokyo = graph.addVertex("Tokyo")
-    let hongKong = graph.addVertex("Hong Kong")
-    let detroit = graph.addVertex("Detroit")
-    let sanFrancisco = graph.addVertex("San Francisco")
-    let washingtonDC = graph.addVertex("Washington, D.C.")
-    let austinTexas = graph.addVertex("Austin")
-    let seattle = graph.addVertex("Seattle")
-
-    for edge in [
-      GraphEdge(source: singapore, destination: hongKong, weight: 300),
-      GraphEdge(source: singapore, destination: tokyo, weight: 500),
-      GraphEdge(source: hongKong, destination: tokyo, weight: 250),
-      GraphEdge(source: tokyo, destination: detroit, weight: 450),
-      GraphEdge(source: tokyo, destination: washingtonDC, weight: 300),
-      GraphEdge(source: hongKong, destination: sanFrancisco, weight: 600),
-      GraphEdge(source: detroit, destination: austinTexas, weight: 50),
-      GraphEdge(source: austinTexas, destination: washingtonDC, weight: 292),
-      GraphEdge(source: sanFrancisco, destination: washingtonDC, weight: 337),
-      GraphEdge(source: washingtonDC, destination: seattle, weight: 277),
-      GraphEdge(source: sanFrancisco, destination: seattle, weight: 218),
-      GraphEdge(source: austinTexas, destination: sanFrancisco, weight: 297)
-    ] {
-      graph.addEdge(edge)
+    func test_graphInit() {
+        let grid: [[Int]] = [
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0]
+        ]
+        
+        var graph = AdjacencyList(grid: grid)
+        XCTAssertEqual(20, graph.vertices.count)
+        print(graph)
     }
-
-    XCTAssertEqual(
-      "\(graph)",
-      """
+    
+    func test_description() {
+        var graph = AdjacencyList<String>()
+        
+        let singapore = graph.addVertex("Singapore")
+        let tokyo = graph.addVertex("Tokyo")
+        let hongKong = graph.addVertex("Hong Kong")
+        let detroit = graph.addVertex("Detroit")
+        let sanFrancisco = graph.addVertex("San Francisco")
+        let washingtonDC = graph.addVertex("Washington, D.C.")
+        let austinTexas = graph.addVertex("Austin")
+        let seattle = graph.addVertex("Seattle")
+        
+        for edge in [
+            GraphEdge(source: singapore, destination: hongKong, weight: 300),
+            GraphEdge(source: singapore, destination: tokyo, weight: 500),
+            GraphEdge(source: hongKong, destination: tokyo, weight: 250),
+            GraphEdge(source: tokyo, destination: detroit, weight: 450),
+            GraphEdge(source: tokyo, destination: washingtonDC, weight: 300),
+            GraphEdge(source: hongKong, destination: sanFrancisco, weight: 600),
+            GraphEdge(source: detroit, destination: austinTexas, weight: 50),
+            GraphEdge(source: austinTexas, destination: washingtonDC, weight: 292),
+            GraphEdge(source: sanFrancisco, destination: washingtonDC, weight: 337),
+            GraphEdge(source: washingtonDC, destination: seattle, weight: 277),
+            GraphEdge(source: sanFrancisco, destination: seattle, weight: 218),
+            GraphEdge(source: austinTexas, destination: sanFrancisco, weight: 297)
+            ] {
+                graph.addEdge(edge)
+        }
+        
+        XCTAssertEqual(
+            "\(graph)",
+            """
         0: Singapore -> Tokyo (500.0)
                         Hong Kong (300.0)
 
@@ -111,7 +124,7 @@ final class AdjacencyListTestCase: XCTestCase {
         7: Seattle -> San Francisco (218.0)
                       Washington, D.C. (277.0)
         """
-    )
-  }
+        )
+    }
 }
 

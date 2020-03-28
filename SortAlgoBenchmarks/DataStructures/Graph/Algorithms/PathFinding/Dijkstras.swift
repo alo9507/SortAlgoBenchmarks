@@ -34,10 +34,27 @@ enum Dijkstra<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
         }
         
         func isUpdatable(_ vertex: Vertex, _ edge: Edge) -> Bool {
-            return edge.destination == source
-            ? false
-            : shortestPathTree[edge.destination] == nil
-            || getReachingCost(to: vertex) + edge.weight < getReachingCost(to: edge.destination)
+            let edgePointsBackToSource = edge.destination == source
+            if edgePointsBackToSource {
+                return false
+            }
+            
+            let isUnvisited = (shortestPathTree[edge.destination] == nil)
+            if isUnvisited {
+                return true
+            }
+            
+            // An edge from u to v can be relaxed if
+            // d[u] + w(u, v) <= d[v]
+            // where:
+            // d[u] and d[v] is the reaching cost of u and v respectively
+            // w(u, v) is the weight of the edge connecting u and v,
+            let edgeCanBeRelaxed = getReachingCost(to: vertex) + edge.weight < getReachingCost(to: edge.destination)
+            if edgeCanBeRelaxed {
+                return true
+            }
+            
+            return false
         }
         
         var priorityQueue = PriorityQueue { getReachingCost(to: $0) < getReachingCost(to: $1) }

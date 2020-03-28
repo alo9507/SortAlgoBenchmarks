@@ -19,6 +19,15 @@ struct AdjacencyList<Element: Hashable>: Graph {
     
     public var adjacencies: [Vertex: [Edge]] = [:]
     
+    init(grid: [[Element]]) {
+        for row in stride(from: 0, to: grid.count, by: 1) {
+            for col in stride(from: 0, to: grid[row].count, by: 1) {
+                let source = grid[row][col]
+                addVertex(source)
+            }
+        }
+    }
+    
     init() {}
     
     init(vertices: [Vertex]) {
