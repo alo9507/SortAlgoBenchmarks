@@ -43,6 +43,12 @@ final class PrimTestCase: XCTestCase {
         let (cost, minimumSpanningTree) = Prim.getMinimumSpanningTree(for: graph)
         XCTAssertEqual(cost, 15)
         
+        // a spanning tree should have V - 1 edges
+        // divided by two since the edges are undirected/symmetrical so two edges technically exist between each vertex
+        let mstEdgeCount = minimumSpanningTree.sortedEdges.count / 2
+        let graphVertexCount = graph.vertices.count
+        XCTAssertEqual(graphVertexCount - 1, mstEdgeCount)
+        
         XCTAssertEqual(
             "\(minimumSpanningTree)",
             """

@@ -22,6 +22,8 @@ protocol Graph {
     mutating func addEdge(_ edge: Edge, _ directed: Bool)
     
     func getEdges(from: Vertex) -> [Edge]
+    
+    var sortedEdges: [Edge] { get }
 }
 
 // EdgeList (inefficient impls)

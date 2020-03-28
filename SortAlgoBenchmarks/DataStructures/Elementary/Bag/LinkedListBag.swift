@@ -9,7 +9,7 @@
 import Foundation
 
 // A bag is a counted set, i.e. can contain duplicated items with their frequencies
-class Bag<Element: Hashable> {
+class LinkedListBag<Element: Hashable> {
     private var head: LinkedListNode<Element>?
     private var tail: LinkedListNode<Element>?
     private var count: Int = 0
@@ -45,7 +45,7 @@ class Bag<Element: Hashable> {
     }
 }
 
-extension Bag: Sequence, IteratorProtocol {
+extension LinkedListBag: Sequence, IteratorProtocol {
     func next() -> Element? {
         return head?.value
     }

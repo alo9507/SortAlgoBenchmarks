@@ -8,7 +8,19 @@
 
 import Foundation
 
-// construct graph from STDIN as
+// construct graph from edge list
+
+/*
+ 1-2
+ 1-3
+ 
+ OR
+ 
+ 1->3
+ 4->4
+ */
+
+// construct grid graph from a 2D Matrix
 
 /*
  1-2

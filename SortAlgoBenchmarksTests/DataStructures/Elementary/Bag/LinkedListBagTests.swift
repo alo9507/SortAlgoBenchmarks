@@ -9,9 +9,9 @@
 import XCTest
 @testable import SortAlgoBenchmarks
 
-final class BagTests: XCTestCase {
+final class LinkedListBagTests: XCTestCase {
     func test_bag() {
-        var bag = Bag<Int>()
+        var bag = LinkedListBag<Int>()
         
         bag.add(0)
         bag.add(1)

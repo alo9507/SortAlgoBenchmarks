@@ -8,29 +8,27 @@
 
 import Foundation
 
-func minimumSpanningTreeKruskal<T>(for graph: AdjacencyList<T>) -> (cost: Double, tree: AdjacencyList<T>) {
-    var cost: Double = 0
-    var tree = AdjacencyList<T>()
-    let sortedEdgesByWeight = graph.sortedEdges
+func minimumSpanningTreeKruskal<T>(for graph: AdjacencyList<T>) -> (cost: Double, mst: AdjacencyList<T>) {
+    var totalCost: Double = 0
+    var mst = AdjacencyList<T>()
+    var unionFind = UnionFind<T>()
     
     // initialize the union find with the elements of the vertices
     // if this union find took vertices then maybe you could hash the index as well
-    var unionFind = UnionFind<T>()
-    for vertex in graph.vertices {
-        unionFind.addSetWith(vertex.element)
-    }
+    graph.vertices.map({ unionFind.addSetWith($0.element) })
     
-    for edge in sortedEdgesByWeight {
+    for edge in graph.sortedEdges {
         let v1 = edge.source
         let v2 = edge.destination
         
+        // if they're already in the same set, then a previous (ergo less costly) edge
+        // has already been added to the mst
         if !unionFind.inSameSet(v1.element, and: v2.element) {
-            cost += edge.weight
-            tree.addEdge(edge)
+            totalCost += edge.weight
+            mst.addEdge(edge)
             unionFind.unionSetsContaining(v1.element, and: v2.element)
-            print(unionFind.allSets())
         }
     }
     
-    return (cost: cost, tree)
+    return (cost: totalCost, mst)
 }
