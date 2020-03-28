@@ -25,6 +25,18 @@ class LinkedListTests: XCTestCase {
         XCTAssertEqual(15, linkedList.tail?.value)
     }
     
+    func test_contains() {
+        let linkedList: SinglyLinkedList<Int> = {
+            let ll = SinglyLinkedList<Int>()
+            ll.append(5)
+            ll.append(10)
+            ll.append(15)
+            return ll
+        }()
+        
+        XCTAssertTrue(linkedList.contains(5))
+        XCTAssertFalse(linkedList.contains(432))
+    }
     
     func test_print() {
         let linkedList: SinglyLinkedList<Int> = {

@@ -16,13 +16,11 @@ protocol Graph {
     
     var vertices: [Vertex] { get }
     
-    // returns a Vertex with a populated index
     @discardableResult
     mutating func addVertex(_ : Element) -> Vertex
     
     mutating func addEdge(_ edge: Edge, _ directed: Bool)
     
-    // returns all edges with a given vertex as their source
     func getEdges(from: Vertex) -> [Edge]
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SinglyLinkedListQueue<Element>: Queue {
+struct SinglyLinkedListQueue<Element: Equatable>: Queue {
     private var head: LinkedListNode<Element>?
     private var tail: LinkedListNode<Element>?
     

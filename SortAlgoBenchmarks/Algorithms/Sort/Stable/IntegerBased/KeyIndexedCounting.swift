@@ -15,7 +15,7 @@ import Foundation
 
 /// Counting sort is a sorting technique based on keys between a specific range
 /// - Parameter array: an unsroted array
-func keyIndexedCounting(_ array: inout [Int], in range: Range<Int>) -> [Int] {
+func keyIndexedCounting(_ array: inout [Int], in range: ClosedRange<Int>) -> [Int] {
     var range = range.lowerBound.distance(to: range.upperBound)
     var counts = [Int](repeating: 0, count: range)
     
@@ -32,9 +32,9 @@ func keyIndexedCounting(_ array: inout [Int], in range: Range<Int>) -> [Int] {
     
     var sorted = [Int](repeating: 0, count: counts[counts.count - 1])
     
-    for i in stride(from: 0, to: sorted.count, by: 1) {
-        sorted[i] = 
-    }
+//    for i in stride(from: 0, to: sorted.count, by: 1) {
+//        sorted[i] = 
+//    }
     
     return []
 }

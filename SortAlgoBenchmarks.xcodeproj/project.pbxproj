@@ -31,6 +31,8 @@
 		59261847242686F1000A0DC5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59261846242686F1000A0DC5 /* Stack.swift */; };
 		5926184A2426925A000A0DC5 /* SinglyLinkedListStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592618492426925A000A0DC5 /* SinglyLinkedListStackTests.swift */; };
 		592F91F3242F852000A627B4 /* NFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F91F2242F852000A627B4 /* NFA.swift */; };
+		592F91FD242FAA7F00A627B4 /* AdjacencyMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F91FC242FAA7F00A627B4 /* AdjacencyMatrix.swift */; };
+		592F9200242FAFC400A627B4 /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F91FF242FAFC400A627B4 /* BagTests.swift */; };
 		593002CA24219F25003CE21E /* RedBlackTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593002C924219F25003CE21E /* RedBlackTree.swift */; };
 		593002CC24219F41003CE21E /* RedBlackTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593002CB24219F41003CE21E /* RedBlackTreeTests.swift */; };
 		59383B032412D00E0067CE89 /* MaxSumOfSubarray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59383B022412D00E0067CE89 /* MaxSumOfSubarray.swift */; };
@@ -180,6 +182,8 @@
 		59261846242686F1000A0DC5 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		592618492426925A000A0DC5 /* SinglyLinkedListStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListStackTests.swift; sourceTree = "<group>"; };
 		592F91F2242F852000A627B4 /* NFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFA.swift; sourceTree = "<group>"; };
+		592F91FC242FAA7F00A627B4 /* AdjacencyMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyMatrix.swift; sourceTree = "<group>"; };
+		592F91FF242FAFC400A627B4 /* BagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
 		593002C924219F25003CE21E /* RedBlackTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBlackTree.swift; sourceTree = "<group>"; };
 		593002CB24219F41003CE21E /* RedBlackTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBlackTreeTests.swift; sourceTree = "<group>"; };
 		59383B022412D00E0067CE89 /* MaxSumOfSubarray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSumOfSubarray.swift; sourceTree = "<group>"; };
@@ -516,6 +520,14 @@
 			children = (
 			);
 			name = CrosswordPuzzleSolver;
+			sourceTree = "<group>";
+		};
+		592F91FE242FAFBC00A627B4 /* Bag */ = {
+			isa = PBXGroup;
+			children = (
+				592F91FF242FAFC400A627B4 /* BagTests.swift */,
+			);
+			path = Bag;
 			sourceTree = "<group>";
 		};
 		593002C824219D10003CE21E /* RedBlackTree */ = {
@@ -961,6 +973,7 @@
 			children = (
 				59CB4D21240EFF5900AB0395 /* Graph */,
 				59F238EC23FB7A4E00D8B467 /* AdjacencyList.swift */,
+				592F91FC242FAA7F00A627B4 /* AdjacencyMatrix.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -1133,6 +1146,7 @@
 		59E6846A241EAF30005C677D /* Elementary */ = {
 			isa = PBXGroup;
 			children = (
+				592F91FE242FAFBC00A627B4 /* Bag */,
 				5977EA7E2426ADD000152D33 /* Queue */,
 				592618482426924D000A0DC5 /* Stack */,
 			);
@@ -1437,6 +1451,7 @@
 				593002CA24219F25003CE21E /* RedBlackTree.swift in Sources */,
 				59F0CFC1241F066100594616 /* Tarjans.swift in Sources */,
 				59C9E1B92429A0C40022A5FB /* BoyerMoore.swift in Sources */,
+				592F91FD242FAA7F00A627B4 /* AdjacencyMatrix.swift in Sources */,
 				599A097B242D8113007F6F76 /* FlowEdge.swift in Sources */,
 				59B200B924021C5500E613C0 /* Dijkstras.swift in Sources */,
 				59A574D1240308930089BF61 /* ArrayStack.swift in Sources */,
@@ -1514,6 +1529,7 @@
 				59D1E99423F61E1500647E4B /* TestFixtures.swift in Sources */,
 				595E700A241D726900B7677F /* GraphTraversalTests.swift in Sources */,
 				59013D9B23F8437000725562 /* Utils.swift in Sources */,
+				592F9200242FAFC400A627B4 /* BagTests.swift in Sources */,
 				59E6846C241EAF93005C677D /* ArrayStackTests.swift in Sources */,
 				5954A324241ABB26007F5FAC /* MedianOfAStreamTests.swift in Sources */,
 				59B200BB2402210900E613C0 /* DijkstrasTest.swift in Sources */,

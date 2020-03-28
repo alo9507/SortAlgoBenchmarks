@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LinkedListNode<T>: Equatable {
+class LinkedListNode<T: Equatable>: Equatable {
     var value: T
     var next: LinkedListNode?
     weak var previous: LinkedListNode?
@@ -22,7 +22,7 @@ class LinkedListNode<T>: Equatable {
     }
 }
 
-protocol LinkedList {
+protocol LinkedList where T: Equatable{
     associatedtype T
     var head: LinkedListNode<T>? { get }
     var tail: LinkedListNode<T>? { get }
@@ -38,7 +38,7 @@ protocol LinkedList {
     func append(_ value: T)
 }
 
-class SinglyLinkedList<T>: LinkedList {
+class SinglyLinkedList<T: Equatable>: LinkedList {
     public var head: LinkedListNode<T>?
     public var tail: LinkedListNode<T>?
     
@@ -95,6 +95,15 @@ class SinglyLinkedList<T>: LinkedList {
         
         head = previous
         print(self.description)
+    }
+    
+    func contains(_ element: T) -> Bool {
+        var current = head
+        while current != nil {
+            if current?.value == element { return true }
+            current = current?.next
+        }
+        return false
     }
     
 }

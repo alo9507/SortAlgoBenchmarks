@@ -6,9 +6,7 @@
 //  Copyright © 2020 Andrew O'Brien. All rights reserved.
 //
 
-// With two GraphVertex you can define a GraphEdge
 struct GraphEdge<Element> {
-    // An edge's vertices will be a GraphVertex with a matching Element type
     typealias Vertex = GraphVertex<Element>
     
     let source: Vertex

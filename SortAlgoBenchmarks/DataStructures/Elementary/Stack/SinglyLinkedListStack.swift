@@ -12,7 +12,7 @@ import Foundation
 // Pop: Omega(1) / O(1)
 // Count: O(N)
 // Space: O(N)
-struct SinglyLinkedListStack<Element>: Stack {
+struct SinglyLinkedListStack<Element: Equatable>: Stack {
     private var storage: SinglyLinkedList<Element> = SinglyLinkedList<Element>()
     
     var isEmpty: Bool {

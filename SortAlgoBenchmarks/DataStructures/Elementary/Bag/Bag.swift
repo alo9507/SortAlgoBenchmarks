@@ -10,14 +10,43 @@ import Foundation
 
 // A bag is a counted set, i.e. can contain duplicated items with their frequencies
 class Bag<Element: Hashable> {
-    private var storage = Dictionary<Element, Int>()
+    private var head: LinkedListNode<Element>?
+    private var tail: LinkedListNode<Element>?
+    private var count: Int = 0
     
-    var toArray: [Element] {
-        var array: [Element] = []
-        for (key, value) in storage {
-            let subarray = Array(repeating: key, count: value)
-            array.append(contentsOf: subarray)
+    func add(_ element: Element) {
+        let node = LinkedListNode(element)
+        
+        if tail != nil {
+            tail?.next = node
+        } else {
+            head = node
+            tail = node
         }
-        return array
+        
+        count += 1
+    }
+    
+    func isEmpty() -> Bool {
+        return head == nil
+    }
+    
+    func contains(_ element: Element) -> Bool {
+        var current = head
+        while current != nil {
+            if current?.value == element { return true }
+            current = current?.next
+        }
+        return false
+    }
+    
+    var size: Int {
+        return count
+    }
+}
+
+extension Bag: Sequence, IteratorProtocol {
+    func next() -> Element? {
+        return head?.value
     }
 }
