@@ -9,67 +9,69 @@
 import Foundation
 
 // caseless enumeration generic on a graph type
+
+// Gives shortest path tree (SPT) from a source vertex to ALL other vertices
+
+// Works on directed and undirected graph
+
+// Min PQ not needed for Dijkstra's
+
 enum Dijkstra<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
     typealias Edge = Graph.Edge
     typealias Vertex = Edge.Vertex
     
+    // build path from destination vertex back to source vertex
+    // this will rely on having stored the appropriate edge for each vertex along the path
+    
+    // performs edge relaxation on each source passed in
     static func getEdges(alongPathsFrom source: Vertex, graph: Graph) -> [Vertex: Edge] {
-        var edges: [Vertex: Edge] = [:]
+        var shortestPathTree: [Vertex: Edge] = [:]
         
-        func getWeight(to destination: Vertex) -> Double {
-            return getShortestPath(to: destination, edgesAlongPath: edges)
+        func getReachingCost(to destination: Vertex) -> Double {
+            return getShortestPath(to: destination, edgesAlongPath: shortestPathTree)
                 .map { $0.weight }
                 .reduce(0, +)
         }
         
-        // use a min priority queue comparing vertices by their total path weights
-        var priorityQueue = PriorityQueue { getWeight(to: $0) < getWeight(to: $1) }
+        func isUpdatable(_ vertex: Vertex, _ edge: Edge) -> Bool {
+            return edge.destination == source
+            ? false
+            : shortestPathTree[edge.destination] == nil
+            || getReachingCost(to: vertex) + edge.weight < getReachingCost(to: edge.destination)
+        }
         
-        // begin search at source vertex
+        var priorityQueue = PriorityQueue { getReachingCost(to: $0) < getReachingCost(to: $1) }
         priorityQueue.enqueue(source)
         
-        // the search will continue until the PQ is empty
         while let vertex = priorityQueue.dequeue() {
             graph.getEdges(from: vertex)
-            // reject edges that connect back to the source
-                .filter {
-                    $0.destination == source ? false
-                        : edges[$0.destination] == nil
-                        || getWeight(to: vertex) + $0.weight < getWeight(to: $0.destination)
-                }
-                // at this point we only have the lowest cost edges
-            .forEach { (newEdgeFromVertex) in
-                edges[newEdgeFromVertex.destination] = newEdgeFromVertex
-                
-                // the search will now continue from the lowest cost path
-                priorityQueue.enqueue(newEdgeFromVertex.destination)
+                .filter { isUpdatable(vertex, $0) }
+                .forEach { (updatableEdgeFromVertex) in
+                    shortestPathTree[updatableEdgeFromVertex.destination] = updatableEdgeFromVertex // records the path it took to get this A) new weight update, or B) updated lower shortest path update
+                    priorityQueue.enqueue(updatableEdgeFromVertex.destination)
             }
         }
         
-        return edges
+        return shortestPathTree
     }
     
-    /// Mechanism to build the path from a destination vertex back to a source vertex
-    /// This will rely on having stored the appropriate edge for each vertex along the path
+    /// getShortestPath
     /// - Parameters:
-    ///   - destination: where you want to go
-    ///   - edgesAlongPath: dictionary of edges along the paths back to a source vertex
+    ///   - destination: Destination vertex
+    ///   - edgesAlongPath: Dictionary along paths back to source vertex
     static func getShortestPath(to destination: Vertex, edgesAlongPath: [Vertex: Edge]) -> [Edge] {
-        var shortesPath: [Edge] = []
+        var shortestPath: [Edge] = []
         
-        // begin at destination vertex passed in
         var destination = destination
         
-        // loop until there isn't an edge corresponding to what you'll assign destination to be
+        // loop backwards from destination to the source
+        // stops looping until you hit the source since we won't be storing an edge for the source
         while let edge = edgesAlongPath[destination] {
-            // add edges to the path and work back to the source by reassigning destination to the conencted vertex
-            shortesPath = [edge] + shortesPath
-            
-            // the loop will end when you hit the source since you won't be storing an edge for the source
+            shortestPath = [edge] + shortestPath
             destination = edge.source
         }
         
-        return shortesPath
+        return shortestPath
     }
     
     static func getShortestPath(from source: Vertex, to destination: Vertex, graph: Graph) -> [Edge] {
