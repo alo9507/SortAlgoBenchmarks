@@ -47,18 +47,45 @@ final class AdjacencyListTestCase: XCTestCase {
         ])
     }
     
-    func test_graphInit() {
+    func test_getIndexForPosition() {
         let grid: [[Int]] = [
             [0,1,2,3,4],
             [5,6,7,8,9]
         ]
         
-        var graph = AdjacencyList(grid: grid)
+        let graph = AdjacencyList(grid: grid)
         
-        // Once you can add edges without adding new vertices for non-unique vertices these will pass
+        XCTAssertEqual(0, graph.indexForPosition((0,0), in: grid))
+        
+        XCTAssertEqual(4, graph.indexForPosition((0,4), in: grid))
+        
+        var fiveIndex = graph.indexForPosition((1,0), in: grid)
+        XCTAssertEqual(5, fiveIndex)
+        XCTAssertEqual(5, graph.getVertexWithIndex(fiveIndex)!.element)
+        
+        XCTAssertEqual(9, graph.indexForPosition((1,4), in: grid))
+    }
+    
+    func test_initializeGraphWithAGrid() {
+        let grid: [[Int]] = [
+            [0,1,2,3,4],
+            [5,6,7,8,9]
+        ]
+        
+        let graph = AdjacencyList(grid: grid)
+        
         XCTAssertEqual(10, graph.vertices.count)
         print(graph.vertices)
         XCTAssertEqual(26, graph.sortedEdges.count)
+        
+        let topLeftEdges = graph.getEdges(from: (0,0), in: grid)
+        
+//        var edgeStrings: [String] = []
+//        topLeftEdges.forEach { (edge) in
+//            edgeStrings.append("\(edge.source.element)->\(edge.destination.element)")
+//        }
+        
+        XCTAssertEqual(topLeftEdges.describe(), ["0->1", "0->5"])
         
         print(graph.description)
     }

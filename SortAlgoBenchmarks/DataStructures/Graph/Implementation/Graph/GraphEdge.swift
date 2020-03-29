@@ -20,6 +20,15 @@ struct GraphEdge<Element> {
     }
 }
 
-// To add edges to a PriorityQueue, they'll have to be Equatable
 extension GraphEdge: Equatable where Element: Equatable {}
 extension GraphEdge: Hashable where Element: Hashable {}
+
+extension Array where Element == GraphEdge<Int> {
+    func describe() -> [String] {
+        var edgeStrings: [String] = []
+        self.forEach { (edge) in
+            edgeStrings.append("\(edge.source.element)->\(edge.destination.element)")
+        }
+        return edgeStrings
+    }
+}
