@@ -1,8 +1,8 @@
 //
-//  Prims.swift
+//  PrimEager.swift
 //  SortAlgoBenchmarks
 //
-//  Created by Andrew O'Brien on 2/23/20.
+//  Created by Andrew O'Brien on 3/28/20.
 //  Copyright © 2020 Andrew O'Brien. All rights reserved.
 //
 
@@ -21,7 +21,7 @@ import Foundation
  
  SPACE COMPLEXITY:
  */
-enum Prim<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
+enum PrimEager<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
     typealias Edge = Graph.Edge
     typealias Vertex = Edge.Vertex
     typealias MinimumSpanningTree = AdjacencyList<Graph.Element>

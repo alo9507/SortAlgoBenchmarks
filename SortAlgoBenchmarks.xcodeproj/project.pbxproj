@@ -86,6 +86,7 @@
 		5989B45D242E4E2700D3AB75 /* KeyIndexedCounting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989B45C242E4E2700D3AB75 /* KeyIndexedCounting.swift */; };
 		5989B460242E515500D3AB75 /* Binsort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989B45F242E515500D3AB75 /* Binsort.swift */; };
 		5989B462242E51BC00D3AB75 /* MSDRadixSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5989B461242E51BC00D3AB75 /* MSDRadixSort.swift */; };
+		59914F422430304100854EA7 /* PrimEager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59914F412430304100854EA7 /* PrimEager.swift */; };
 		599A0979242D7CB7007F6F76 /* FordFulkerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599A0978242D7CB7007F6F76 /* FordFulkerson.swift */; };
 		599A097B242D8113007F6F76 /* FlowEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599A097A242D8113007F6F76 /* FlowEdge.swift */; };
 		599D0F7C2415873700B71E42 /* XOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599D0F7B2415873700B71E42 /* XOR.swift */; };
@@ -240,6 +241,7 @@
 		5989B45C242E4E2700D3AB75 /* KeyIndexedCounting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyIndexedCounting.swift; sourceTree = "<group>"; };
 		5989B45F242E515500D3AB75 /* Binsort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binsort.swift; sourceTree = "<group>"; };
 		5989B461242E51BC00D3AB75 /* MSDRadixSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSDRadixSort.swift; sourceTree = "<group>"; };
+		59914F412430304100854EA7 /* PrimEager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimEager.swift; sourceTree = "<group>"; };
 		599A0978242D7CB7007F6F76 /* FordFulkerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FordFulkerson.swift; sourceTree = "<group>"; };
 		599A097A242D8113007F6F76 /* FlowEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowEdge.swift; sourceTree = "<group>"; };
 		599D0F7B2415873700B71E42 /* XOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOR.swift; sourceTree = "<group>"; };
@@ -1067,6 +1069,7 @@
 			isa = PBXGroup;
 			children = (
 				5917EE322402BE0100D3A061 /* Prim.swift */,
+				59914F412430304100854EA7 /* PrimEager.swift */,
 				59EE461D241B0CFC00CA36E3 /* Kruskal.swift */,
 				592F9203242FC6C500A627B4 /* MinimumDirectedSpanningTree.swift */,
 			);
@@ -1415,6 +1418,7 @@
 				5977EA8C2426C80A00152D33 /* UnorderedArrayPriorityQueue.swift in Sources */,
 				59EC1FE6242FD011009B795D /* BellmanFord.swift in Sources */,
 				59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */,
+				59914F422430304100854EA7 /* PrimEager.swift in Sources */,
 				59E68464241EABFB005C677D /* Palindrome.swift in Sources */,
 				592F9204242FC6C500A627B4 /* MinimumDirectedSpanningTree.swift in Sources */,
 				59F0CFBD241EF40200594616 /* ConnectedComponents.swift in Sources */,

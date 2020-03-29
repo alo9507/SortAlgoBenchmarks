@@ -31,6 +31,10 @@ public struct UnionFind<T: Hashable> {
     
     private var size = [Int]()
     
+    init(_ elements: [T]) {
+        elements.forEach({ addSetWith($0) })
+    }
+    
     public init() {}
     
     mutating public func allSets() -> [Int: [T]] {

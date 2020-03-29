@@ -35,7 +35,7 @@ class TopologicalSortTest: XCTestCase {
         let stack_ts = GraphEdge(source: stack, destination: ts)
         
         for edge in [linkingObject_tree, linkingObject_graph, linkingObject_ll, tree_dfs, al_dfs, dfs_ts, stack_ts] {
-            graph.addEdge(edge, true)
+            graph.addEdge(edge, directed: true)
         }
         
         return graph

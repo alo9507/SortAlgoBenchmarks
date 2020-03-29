@@ -59,7 +59,7 @@ enum Dijkstra<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
             graph.getEdges(from: vertex)
                 .filter { outgoingEdge in isUpdatable(vertex, outgoingEdge) }
                 .forEach { (updatableEdgeFromVertex) in
-                    shortestPathTree[updatableEdgeFromVertex.destination] = updatableEdgeFromVertex // records the path it took to get this A) new weight update, or B) updated lower shortest path update
+                    shortestPathTree[updatableEdgeFromVertex.destination] = updatableEdgeFromVertex
                     priorityQueue.enqueue(updatableEdgeFromVertex.destination)
             }
         }
@@ -81,6 +81,10 @@ enum Dijkstra<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
         }
         
         return shortestPath
+    }
+    
+    static func relax(_ edge: Edge) {
+        
     }
     
     static func getShortestPath(from source: Vertex, to sink: Vertex, graph: Graph) -> [Edge] {

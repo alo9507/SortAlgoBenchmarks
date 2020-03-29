@@ -12,7 +12,7 @@ import XCTest
 @testable import SortAlgoBenchmarks
 
 final class PrimTestCase: XCTestCase {
-    func test() {
+    func test_metMinimumSpanningTree() {
         var graph = AdjacencyList<Int>()
         
         let one = graph.addVertex(element: 1)

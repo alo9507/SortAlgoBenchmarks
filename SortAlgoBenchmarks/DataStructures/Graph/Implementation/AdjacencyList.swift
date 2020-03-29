@@ -52,7 +52,7 @@ struct AdjacencyList<Element: Hashable>: Graph {
             }
             
             let edge = Edge(source: source, destination: destination)
-            addEdge(edge)
+            addEdge(edge, directed: true)
         }
     }
     
@@ -111,7 +111,7 @@ struct AdjacencyList<Element: Hashable>: Graph {
     
     // An undirected graph could be seen as a bidirectional graph, where every edge could be traversed in both directions
     // Should allow parallel edges? Or should there be a check for that?
-    mutating func addEdge(_ edge: Edge, _ directed: Bool = false) {
+    mutating func addEdge(_ edge: Edge, directed: Bool = false) {
         if !adjacencies.keys.contains(edge.source) {
             addVertex(vertex: edge.source)
         }
