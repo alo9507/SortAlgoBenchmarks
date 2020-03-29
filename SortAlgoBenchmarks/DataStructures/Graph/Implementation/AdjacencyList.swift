@@ -90,6 +90,12 @@ struct AdjacencyList<Element: Hashable>: Graph {
         return Array(adjacencies.values.flatMap({ $0 })).sorted(by: { $0.weight < $1.weight })
     }
     
+    var edges: [Edge] {
+        // what to do about duplicate edges?
+        let uniqueEdges = Set(adjacencies.values.flatMap({ $0 }))
+        return Array(uniqueEdges)
+    }
+    
     @discardableResult
     mutating func addVertex(element: Element) -> Vertex {
         let vertex = Vertex(index: adjacencies.count, element: element)

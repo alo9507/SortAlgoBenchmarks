@@ -17,6 +17,8 @@ enum Prim<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
     typealias Vertex = Edge.Vertex
     typealias MinimumSpanningTree = AdjacencyList<Graph.Element>
     
+    /// Returns MST for graph
+    /// - Parameter graph: A connected and undirected graph
     static func getMinimumSpanningTree(for graph: Graph) -> (cost: Double, minimumSpanningTree: MinimumSpanningTree) {
         var totalCost = 0.0
         var minimumSpanningTree = MinimumSpanningTree(vertices: graph.vertices)

@@ -15,6 +15,7 @@ protocol Graph {
     typealias Vertex = Edge.Vertex
     
     var vertices: [Vertex] { get }
+    var edges: [Edge] { get }
     
     @discardableResult
     mutating func addVertex(element: Element) -> Vertex
