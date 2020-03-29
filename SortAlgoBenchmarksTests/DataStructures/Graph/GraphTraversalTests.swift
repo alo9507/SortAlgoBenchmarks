@@ -33,8 +33,7 @@ final class GraphTraversalTests: XCTestCase {
         }
         
         let start = graph.vertices.first!
-        var visited: [GraphVertex<String>: Bool] = [:]
-        let dfsResults: [GraphVertex<String>] = graph.depthFirstSearch(start, &visited, previsit: { element in
+        let dfsResults: [GraphVertex<String>] = graph.depthFirstSearch(start, previsit: { element in
             print(element)
         })
     }
@@ -61,7 +60,7 @@ final class GraphTraversalTests: XCTestCase {
             graph.addEdge(edge)
         }
         
-        graphBfs(graph, graph.vertices.first!) { element in
+        graph.breadthFirstSearch(graph.vertices.first!) { element in
             print(element)
         }
     }

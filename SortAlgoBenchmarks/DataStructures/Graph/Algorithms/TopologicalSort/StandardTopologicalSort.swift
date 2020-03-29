@@ -16,14 +16,9 @@ extension AdjacencyList {
             return node
         })
         
-        var visited = [GraphVertex<Element>: Bool]()
-        for (node, _) in adjacencies {
-            visited[node] = false
-        }
-        
         var result = [GraphVertex<Element>]()
         for vertex in startVertices {
-            result = depthFirstSearch(vertex, &visited) + result
+            result = depthFirstSearch(vertex) + result
         }
         
         return result

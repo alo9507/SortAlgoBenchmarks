@@ -31,7 +31,6 @@ enum FloodFill {
             guard grid[row][col] == targetColor else { continue }
             
             visited[row][col] = true
-            print(grid[row][col])
             grid[row][col] = replacementColor
             
             queue.enqueue((row, col - 1))

@@ -9,12 +9,19 @@
 import Foundation
 
 //struct AdjacencyMatrix<Element: Hashable>: Graph {
-//    var vertices: [GraphVertex<Element>]
+//    private var storage = [[GraphVertex<Element>]]()
+//    private var n: Int = 0
+//    
+//    var vertices: [GraphVertex<Element>] {
+//        return storage[0]
+//    }
 //
 //    var edges: [GraphEdge<Element>]
 //
-//    func addVertex(element: Element) -> GraphVertex<Element> {
-//
+//    mutating func addVertex(element: Element) -> GraphVertex<Element> {
+//        n += 1
+//        let vertex = addVertex(element: element)
+//        storage[vertex][vertex] = 0
 //    }
 //
 //    func addVertex(vertex: GraphVertex<Element>) -> GraphVertex<Element> {

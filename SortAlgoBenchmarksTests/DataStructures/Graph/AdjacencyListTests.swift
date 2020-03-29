@@ -47,6 +47,21 @@ final class AdjacencyListTestCase: XCTestCase {
         ])
     }
     
+    func test_breadthFirstSearch() {
+        let grid = [
+            ["A", "B", "C"],
+            ["D", "E", "F"],
+            ["G", "H", "I"]
+        ]
+        
+        let graph = AdjacencyList(grid: grid)
+        var result: [String] = []
+        graph.breadthFirstSearch(graph.getVertexWithIndex(0)!) { (vertex) in
+            result.append(vertex.element)
+        }
+        XCTAssertEqual(["A", "B", "E", "D", "C", "F", "I", "H", "G"], result)
+    }
+    
     func test_getIndexForPosition() {
         let grid: [[Int]] = [
             [0,1,2,3,4],
@@ -80,10 +95,10 @@ final class AdjacencyListTestCase: XCTestCase {
         
         let topLeftEdges = graph.getEdges(from: (0,0), in: grid)
         
-//        var edgeStrings: [String] = []
-//        topLeftEdges.forEach { (edge) in
-//            edgeStrings.append("\(edge.source.element)->\(edge.destination.element)")
-//        }
+        //        var edgeStrings: [String] = []
+        //        topLeftEdges.forEach { (edge) in
+        //            edgeStrings.append("\(edge.source.element)->\(edge.destination.element)")
+        //        }
         
         XCTAssertEqual(topLeftEdges.describe(), ["0->1", "0->5"])
         

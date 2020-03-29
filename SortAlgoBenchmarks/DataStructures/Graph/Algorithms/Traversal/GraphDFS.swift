@@ -18,33 +18,28 @@ extension AdjacencyList {
     typealias Augmentation = (Element) -> Void
     
     func depthFirstSearch(_ source: GraphVertex<Element>,
-                          _ visited: inout [GraphVertex<Element>: Bool],
                           previsit: Augmentation? = nil,
-                          postvisit: Augmentation? = nil
-                          ) -> [GraphVertex<Element>] {
+                          postvisit: Augmentation? = nil) -> [GraphVertex<Element>] {
         var result = [GraphVertex<Element>]()
-        recurseDfs(source, &visited, &result, previsit, postvisit)
-        return result
-    }
-    
-    func recurseDfs(_ source: GraphVertex<Element>,
-                    _ visited: inout [GraphVertex<Element>: Bool],
-                    _ result: inout [GraphVertex<Element>],
-                    _ previsit: Augmentation? = nil,
-                    _ postvisit: Augmentation? = nil
-                    ) {
-        if visited[source] == true { return }
-        visited[source] = true
+        var visited = [GraphVertex<Element>: Bool]()
         
-        let neighbors = getEdges(from: source)
-        
-        previsit?(source.element)
-        for next in neighbors {
-            if !visited[next.destination, default: false] {
-                recurseDfs(next.destination, &visited, &result, previsit, postvisit)
+        func recurseDfs(_ source: GraphVertex<Element>) {
+            if visited[source] == true { return }
+            visited[source] = true
+            
+            let neighbors = getEdges(from: source)
+            
+            previsit?(source.element)
+            for next in neighbors {
+                if !visited[next.destination, default: false] {
+                    recurseDfs(next.destination)
+                }
             }
+            postvisit?(source.element)
+            result = [source] + result
         }
-        postvisit?(source.element)
-        result = [source] + result
+        
+        recurseDfs(source)
+        return result
     }
 }

@@ -8,7 +8,11 @@
 
 struct GraphVertex<Element> {
     let index: Int
-    let element: Element
+    var element: Element
+    
+    mutating func updateElement(to element: Element) {
+        self.element = element
+    }
 }
 
 // In order to be used as a dictionary key, GraphVertex must be Hashable
