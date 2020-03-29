@@ -14,17 +14,20 @@ import XCTest
 final class FloodFillTest: XCTestCase {
     func test_floodFill() {
         var grid: [[Int]] = [
-            [1,2,3,4],
-            [5,6,7,8],
-            [9, 10,11,12],
-            [13,14,15,16]
+            [1,1,1,1],
+            [1,1,7,8],
+            [9, 1,11,12],
+            [13,14,1,16]
         ]
         
         let position = (row: 0, col: 0)
-        let color = 5
-        let target = grid[position.row][position.col]
-        FloodFill.fill(from: position, target: target, replacement: color, grid: &grid)
+        let targetColor = grid[position.row][position.col]
+        let replacementColor = 5
         
-//        XCTAssertEqual(grid[position.row][position.col], color)
+        FloodFill.fill(from: position, targetColor: targetColor, replacementColor: replacementColor, grid: &grid)
+        print(grid.description)
+        XCTAssertEqual(grid[0][0], replacementColor)
+        XCTAssertEqual(grid[2][1], replacementColor)
+        XCTAssertEqual(grid[3][2], targetColor)
     }
 }
