@@ -15,7 +15,7 @@ import Foundation
  */
 
 extension AdjacencyList {
-    typealias Augmentation = (Element) -> Void
+    typealias Augmentation = (GraphVertex<Element>) -> Void
     
     func depthFirstSearch(_ source: GraphVertex<Element>,
                           previsit: Augmentation? = nil,
@@ -29,13 +29,13 @@ extension AdjacencyList {
             
             let neighbors = getEdges(from: source)
             
-            previsit?(source.element)
+            previsit?(source)
             for next in neighbors {
                 if !visited[next.destination, default: false] {
                     recurseDfs(next.destination)
                 }
             }
-            postvisit?(source.element)
+            postvisit?(source)
             result = [source] + result
         }
         

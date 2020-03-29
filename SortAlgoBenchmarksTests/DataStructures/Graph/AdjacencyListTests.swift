@@ -56,10 +56,10 @@ final class AdjacencyListTestCase: XCTestCase {
         
         let graph = AdjacencyList(grid: grid)
         var result: [String] = []
-        graph.breadthFirstSearch(graph.getVertexWithIndex(0)!) { (vertex) in
+        graph.breadthFirstSearch(graph.getVertexWithIndex("00")!) { (vertex) in
             result.append(vertex.element)
         }
-        XCTAssertEqual(["A", "B", "E", "D", "C", "F", "I", "H", "G"], result)
+        XCTAssertEqual(["A", "D", "B", "G", "E", "C", "H", "F", "I"], result)
     }
     
     func test_getIndexForPosition() {
@@ -70,15 +70,9 @@ final class AdjacencyListTestCase: XCTestCase {
         
         let graph = AdjacencyList(grid: grid)
         
-        XCTAssertEqual(0, graph.indexForPosition((0,0), in: grid))
-        
-        XCTAssertEqual(4, graph.indexForPosition((0,4), in: grid))
-        
-        var fiveIndex = graph.indexForPosition((1,0), in: grid)
-        XCTAssertEqual(5, fiveIndex)
-        XCTAssertEqual(5, graph.getVertexWithIndex(fiveIndex)!.element)
-        
-        XCTAssertEqual(9, graph.indexForPosition((1,4), in: grid))
+        XCTAssertEqual("00", graph.indexForPosition((0,0)))
+        XCTAssertEqual("01", graph.indexForPosition((0,1)))
+        XCTAssertEqual("010", graph.indexForPosition((0,10)))
     }
     
     func test_initializeGraphWithAGrid() {
@@ -95,12 +89,7 @@ final class AdjacencyListTestCase: XCTestCase {
         
         let topLeftEdges = graph.getEdges(from: (0,0), in: grid)
         
-        //        var edgeStrings: [String] = []
-        //        topLeftEdges.forEach { (edge) in
-        //            edgeStrings.append("\(edge.source.element)->\(edge.destination.element)")
-        //        }
-        
-        XCTAssertEqual(topLeftEdges.describe(), ["0->1", "0->5"])
+        XCTAssertEqual(topLeftEdges.describe(), ["0->5", "0->1"])
         
         print(graph.description)
     }

@@ -30,6 +30,8 @@
 		59261845242686E7000A0DC5 /* SinglyLinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59261844242686E7000A0DC5 /* SinglyLinkedListStack.swift */; };
 		59261847242686F1000A0DC5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59261846242686F1000A0DC5 /* Stack.swift */; };
 		5926184A2426925A000A0DC5 /* SinglyLinkedListStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592618492426925A000A0DC5 /* SinglyLinkedListStackTests.swift */; };
+		592D39AB24313A0200783D15 /* AdjacencyList+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D39AA24313A0200783D15 /* AdjacencyList+CustomStringConvertible.swift */; };
+		592D39AD24313A1A00783D15 /* AdjacencyList+GridInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D39AC24313A1A00783D15 /* AdjacencyList+GridInit.swift */; };
 		592F91F3242F852000A627B4 /* NFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F91F2242F852000A627B4 /* NFA.swift */; };
 		592F91FD242FAA7F00A627B4 /* AdjacencyMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F91FC242FAA7F00A627B4 /* AdjacencyMatrix.swift */; };
 		592F9200242FAFC400A627B4 /* LinkedListBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F91FF242FAFC400A627B4 /* LinkedListBagTests.swift */; };
@@ -189,6 +191,8 @@
 		59261844242686E7000A0DC5 /* SinglyLinkedListStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListStack.swift; sourceTree = "<group>"; };
 		59261846242686F1000A0DC5 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		592618492426925A000A0DC5 /* SinglyLinkedListStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListStackTests.swift; sourceTree = "<group>"; };
+		592D39AA24313A0200783D15 /* AdjacencyList+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjacencyList+CustomStringConvertible.swift"; sourceTree = "<group>"; };
+		592D39AC24313A1A00783D15 /* AdjacencyList+GridInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdjacencyList+GridInit.swift"; sourceTree = "<group>"; };
 		592F91F2242F852000A627B4 /* NFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFA.swift; sourceTree = "<group>"; };
 		592F91FC242FAA7F00A627B4 /* AdjacencyMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyMatrix.swift; sourceTree = "<group>"; };
 		592F91FF242FAFC400A627B4 /* LinkedListBagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListBagTests.swift; sourceTree = "<group>"; };
@@ -521,6 +525,16 @@
 				5977EA7424269AC300152D33 /* FixedSizeArrayStackTests.swift */,
 			);
 			path = Stack;
+			sourceTree = "<group>";
+		};
+		592D39A9243139E700783D15 /* AdjacencyList */ = {
+			isa = PBXGroup;
+			children = (
+				59F238EC23FB7A4E00D8B467 /* AdjacencyList.swift */,
+				592D39AA24313A0200783D15 /* AdjacencyList+CustomStringConvertible.swift */,
+				592D39AC24313A1A00783D15 /* AdjacencyList+GridInit.swift */,
+			);
+			path = AdjacencyList;
 			sourceTree = "<group>";
 		};
 		592F91F1242F850F00A627B4 /* FiniteAutomaton */ = {
@@ -974,8 +988,8 @@
 		59CB4D26240EFF9B00AB0395 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				592D39A9243139E700783D15 /* AdjacencyList */,
 				59CB4D21240EFF5900AB0395 /* Graph */,
-				59F238EC23FB7A4E00D8B467 /* AdjacencyList.swift */,
 				592F91FC242FAA7F00A627B4 /* AdjacencyMatrix.swift */,
 			);
 			path = Implementation;
@@ -1467,6 +1481,7 @@
 				59FC1E58242AE83400EE2083 /* EulerTour.swift in Sources */,
 				59261845242686E7000A0DC5 /* SinglyLinkedListStack.swift in Sources */,
 				59FC1E56242AE81B00EE2083 /* HamiltonTour.swift in Sources */,
+				592D39AD24313A1A00783D15 /* AdjacencyList+GridInit.swift in Sources */,
 				5973C05723F63B420008C0C7 /* Heap.swift in Sources */,
 				5977EA7324269AAF00152D33 /* FixedSizeArrayStack.swift in Sources */,
 				59EE4623241B168500CA36E3 /* UnionFind.swift in Sources */,
@@ -1490,6 +1505,7 @@
 				59383B082412DB2C0067CE89 /* SmallestSubarrayWithSum.swift in Sources */,
 				59EE461E241B0CFC00CA36E3 /* Kruskal.swift in Sources */,
 				595E7003241D6F3500B7677F /* GraphBFS.swift in Sources */,
+				592D39AB24313A0200783D15 /* AdjacencyList+CustomStringConvertible.swift in Sources */,
 				59383B0C2412E48B0067CE89 /* LongestSubstringWithDistinctChars.swift in Sources */,
 				59C9E1BB2429A3B90022A5FB /* RabinKarp.swift in Sources */,
 				59E68455241E7410005C677D /* KahnsTopologicalSort.swift in Sources */,

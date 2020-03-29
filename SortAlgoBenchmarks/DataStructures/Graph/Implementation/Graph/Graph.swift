@@ -20,9 +20,6 @@ protocol Graph {
     @discardableResult
     mutating func addVertex(element: Element) -> Vertex
     
-    @discardableResult
-    mutating func addVertex(vertex: Vertex) -> Vertex
-    
     mutating func addEdge(_ edge: Edge, directed: Bool)
     
     func getEdges(from: Vertex) -> [Edge]

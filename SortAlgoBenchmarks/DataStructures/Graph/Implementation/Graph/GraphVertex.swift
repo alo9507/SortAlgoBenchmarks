@@ -7,7 +7,7 @@
 //
 
 struct GraphVertex<Element> {
-    let index: Int
+    var index: String
     var element: Element
     
     mutating func updateElement(to element: Element) {
