@@ -11,7 +11,7 @@ import XCTest
 
 final class TrieTests: XCTestCase {
     func test_trieInsert() {
-        var trie = Trie()
+        var trie = Trie2()
         trie.insert(word: "abc")
         trie.insert(word: "bob")
         XCTAssertEqual(true, trie.contains(word: "abc"))

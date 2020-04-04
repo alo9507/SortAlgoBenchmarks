@@ -14,8 +14,10 @@ class TrieSymbolTable<Value: Hashable>: HashTable {
     
     let R = 256 // extended ASCII
     
+    var trie = Trie<Value>()
+    
     func insert(_ key: String, _ value: Value) {
-        let key = Array(key)
+        trie.insert(word: key, value)
     }
     
     func hash(_ key: String) -> Int {
@@ -23,7 +25,7 @@ class TrieSymbolTable<Value: Hashable>: HashTable {
     }
     
     func get(_ key: String) -> Value? {
-        return nil
+        return trie.get(word: key)?.dictValue
     }
     
     func search(_ key: String) -> Bool {

@@ -15,14 +15,6 @@ extension AdjacencyList {
         }
     }
     
-    @discardableResult
-    mutating func addVertex(element: Element, at position: (row: Int, col: Int)) -> Vertex {
-        let vertex = Vertex(index: indexForPosition(position), element: element)
-        adjacencies[vertex] = []
-        vertexWithIndex[vertex.index] = vertex
-        return vertex
-    }
-    
     mutating func addNeighborsAsEdges(position: (row: Int, col: Int), _ grid: [[Element]]) {
         let height = grid.count
         let width = grid[0].count
@@ -58,16 +50,24 @@ extension AdjacencyList {
         return vertex
     }
     
+    @discardableResult
+    mutating func addVertex(element: Element, at position: (row: Int, col: Int)) -> Vertex {
+        let vertex = Vertex(index: indexForPosition(position), element: element)
+        adjacencies[vertex] = []
+        vertexWithIndex[vertex.index] = vertex
+        return vertex
+    }
+    
+    func getVertexWithIndex(_ index: String) -> Vertex? {
+        return vertexWithIndex[index]
+    }
+    
     func indexForPosition(_ position: (row: Int, col: Int)) -> String {
         return String(position.row) + String(position.col)
     }
     
     func containsVertexWithIndex(_ index: String) -> Bool {
         return vertexWithIndex[index] != nil
-    }
-    
-    func getVertexWithIndex(_ index: String) -> Vertex? {
-        return vertexWithIndex[index]
     }
     
     func getEdges(from position: (row: Int, col: Int), in grid: [[Element]]) -> [Edge] {

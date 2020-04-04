@@ -22,19 +22,19 @@ enum FloodFill {
         
         queue.enqueue(position)
         
-        while let position = queue.dequeue() {
-            let row = position.row
-            let col = position.col
+        while let cell = queue.dequeue() {
+            let row = cell.row
+            let col = cell.col
             
             if row < 0 || col < 0 || row >= height || col >= width { continue }
-            guard visited[row][col] == false else { continue }
+            guard !visited[row][col] else { continue }
             guard grid[row][col] == targetColor else { continue }
             
             visited[row][col] = true
             grid[row][col] = replacementColor
             
-            queue.enqueue((row, col - 1))
-            queue.enqueue((row, col + 1))
+            queue.enqueue((row, col-1))
+            queue.enqueue((row, col+1))
             queue.enqueue((row - 1, col))
             queue.enqueue((row + 1, col))
         }

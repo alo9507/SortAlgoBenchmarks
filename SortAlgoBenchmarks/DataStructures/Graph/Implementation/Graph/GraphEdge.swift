@@ -13,6 +13,9 @@ struct GraphEdge<Element> {
     let destination: Vertex
     let weight: Double
     
+    var flow: Int? = 0
+    let capacity: Int? = 0
+    
     init(source: Vertex, destination: Vertex, weight: Double = 0.0) {
         self.source = source
         self.destination = destination

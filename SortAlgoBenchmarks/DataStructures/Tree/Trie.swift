@@ -27,19 +27,16 @@ import Foundation
 import Foundation
 
 /// A node in the trie
-class TrieNode<T: Hashable> {
+class TrieNode<T: Hashable, Value: Hashable> {
     var value: T?
+    var dictValue: Value?
     var children: [T: TrieNode] = [:]
     var isTerminating = false
-    var isLeaf: Bool {
-        return children.count == 0
-    }
     
     /// Initializes a node.
     ///
     /// - Parameters:
     ///   - value: The value that goes into the node
-    ///   - parentNode: A reference to this node's parent
     init(value: T? = nil) {
         self.value = value
     }
@@ -58,11 +55,10 @@ class TrieNode<T: Hashable> {
 
 /// A trie data structure containing words.  Each node is a single
 /// character of a word.
-class Trie {
-    typealias Node = TrieNode<Character>
+class Trie<Value: Hashable> {
+    typealias Node = TrieNode<Character, Value>
     
     fileprivate let root: Node
-    
     /// Creates an empty trie.
     init() {
         root = Node()
@@ -75,7 +71,7 @@ extension Trie {
     /// there is no change.
     ///
     /// - Parameter word: the word to be inserted.
-    func insert(word: String) {
+    func insert(word: String, _ value: Value) {
         guard !word.isEmpty else {
             return
         }
@@ -92,6 +88,7 @@ extension Trie {
         guard !currentNode.isTerminating else {
             return
         }
+        currentNode.dictValue = value
         currentNode.isTerminating = true
     }
     
@@ -99,17 +96,18 @@ extension Trie {
     ///
     /// - Parameter word: the word to check for
     /// - Returns: true if the word is present, false otherwise.
-    func contains(word: String) -> Bool {
+    func get(word: String) -> Node? {
         guard !word.isEmpty else {
-            return false
+            return nil
         }
         var currentNode = root
         for character in word.lowercased() {
             guard let childNode = currentNode.children[character] else {
-                return false
+                return nil
             }
             currentNode = childNode
         }
-        return currentNode.isTerminating
+        if currentNode.isTerminating { return nil }
+        return currentNode
     }
 }

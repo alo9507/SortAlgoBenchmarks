@@ -61,7 +61,8 @@ public struct UnionFind<T: Hashable> {
     // This find the root node of the tree that the element we're searching for belongs to
     private mutating func setByIndex(_ index: Int) -> Int {
         // check if the given index represents a root node (i.e. a node whose parent points back to the node itself)
-        if parent[index] == index {
+        let isRootNode = parent[index] == index
+        if isRootNode {
             return index
         } else {
             // otherwise we recursively call this method on the parent of the current node
