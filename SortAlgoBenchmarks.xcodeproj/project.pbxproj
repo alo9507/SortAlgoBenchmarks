@@ -115,7 +115,8 @@
 		59CA8AB4242E7E410065DC5C /* KeyIndexedCountingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA8AB3242E7E410065DC5C /* KeyIndexedCountingTests.swift */; };
 		59CB4D23240EFF7100AB0395 /* GraphVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D22240EFF7100AB0395 /* GraphVertex.swift */; };
 		59CB4D25240EFF8900AB0395 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D24240EFF8900AB0395 /* GraphEdge.swift */; };
-		59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */; };
+		59CB4D2A240F00F400AB0395 /* BinarySearchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB4D29240F00F400AB0395 /* BinarySearchNode.swift */; };
+		59CD9DC0243902960034DAC6 /* BinarySearchTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CD9DBF243902960034DAC6 /* BinarySearchTreeTests.swift */; };
 		59D1E98123F618DF00647E4B /* SortAlgoBenchmarks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D1E97723F618DF00647E4B /* SortAlgoBenchmarks.framework */; };
 		59D1E98623F618DF00647E4B /* SortAlgorithmPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E98523F618DF00647E4B /* SortAlgorithmPerformanceTests.swift */; };
 		59D1E98823F618DF00647E4B /* SortAlgoBenchmarks.h in Headers */ = {isa = PBXBuildFile; fileRef = 59D1E97A23F618DF00647E4B /* SortAlgoBenchmarks.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -284,7 +285,8 @@
 		59CA8AB3242E7E410065DC5C /* KeyIndexedCountingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyIndexedCountingTests.swift; sourceTree = "<group>"; };
 		59CB4D22240EFF7100AB0395 /* GraphVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVertex.swift; sourceTree = "<group>"; };
 		59CB4D24240EFF8900AB0395 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
-		59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
+		59CB4D29240F00F400AB0395 /* BinarySearchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchNode.swift; sourceTree = "<group>"; };
+		59CD9DBF243902960034DAC6 /* BinarySearchTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeTests.swift; sourceTree = "<group>"; };
 		59D1E97723F618DF00647E4B /* SortAlgoBenchmarks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SortAlgoBenchmarks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D1E97A23F618DF00647E4B /* SortAlgoBenchmarks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SortAlgoBenchmarks.h; sourceTree = "<group>"; };
 		59D1E97B23F618DF00647E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1066,7 +1068,7 @@
 			isa = PBXGroup;
 			children = (
 				5964088823F891D900B68414 /* BinaryTree.swift */,
-				59CB4D29240F00F400AB0395 /* BinarySearchTree.swift */,
+				59CB4D29240F00F400AB0395 /* BinarySearchNode.swift */,
 				5939FEAF24147A10000586D1 /* BFS.swift */,
 				590C8B1A2415752600B10C2B /* DFS.swift */,
 			);
@@ -1174,6 +1176,7 @@
 				5964088A23F8923400B68414 /* BinaryTreeTests.swift */,
 				59E6845C241E7B63005C677D /* nTreeTests.swift */,
 				593002CB24219F41003CE21E /* RedBlackTreeTests.swift */,
+				59CD9DBF243902960034DAC6 /* BinarySearchTreeTests.swift */,
 			);
 			name = Tree;
 			path = Functionality/Tree;
@@ -1508,7 +1511,7 @@
 				59F238EA23FB76F700D8B467 /* Graph.swift in Sources */,
 				5977EA8C2426C80A00152D33 /* UnorderedArrayPriorityQueue.swift in Sources */,
 				59EC1FE6242FD011009B795D /* BellmanFord.swift in Sources */,
-				59CB4D2A240F00F400AB0395 /* BinarySearchTree.swift in Sources */,
+				59CB4D2A240F00F400AB0395 /* BinarySearchNode.swift in Sources */,
 				59DDA515243116CF00DDC5E2 /* DynamicProgramming.swift in Sources */,
 				59914F422430304100854EA7 /* PrimEager.swift in Sources */,
 				59E68464241EABFB005C677D /* Palindrome.swift in Sources */,
@@ -1646,6 +1649,7 @@
 				596828CF2412F23E002AEF7E /* PairWithTargetSumTests.swift in Sources */,
 				5973C05C23F63C530008C0C7 /* PriorityQueueTests.swift in Sources */,
 				596828D32412F7C0002AEF7E /* RemoveDuplicatesTests.swift in Sources */,
+				59CD9DC0243902960034DAC6 /* BinarySearchTreeTests.swift in Sources */,
 				5964088B23F8923400B68414 /* BinaryTreeTests.swift in Sources */,
 				5973C05F23F63F740008C0C7 /* FunctionalityTests.swift in Sources */,
 				5926184A2426925A000A0DC5 /* SinglyLinkedListStackTests.swift in Sources */,

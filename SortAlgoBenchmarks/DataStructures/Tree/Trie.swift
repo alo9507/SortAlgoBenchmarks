@@ -15,73 +15,101 @@ import Foundation
 
 // Fun fact: "trie" is an infix of the word "re-'trie'-val"
 
+// Symbol table specialized to string types
+//
+//  Trie.swift
+//  Trie
+//
+//  Created by Rick Zaccone on 2016-12-12.
+//  Copyright © 2016 Rick Zaccone. All rights reserved.
+//
+
+import Foundation
+
+/// A node in the trie
 class TrieNode<T: Hashable> {
-    var value: T? // the value must be hashable because it's used as a key in the children dictionary
-    weak var parent: TrieNode? // necessary for remove operations
+    var value: T?
     var children: [T: TrieNode] = [:]
     var isTerminating = false
-    
-    init(value: T? = nil, parent: TrieNode? = nil) {
-        self.value = value
-        self.parent = parent
+    var isLeaf: Bool {
+        return children.count == 0
     }
     
-    func add(child: T) {
-        guard children[child] == nil else { return } // this preserves uniqueness of all children
-        children[child] = TrieNode(value: child, parent: self)
+    /// Initializes a node.
+    ///
+    /// - Parameters:
+    ///   - value: The value that goes into the node
+    ///   - parentNode: A reference to this node's parent
+    init(value: T? = nil) {
+        self.value = value
+    }
+    
+    /// Adds a child node to self.  If the child is already present,
+    /// do nothing.
+    ///
+    /// - Parameter value: The item to be added to this node.
+    func add(value: T) {
+        guard children[value] == nil else {
+            return
+        }
+        children[value] = TrieNode(value: value)
     }
 }
 
+/// A trie data structure containing words.  Each node is a single
+/// character of a word.
 class Trie {
     typealias Node = TrieNode<Character>
     
     fileprivate let root: Node
     
+    /// Creates an empty trie.
     init() {
         root = Node()
     }
 }
 
+// MARK: - Adds methods: insert, remove, contains
 extension Trie {
-    // a trie always tries to reuse existing nodes to complete a sequence
-    // e.g. "cut" and "cute" could be represented with 4 nodes
+    /// Inserts a word into the trie.  If the word is already present,
+    /// there is no change.
+    ///
+    /// - Parameter word: the word to be inserted.
     func insert(word: String) {
-        guard !word.isEmpty else { return }
-        
+        guard !word.isEmpty else {
+            return
+        }
         var currentNode = root
-        
-        let characters = Array(word.lowercased())
-        var currentIndex = 0
-        
-        while currentIndex < characters.count {
-            let character = characters[currentIndex]
-            
-            // if the first character is already there, step to it
-            if let child = currentNode.children[character] {
-                currentNode = child
+        for character in word.lowercased() {
+            if let childNode = currentNode.children[character] {
+                currentNode = childNode
             } else {
-            // otherwise, add this character as a child and THEN step to it
-                currentNode.add(child: character)
+                currentNode.add(value: character)
                 currentNode = currentNode.children[character]!
             }
-            
-            currentIndex += 1
         }
-        if currentIndex == characters.count { currentNode.isTerminating = true }
+        // Word already present?
+        guard !currentNode.isTerminating else {
+            return
+        }
+        currentNode.isTerminating = true
     }
     
+    /// Determines whether a word is in the trie.
+    ///
+    /// - Parameter word: the word to check for
+    /// - Returns: true if the word is present, false otherwise.
     func contains(word: String) -> Bool {
-        guard !word.isEmpty else { return false }
-        var currentNode = root
-        
-        let characters = Array(word.lowercased())
-        var currentIndex = 0
-        
-        while currentIndex < characters.count, let child = currentNode.children[characters[currentIndex]] {
-            currentNode = child
-            currentIndex += 1
+        guard !word.isEmpty else {
+            return false
         }
-        
-        return currentIndex == characters.count && currentNode.isTerminating
+        var currentNode = root
+        for character in word.lowercased() {
+            guard let childNode = currentNode.children[character] else {
+                return false
+            }
+            currentNode = childNode
+        }
+        return currentNode.isTerminating
     }
 }

@@ -10,12 +10,11 @@ import XCTest
 @testable import SortAlgoBenchmarks
 
 final class TrieTests: XCTestCase {
-    func test_trie() {
+    func test_trieInsert() {
         var trie = Trie()
-        trie.insert(word: "cat")
-        trie.insert(word: "dog")
-        
-        XCTAssertTrue(trie.contains(word: "dog"))
-        XCTAssertFalse(trie.contains(word: "blarg"))
+        trie.insert(word: "abc")
+        trie.insert(word: "bob")
+        XCTAssertEqual(true, trie.contains(word: "abc"))
+        XCTAssertEqual(false, trie.contains(word: "not"))
     }
 }
