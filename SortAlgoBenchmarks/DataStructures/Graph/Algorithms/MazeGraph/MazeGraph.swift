@@ -9,9 +9,9 @@
 import Foundation
 
 enum MazeGraph {
-    static func pathExists(_ grid: [[Int]],
-                           start: (row: Int, col: Int),
-                           finish: (row: Int, col: Int)) -> Bool {
+    static func pathExists_iterativeDfs(_ grid: [[Int]],
+                               start: (row: Int, col: Int),
+                               finish: (row: Int, col: Int)) -> Bool {
         var path = Array<Int>()
         var stack = ArrayStack<(row: Int, col: Int)>()
         
@@ -27,11 +27,10 @@ enum MazeGraph {
             let col = position.col
             
             if row < 0 || col < 0 || row >= height || col >= width { continue }
-            guard visited[row][col] == false else { continue }
+            guard !visited[row][col] else { continue }
             guard grid[row][col] == 1 else { continue }
             
             visited[row][col] = true
-            print(position)
             
             stack.push((row: row, col: col - 1))
             stack.push((row: row, col: col + 1))
@@ -40,6 +39,93 @@ enum MazeGraph {
         }
         
         return false
+    }
+    
+    static func pathExists_dfsRecursive(_ grid: [[Int]], start: (row: Int, col: Int), finish: (row: Int, col: Int)) -> Bool {
+        var height = grid.count
+        var width = grid[0].count
+        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+        
+        var pathExists = false
+        func recurseDfs(from position: (row: Int, col: Int)) {
+            if position == finish { pathExists = true; return }
+            
+            let row = position.row
+            let col = position.col
+            
+            if row < 0 || col < 0 || row >= height || col >= width { return }
+            guard !visited[row][col] else { return }
+            guard grid[row][col] == 1 else { return }
+            
+            visited[row][col] = true
+            
+            recurseDfs(from: (row: row, col: col - 1))
+            recurseDfs(from: (row: row, col: col + 1))
+            recurseDfs(from: (row: row - 1, col: col))
+            recurseDfs(from: (row: row + 1, col: col))
+        }
+        
+        recurseDfs(from: start)
+        return pathExists
+    }
+    
+    static func pathExists_iterativeBfs(_ grid: [[Int]], start: (row: Int, col: Int), finish: (row: Int, col: Int)) -> Bool {
+        let height = grid.count
+        let width = grid[0].count
+        
+        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+        var queue = ArrayQueue<(row: Int, col: Int)>()
+        
+        queue.enqueue(start)
+        
+        while let position = queue.dequeue() {
+            if position == finish { return true }
+            
+            let row = position.row
+            let col = position.col
+            
+            if row < 0 || col < 0 || row >= height || col >= width { continue }
+            guard !visited[row][col] else { continue }
+            guard grid[row][col] == 1 else { continue }
+            
+            visited[row][col] = true
+            
+            queue.enqueue((row, col + 1))
+            queue.enqueue((row, col - 1))
+            queue.enqueue((row + 1, col))
+            queue.enqueue((row - 1, col))
+        }
+        
+        return false
+    }
+}
+
+extension MazeGraph {
+    static func pathToEnd_dfsRecursive(_ grid: [[Int]], start: (row: Int, col: Int), finish: (row: Int, col: Int)) -> [(row: Int, col: Int)] {
+        var height = grid.count
+        var width = grid[0].count
+        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+        var path: [(row: Int, col: Int)] = []
+        
+        func recurseDfs(from position: (row: Int, col: Int)) -> [(row: Int, col: Int)] {
+            let row = position.row
+            let col = position.col
+            
+            if row < 0 || col < 0 || row >= height || col >= width { return [] }
+            guard !visited[row][col] else { return [] }
+            guard grid[row][col] == 1 else { return  [] }
+            
+            visited[row][col] = true
+            
+            path = recurseDfs(from: (row: row, col: col - 1)) + path
+            path = recurseDfs(from: (row: row, col: col + 1)) + path
+            path = recurseDfs(from: (row: row - 1, col: col)) + path
+            path = recurseDfs(from: (row: row + 1, col: col)) + path
+            
+            return path
+        }
+        
+        return recurseDfs(from: start)
     }
 }
 

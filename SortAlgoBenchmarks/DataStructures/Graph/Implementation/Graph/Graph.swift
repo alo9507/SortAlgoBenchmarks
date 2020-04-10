@@ -9,13 +9,14 @@
 import Foundation
 
 protocol Graph {
-    associatedtype Element
+    associatedtype Element: Hashable
     
     typealias Edge = GraphEdge<Element>
     typealias Vertex = Edge.Vertex
     
     var vertices: [Vertex] { get }
     var edges: [Edge] { get }
+    var adjacencies: [Vertex: [Edge]] { get }
     
     @discardableResult
     mutating func addVertex(element: Element) -> Vertex

@@ -50,3 +50,16 @@ extension AdjacencyList {
         return leaders
     }
 }
+
+/// Time Complexity: O(V + E)
+// Only DAGs can have Topological Sortings. Use Tarjan's to detect these cycles
+// Topological orderings are not unique
+// Cyclic graphs cannot have a valid ordering
+//enum KahnsTopologicalSort<Graph: SortAlgoBenchmarks.Graph> {
+//    typealias Edge = Graph.Edge
+//    typealias Vertex = Edge.Vertex
+//
+//    static func topsort(graph: Graph) -> [Vertex] {
+//
+//    }
+//}

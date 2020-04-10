@@ -42,25 +42,23 @@ class TopologicalSortTest: XCTestCase {
     }()
     
     func test_calculateInDegrees() {
-        print(graph.calculateInDegreeOfNodes())
-    }
-    
-    func test_topologicalSort() {
-        graph.topologicalSort().forEach { (vertex) in
-            print(vertex.element)
-        }
-    }
-    
-    func test_topologicalSortKahns() {
-        graph.kahnsTopologicalSort().forEach { (vertex) in
-            print(vertex.element)
-        }
-    }
-    
-    func test_randomSourceTopologicalSort() {
-        graph.topologicalSortRandomSource().forEach { (vertex) in
-            print(vertex.element)
-        }
+        let inDegrees = graph.calculateInDegreeOfNodes()
+        
+        let stack = graph.vertices.filter { $0.element == "Stack" }.first!
+        let topologicalSort = graph.vertices.filter { $0.element == "Topological Sort" }.first!
+        let linkingObjects = graph.vertices.filter { $0.element == "Linking Objects" }.first!
+        let tree = graph.vertices.filter { $0.element == "Tree" }.first!
+        let graphType = graph.vertices.filter { $0.element == "Graph" }.first!
+        let ll = graph.vertices.filter { $0.element == "Linked List" }.first!
+        let dfs = graph.vertices.filter { $0.element == "Depth First Search" }.first!
+        
+        XCTAssertEqual(0, inDegrees[linkingObjects])
+        XCTAssertEqual(1, inDegrees[tree])
+        XCTAssertEqual(1, inDegrees[graphType])
+        XCTAssertEqual(1, inDegrees[ll])
+        XCTAssertEqual(2, inDegrees[dfs])
+        XCTAssertEqual(2, inDegrees[topologicalSort])
+        XCTAssertEqual(0, inDegrees[stack])
     }
 }
 

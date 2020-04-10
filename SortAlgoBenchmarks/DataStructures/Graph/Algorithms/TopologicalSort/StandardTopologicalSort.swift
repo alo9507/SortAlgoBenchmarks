@@ -8,33 +8,49 @@
 
 import Foundation
 
-extension AdjacencyList {
-    public func topologicalSort() -> [GraphVertex<Element>] {
-        let startVertices = calculateInDegreeOfNodes().filter({_, indegree in
-            return indegree == 0
-        }).map({ node, indegree in
-            return node
-        })
+enum StandardTopologicalSort<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
+    typealias Edge = Graph.Edge
+    typealias Vertex = Edge.Vertex
+    
+    static func topsort(graph: Graph) -> [Vertex] {
+        let inDegrees = calculateInDegreeOfNodes(in: graph)
         
-        var result = [GraphVertex<Element>]()
-        for vertex in startVertices {
-            result = depthFirstSearch(vertex) + result
+        let startNodes = graph.vertices.filter { (vertex) -> Bool in
+            return inDegrees[vertex] == 0
         }
         
-        return result
+        return []
     }
     
-    typealias InDegree = Int
-    
-    public func calculateInDegreeOfNodes() -> [GraphVertex<Element>: InDegree] {
-        var inDegrees = [GraphVertex<Element>: InDegree]()
+    static public func calculateInDegreeOfNodes(in graph: Graph) -> [Vertex : Int] {
+        var inDegrees = [Vertex: Int]()
         
-        for (node, _) in adjacencies {
-            inDegrees[node] = 0
+        for (vertex, _) in graph.adjacencies {
+            inDegrees[vertex] = 0
         }
         
-        for edge in sortedEdges {
-            inDegrees[edge.destination, default: 0] += 1
+        for (_, edges) in graph.adjacencies {
+            for edge in edges {
+                inDegrees[edge.destination]! += 1
+            }
+        }
+        
+        return inDegrees
+    }
+}
+
+extension AdjacencyList {
+    public func calculateInDegreeOfNodes() -> [Vertex : Int] {
+        var inDegrees = [Vertex: Int]()
+        
+        for (vertex, _) in adjacencies {
+            inDegrees[vertex] = 0
+        }
+        
+        for (_, edges) in adjacencies {
+            for edge in edges {
+                inDegrees[edge.destination]! += 1
+            }
         }
         
         return inDegrees

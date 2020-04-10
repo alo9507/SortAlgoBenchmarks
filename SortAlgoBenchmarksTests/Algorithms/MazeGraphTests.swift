@@ -10,8 +10,8 @@ import XCTest
 @testable import SortAlgoBenchmarks
 
 class MazeGraphTests: XCTestCase {
-    func testBinarySearch() {
-        var grid_pathExists = [
+    func testMazeGraph() {
+        let grid_pathExists = [
             [0,1,0,1,1,1,0,1],
             [1,1,0,1,1,0,1,1],
             [1,0,0,1,0,0,1,0],
@@ -22,7 +22,7 @@ class MazeGraphTests: XCTestCase {
             [1,1,0,0,0,1,1,1],
         ]
         
-        var grid_noPath = [
+        let grid_noPath = [
             [0,1,0,1,1,1,0,1],
             [1,1,0,1,1,0,1,1],
             [1,0,0,1,0,0,1,0],
@@ -33,9 +33,19 @@ class MazeGraphTests: XCTestCase {
             [1,1,0,0,0,1,1,1],
         ]
         
-        XCTAssertTrue(MazeGraph.pathExists(grid_pathExists, start: (7,0), finish: (0,7)))
+        // Iterative DFS w/ Stack
+        XCTAssertTrue(MazeGraph.pathExists_iterativeDfs(grid_pathExists, start: (7,0), finish: (0,7)))
+        XCTAssertFalse(MazeGraph.pathExists_iterativeDfs(grid_noPath, start: (7,0), finish: (0,7)))
         
-        XCTAssertFalse(MazeGraph.pathExists(grid_noPath, start: (7,0), finish: (0,7)))
+        // Recursive DFS
+        XCTAssertTrue(MazeGraph.pathExists_dfsRecursive(grid_pathExists, start: (7,0), finish: (0,7)))
+        XCTAssertFalse(MazeGraph.pathExists_dfsRecursive(grid_noPath, start: (7,0), finish: (0,7)))
+        
+        // Iterative BFS w/ Queue
+        XCTAssertTrue(MazeGraph.pathExists_iterativeBfs(grid_pathExists, start: (7,0), finish: (0,7)))
+        XCTAssertFalse(MazeGraph.pathExists_iterativeBfs(grid_noPath, start: (7,0), finish: (0,7)))
+        
+        print(MazeGraph.pathToEnd_dfsRecursive(grid_pathExists, start: (7,0), finish: (0,7)))
     }
 }
 
