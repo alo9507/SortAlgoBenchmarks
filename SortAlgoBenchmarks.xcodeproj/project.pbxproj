@@ -122,6 +122,7 @@
 		59CD9DC0243902960034DAC6 /* BinarySearchTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CD9DBF243902960034DAC6 /* BinarySearchTreeTests.swift */; };
 		59CD9DC224391B240034DAC6 /* Trie2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CD9DC124391B240034DAC6 /* Trie2.swift */; };
 		59CD9DC4243920860034DAC6 /* TrieSymbolTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CD9DC3243920860034DAC6 /* TrieSymbolTableTests.swift */; };
+		59CEFB0B2440CB5200D8DDAF /* MazeGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEFB0A2440CB5200D8DDAF /* MazeGraphTests.swift */; };
 		59D1E98123F618DF00647E4B /* SortAlgoBenchmarks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D1E97723F618DF00647E4B /* SortAlgoBenchmarks.framework */; };
 		59D1E98623F618DF00647E4B /* SortAlgorithmPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E98523F618DF00647E4B /* SortAlgorithmPerformanceTests.swift */; };
 		59D1E98823F618DF00647E4B /* SortAlgoBenchmarks.h in Headers */ = {isa = PBXBuildFile; fileRef = 59D1E97A23F618DF00647E4B /* SortAlgoBenchmarks.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -297,6 +298,7 @@
 		59CD9DBF243902960034DAC6 /* BinarySearchTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeTests.swift; sourceTree = "<group>"; };
 		59CD9DC124391B240034DAC6 /* Trie2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie2.swift; sourceTree = "<group>"; };
 		59CD9DC3243920860034DAC6 /* TrieSymbolTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieSymbolTableTests.swift; sourceTree = "<group>"; };
+		59CEFB0A2440CB5200D8DDAF /* MazeGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeGraphTests.swift; sourceTree = "<group>"; };
 		59D1E97723F618DF00647E4B /* SortAlgoBenchmarks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SortAlgoBenchmarks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D1E97A23F618DF00647E4B /* SortAlgoBenchmarks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SortAlgoBenchmarks.h; sourceTree = "<group>"; };
 		59D1E97B23F618DF00647E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -813,6 +815,7 @@
 				59DDA518243118B300DDC5E2 /* DynamicProgramming */,
 				590EA4F323F87DB900E71EAF /* Search */,
 				59013D9F23F84B8000725562 /* Sort */,
+				59CEFB0A2440CB5200D8DDAF /* MazeGraphTests.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -1667,6 +1670,7 @@
 				59013D9B23F8437000725562 /* Utils.swift in Sources */,
 				592F9200242FAFC400A627B4 /* LinkedListBagTests.swift in Sources */,
 				59E6846C241EAF93005C677D /* ArrayStackTests.swift in Sources */,
+				59CEFB0B2440CB5200D8DDAF /* MazeGraphTests.swift in Sources */,
 				5954A324241ABB26007F5FAC /* MedianOfAStreamTests.swift in Sources */,
 				59B200BB2402210900E613C0 /* DijkstrasTest.swift in Sources */,
 				59383B0A2412DB460067CE89 /* SmallestSubarrayWithSum.swift in Sources */,

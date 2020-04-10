@@ -45,3 +45,11 @@ extension ArrayStack: CustomStringConvertible {
             .joined(separator: " ")
     }
 }
+
+extension ArrayStack where Element == GraphVertex<String> {
+    var verticesDescription: String {
+        return storage.reversed()
+            .map { "\($0.element)" }
+            .joined(separator: " ")
+    }
+}

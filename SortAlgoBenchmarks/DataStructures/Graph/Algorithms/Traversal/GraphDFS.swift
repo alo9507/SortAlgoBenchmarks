@@ -43,3 +43,33 @@ extension AdjacencyList {
         return result
     }
 }
+
+// iterative dfs
+
+enum IterativeGraphDFS<Graph: SortAlgoBenchmarks.Graph>  where Graph.Element == String {
+    typealias Vertex = Graph.Vertex
+    static func depthFirstSearch(graph: Graph, _ source: Vertex) -> [Vertex] {
+        var result = [Vertex]()
+        var visited = Set<Vertex>()
+        var stack = ArrayStack<Vertex>()
+        
+        stack.push(source)
+        
+        while !stack.isEmpty {
+//            print(stack.verticesDescription)
+            let vertex = stack.pop()!
+            guard !visited.contains(vertex) else { continue }
+            
+            visited.insert(vertex)
+            print(vertex.element)
+            let neighbors = graph.getEdges(from: vertex)
+            
+            for next in neighbors where !visited.contains(next.destination) {
+                stack.push(next.destination)
+            }
+            result = result + [vertex]
+        }
+        
+        return result
+    }
+}

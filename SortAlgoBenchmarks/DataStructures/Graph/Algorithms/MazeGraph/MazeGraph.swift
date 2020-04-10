@@ -8,6 +8,41 @@
 
 import Foundation
 
+enum MazeGraph {
+    static func pathExists(_ grid: [[Int]],
+                           start: (row: Int, col: Int),
+                           finish: (row: Int, col: Int)) -> Bool {
+        var path = Array<Int>()
+        var stack = ArrayStack<(row: Int, col: Int)>()
+        
+        let height = grid.count
+        let width = grid[0].count
+        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+        
+        stack.push(start)
+        
+        while let position = stack.pop() {
+            if position == finish { return true }
+            let row = position.row
+            let col = position.col
+            
+            if row < 0 || col < 0 || row >= height || col >= width { continue }
+            guard visited[row][col] == false else { continue }
+            guard grid[row][col] == 1 else { continue }
+            
+            visited[row][col] = true
+            print(position)
+            
+            stack.push((row: row, col: col - 1))
+            stack.push((row: row, col: col + 1))
+            stack.push((row: row - 1, col: col))
+            stack.push((row: row + 1, col: col))
+        }
+        
+        return false
+    }
+}
+
 /*
  Vertex = intersection
  Edge = passage
