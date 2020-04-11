@@ -36,7 +36,6 @@ enum StandardTopologicalSort<Graph: SortAlgoBenchmarks.Graph> where Graph.Elemen
         }
         
         for startNode in startNodes {
-            // append result of dfs to FRONT of result
             result = modifiedDepthFirstSearch(from: startNode) + result
         }
         

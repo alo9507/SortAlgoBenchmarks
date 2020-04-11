@@ -66,5 +66,11 @@ class TopologicalSortTest: XCTestCase {
             print(vertex.element)
         }
     }
+    
+    func test_kahnsTopologicalSort() {
+        KahnsTopologicalSort.topsort(for: graph).forEach { (vertex) in
+            print(vertex.element)
+        }
+    }
 }
 

@@ -16,14 +16,11 @@ enum RecursiveGraphDFS<Graph: SortAlgoBenchmarks.Graph>  where Graph.Element == 
         var result = [Vertex]()
         
         func dfs(from source: Vertex) {
-            // O(1) per node visit
             visited.insert(source)
             result.append(source)
-            let neighbors = graph.getEdges(from: source)
             
-            // O(E)
-            for neighbor in neighbors where !visited.contains(neighbor.destination) {
-                dfs(from: neighbor.destination)
+            for edge in graph.getEdges(from: source) where !visited.contains(edge.destination) {
+                dfs(from: edge.destination)
             }
         }
         
@@ -43,14 +40,11 @@ enum IterativeGraphDFS<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Has
         stack.push(source)
         
         while let vertex = stack.pop() {
-            // O(1) per node visit
-            result.append(vertex)
             visited.insert(vertex)
-            let neighbors = graph.getEdges(from: vertex)
+            result.append(vertex)
             
-            // O(E)
-            for neighbor in neighbors where !visited.contains(neighbor.destination) {
-                stack.push(neighbor.destination)
+            for edge in graph.getEdges(from: vertex) where !visited.contains(edge.destination) {
+                stack.push(edge.destination)
             }
         }
         

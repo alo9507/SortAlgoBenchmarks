@@ -119,7 +119,6 @@ final class GraphTraversalTests: XCTestCase {
             graph.addEdge(edge)
         }
         
-        
     }
 }
 

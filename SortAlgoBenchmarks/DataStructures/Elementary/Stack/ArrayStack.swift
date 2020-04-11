@@ -13,6 +13,12 @@ import Foundation
 // Count: O(N)
 // Space: O(N)
 
+extension ArrayStack where Element: Equatable {
+    func contains(_ element: Element) -> Bool {
+        return storage.contains { element == $0 }
+    }
+}
+
 struct ArrayStack<Element> {
     private var storage: [Element] = []
     

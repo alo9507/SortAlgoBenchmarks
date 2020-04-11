@@ -6,60 +6,41 @@
 //  Copyright © 2020 Andrew O'Brien. All rights reserved.
 //
 
-import Foundation
-
-extension AdjacencyList {
-    func kahnsTopologicalSort() -> [GraphVertex<Element>] {
-        var nodes = calculateInDegreeOfNodes()
+enum KahnsTopologicalSort<Graph: SortAlgoBenchmarks.Graph> {
+    typealias Vertex = Graph.Vertex
+    
+    static func topsort(for graph: Graph) -> [Vertex] {
+        var inDegrees = calculateInDegreesOfNodes(for: graph)
         
-        // Find nodes with no predecessors and puth them into a new list
-        // These are the leaders.
-        // The leaders array eventually becomes the topologically sorted list
-        var leaders = nodes.filter({ _, indegree in
-            return indegree == 0
-        }).map({node, _ in
-            return node
-        })
+        var leaders = graph.vertices.filter { inDegrees[$0] == 0 }
         
-        /*
-         Remove each of the leaders
-         We do this by decrementing the in-degree of the nodes they poin to.
-         As soon as such a node has itself no more predecessors
-         it is added to the leaders array.
-         This repeates until there are no more vertices left
-         */
         var l = 0
         while l < leaders.count {
-            if let edges = adjacencies[leaders[l]] {
-                for neighbor in edges {
-                    if let count = nodes[neighbor.destination] {
-                        nodes[neighbor.destination] = count - 1
-                        if count == 1 {
-                            leaders.append(neighbor.destination)
-                        }
-                    }
+            for edge in graph.getEdges(from: leaders[l]) {
+                inDegrees[edge.destination]! -= 1
+                if inDegrees[edge.destination]! == 0 {
+                    leaders.append(edge.destination)
                 }
             }
             l += 1
         }
         
-        if leaders.count != nodes.count {
-            print("Error: graphs with cycles are not allowed")
-        }
-        
         return leaders
     }
+    
+    static func calculateInDegreesOfNodes(for graph: Graph) -> [Vertex: Int] {
+        var inDegress = [Vertex: Int]()
+        
+        for vertex in graph.vertices {
+            inDegress[vertex] = 0
+        }
+        
+        for (_, edges) in graph.adjacencies {
+            for edge in edges {
+                inDegress[edge.destination]! += 1
+            }
+        }
+        
+        return inDegress
+    }
 }
-
-/// Time Complexity: O(V + E)
-// Only DAGs can have Topological Sortings. Use Tarjan's to detect these cycles
-// Topological orderings are not unique
-// Cyclic graphs cannot have a valid ordering
-//enum KahnsTopologicalSort<Graph: SortAlgoBenchmarks.Graph> {
-//    typealias Edge = Graph.Edge
-//    typealias Vertex = Edge.Vertex
-//
-//    static func topsort(graph: Graph) -> [Vertex] {
-//
-//    }
-//}
