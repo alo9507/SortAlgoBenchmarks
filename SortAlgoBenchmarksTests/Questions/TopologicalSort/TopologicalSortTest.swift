@@ -42,7 +42,7 @@ class TopologicalSortTest: XCTestCase {
     }()
     
     func test_calculateInDegrees() {
-        let inDegrees = graph.calculateInDegreeOfNodes()
+        let inDegrees = StandardTopologicalSort.calculateInDegreeOfNodes(in: graph)
         
         let stack = graph.vertices.filter { $0.element == "Stack" }.first!
         let topologicalSort = graph.vertices.filter { $0.element == "Topological Sort" }.first!
@@ -59,6 +59,12 @@ class TopologicalSortTest: XCTestCase {
         XCTAssertEqual(2, inDegrees[dfs])
         XCTAssertEqual(2, inDegrees[topologicalSort])
         XCTAssertEqual(0, inDegrees[stack])
+    }
+    
+    func test_standardTopologicalSort() {
+        StandardTopologicalSort.topsort(graph: graph).forEach { (vertex) in
+            print(vertex.element)
+        }
     }
 }
 

@@ -8,18 +8,39 @@
 
 import Foundation
 
-enum StandardTopologicalSort<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
+enum StandardTopologicalSort<Graph: SortAlgoBenchmarks.Graph> where Graph.Element == String {
     typealias Edge = Graph.Edge
     typealias Vertex = Edge.Vertex
     
     static func topsort(graph: Graph) -> [Vertex] {
         let inDegrees = calculateInDegreeOfNodes(in: graph)
+        var visited = Set<Vertex>()
         
         let startNodes = graph.vertices.filter { (vertex) -> Bool in
             return inDegrees[vertex] == 0
         }
         
-        return []
+        var result = [Vertex]()
+        
+        func modifiedDepthFirstSearch(from source: Vertex) -> [Vertex] {
+            var result = [Vertex]()
+            
+            let neighbors = graph.getEdges(from: source)
+            
+            for neighbor in neighbors where !visited.contains(neighbor.destination) {
+                result = modifiedDepthFirstSearch(from: neighbor.destination) + result
+            }
+            
+            visited.insert(source)
+            return [source] + result
+        }
+        
+        for startNode in startNodes {
+            // append result of dfs to FRONT of result
+            result = modifiedDepthFirstSearch(from: startNode) + result
+        }
+        
+        return result
     }
     
     static public func calculateInDegreeOfNodes(in graph: Graph) -> [Vertex : Int] {

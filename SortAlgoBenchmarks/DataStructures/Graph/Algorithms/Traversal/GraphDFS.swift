@@ -6,68 +6,52 @@
 //  Copyright © 2020 Andrew O'Brien. All rights reserved.
 //
 
-// O(V + E)
-import Foundation
-
-/*
- A Depth-first Search plunges depth first into a graph without regard for which edge it takes next until it cannot go any further
- It then backtracks and continues
- */
-
-extension AdjacencyList {
-    typealias Augmentation = (GraphVertex<Element>) -> Void
+// Time Complexity: 0(V + E), aka 0(number of node visits + number of edges)
+/// Recursive implementation of depth first search
+enum RecursiveGraphDFS<Graph: SortAlgoBenchmarks.Graph>  where Graph.Element == String {
+    typealias Vertex = Graph.Vertex
     
-    func depthFirstSearch(_ source: GraphVertex<Element>,
-                          previsit: Augmentation? = nil,
-                          postvisit: Augmentation? = nil) -> [GraphVertex<Element>] {
-        var result = [GraphVertex<Element>]()
-        var visited = [GraphVertex<Element>: Bool]()
+    static func depthFirstSearch(for graph: Graph, from source: Vertex) -> [Vertex] {
+        var visited = Set<Vertex>()
+        var result = [Vertex]()
         
-        func recurseDfs(_ source: GraphVertex<Element>) {
-            if visited[source] == true { return }
-            visited[source] = true
+        func dfs(from source: Vertex) {
+            // O(1) per node visit
+            visited.insert(source)
+            result.append(source)
+            let neighbors = graph.getEdges(from: source)
             
-            let neighbors = getEdges(from: source)
-            
-            previsit?(source)
-            for next in neighbors {
-                if !visited[next.destination, default: false] {
-                    recurseDfs(next.destination)
-                }
+            // O(E)
+            for neighbor in neighbors where !visited.contains(neighbor.destination) {
+                dfs(from: neighbor.destination)
             }
-            postvisit?(source)
-            result = [source] + result
         }
         
-        recurseDfs(source)
+        dfs(from: source)
         return result
     }
 }
 
-// iterative dfs
-
-enum IterativeGraphDFS<Graph: SortAlgoBenchmarks.Graph>  where Graph.Element == String {
+enum IterativeGraphDFS<Graph: SortAlgoBenchmarks.Graph> where Graph.Element: Hashable {
     typealias Vertex = Graph.Vertex
-    static func depthFirstSearch(graph: Graph, _ source: Vertex) -> [Vertex] {
-        var result = [Vertex]()
+    
+    static func depthFirstSearch(for graph: Graph, from source: Vertex) -> [Vertex] {
         var visited = Set<Vertex>()
+        var result = [Vertex]()
         var stack = ArrayStack<Vertex>()
         
         stack.push(source)
         
-        while !stack.isEmpty {
-//            print(stack.verticesDescription)
-            let vertex = stack.pop()!
-            guard !visited.contains(vertex) else { continue }
-            
+        while let vertex = stack.pop() {
+            // O(1) per node visit
+            result.append(vertex)
             visited.insert(vertex)
-            print(vertex.element)
             let neighbors = graph.getEdges(from: vertex)
             
-            for next in neighbors where !visited.contains(next.destination) {
-                stack.push(next.destination)
+            // O(E)
+            for neighbor in neighbors where !visited.contains(neighbor.destination) {
+                stack.push(neighbor.destination)
             }
-            result = result + [vertex]
         }
         
         return result
