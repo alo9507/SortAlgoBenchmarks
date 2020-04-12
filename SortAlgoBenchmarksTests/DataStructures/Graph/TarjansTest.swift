@@ -66,6 +66,8 @@ final class TarjansTest: XCTestCase {
             graph.addEdge(ii_directed, directed: true)
             
             return graph
+            
+            XCTAssertEqual([1], Tarjans.sccs(for: graph))
         }
     }
 }
